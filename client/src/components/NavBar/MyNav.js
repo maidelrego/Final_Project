@@ -13,8 +13,8 @@ export default function MyNav () {
           <Nav className="cl-effect-7">
             <Nav.Link href="#features">Quotes</Nav.Link>
             <Nav.Link href="#pricing">Galery</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link href="#pricing">About us</Nav.Link>
+            <Nav.Link href="#pricing">Contact us</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

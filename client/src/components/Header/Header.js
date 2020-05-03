@@ -1,9 +1,11 @@
 import React from 'react';
-import { Parallax, Background } from 'react-parallax';
+import { Parallax } from 'react-parallax';
 import parallaxImg from '../../images/parallax.jpg'
 import './header.css'
 import MyNav from '../NavBar/MyNav';
-import Gallery from '../../pages/Gallery/Gallery.js';
+// import Gallery from '../../pages/Gallery/Gallery.js';
+import Selection from '../Selection/Selection.js';
+import { Container, Row, Col } from 'react-bootstrap';
 
 const styles = {
     fontFamily: "sans-serif",
@@ -24,17 +26,28 @@ const styles = {
   
 
 const Header = () => (
-   
-    <div style={styles}>
-       <MyNav />
-    <Parallax bgImage={parallaxImg} strength={200}>
-      <div style={{ height: 860, width: 500 }}>
-        <h1 style={insideStyles} className="title">Campbell Wood Designs</h1>
-      </div>
-    </Parallax>
-    <Gallery />
-  </div>
+  <Container fluid>
+    <Row>
+      <Col>
+        <div style={styles}>
+          <MyNav />
+          <Parallax bgImage={parallaxImg} strength={500}>
+            <div style={{ height: 860, width: 500 }}>
+              <h1 style={insideStyles} className="title">Campbell Wood Designs</h1>
+            </div>
+          </Parallax>
+        </div>
+      </Col>
+    </Row>
 
+    <Row>
+      <Col>
+      <div>
+      <Selection />
+      </div>
+      </Col>
+    </Row>
+  </Container>
   
   
 
