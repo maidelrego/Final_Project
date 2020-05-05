@@ -1,7 +1,7 @@
 import React from 'react';
 import { Parallax } from 'react-parallax';
 import parallaxImg from '../../images/parallax.jpg'
-import './header.css'
+import './header.scss'
 import MyNav from '../NavBar/MyNav';
 // import Gallery from '../../pages/Gallery/Gallery.js';
 import Selection from '../Selection/Selection.js';
@@ -31,9 +31,20 @@ const Header = () => (
       <Col>
         <div style={styles}>
           <MyNav />
-          <Parallax bgImage={parallaxImg} strength={500}>
+          <Parallax bgImage={parallaxImg} strength={600}>
             <div style={{ height: 860, width: 500 }}>
-              <h1 style={insideStyles} className="title">Campbell Wood Designs</h1>
+            <div class="frame">
+              <div class="circle"></div>
+              <div class="line left"></div>
+              <div class="line right"></div>
+              <div class="bracket left"></div>
+              <div class="bracket right"></div>
+              <div class="small top">Wood</div>
+              <div class="big">Campbell</div>
+              <div class="small bottom">Designs</div>
+              <div class="hide top"></div>
+              <div class="hide bottom"></div>
+</div>
             </div>
           </Parallax>
         </div>
