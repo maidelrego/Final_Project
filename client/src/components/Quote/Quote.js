@@ -15,7 +15,7 @@ import Form3 from './Form3.js';
 
 
 function getSteps() {
-  return ['Info', 'Create an ad group', 'Create an ad'];
+  return ['Info', 'Finish', 'Door Design', 'Door Design', 'Door Design', 'Door Design'];
 }
 
 function getStepContent(step) {
