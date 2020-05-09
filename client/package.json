@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "@material-ui/core": "^4.9.13",
     "axios": "^0.18.0",
     "bootstrap": "^4.4.1",
     "mdbreact": "^4.26.0",
@@ -12,9 +13,12 @@
     "react": "^16.6.3",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.6.3",
+    "react-form-stepper": "^1.2.3",
     "react-parallax": "^3.0.3",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^2.1.1"
+    "react-scripts": "^2.1.1",
+    "react-stepzilla": "^6.0.2",
+    "react-typing-effect": "^2.0.3"
   },
   "scripts": {
     "start": "react-scripts start",

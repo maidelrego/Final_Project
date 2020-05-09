@@ -1,0 +1,10 @@
+.typing-effect {
+    background-color: rgb(224,224,224);
+    height: 90px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Lato',Arial,sans-serif;
+    text-shadow: 0 0 1px rgba(255,255,255,0.3);
+    font-size: 4em;
+    color: #566473;
+}
