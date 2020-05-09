@@ -10,15 +10,15 @@ function validEmail (v) {
   return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v)
 }
 
-const validatePhone = [validPhoneNum, `Is not,${Quote.Phone} a phone number`]
-const validateEmail = [validEmail, `Is not, ${Quote.Email} an email`]
+// const validatePhone = [validPhoneNum, `Is not,${Quote.Phone} a phone number`]
+// const validateEmail = [validEmail, `Is not, ${Quote.Email} an email`]
 
-let addressSchema = new Schema({
-  street: String,
-  city: String,
-  state: String,
-  country: 'US'
-})
+// let addressSchema = new Schema({
+//   street: String,
+//   city: String,
+//   state: String,
+//   country: 'US'
+// })
 
 // Quote schema
 const quoteSchema = new Schema({
@@ -26,7 +26,7 @@ const quoteSchema = new Schema({
   LastName: { type: String, required: true },
   Phone: {
     type: String,
-    validate: validatePhone,
+    // validate: validatePhone,
     required: 'Phone number is required'
   },
   Email: {
@@ -34,10 +34,10 @@ const quoteSchema = new Schema({
     required: 'Email is required',
     unique: true,
     trim: true,
-    validate: validateEmail
+    // validate: validateEmail
   },
   Address: {
-    type: addressSchema,
+    type: String,
     required: true
   },
   Door: {

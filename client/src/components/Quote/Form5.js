@@ -1,11 +1,18 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
+import { useGlobalContext } from "../../utils/GlobalState.js";
 import './form5.scss';
 
 
 
 
 export default function Form5() {
+
+    const [state, dispatch] = useGlobalContext();
+
+    function updateState(event) {
+        dispatch({type: event.target.name, value: event.target.value})
+     }
 
     return (
       <div>
@@ -15,7 +22,7 @@ export default function Form5() {
                 <Col xs={4}>
                     <div className='handle1'></div>
                     <div class="inputGroup">
-                        <input id="radio1" name="radio" type="radio" />
+                        <input id="radio1" name="radio" type="radio" name="handle" value="J Shape Hanger" onChange={updateState } />
                         <label for="radio1">White</label>
                     </div>
                 </Col>
