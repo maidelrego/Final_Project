@@ -10,9 +10,9 @@ import Quote from './components/Quote/Quote.js';
 function App() {
   return (
     <Container fluid>
-      {/* <MyParallax />
+      <MyParallax />
       <TypingEffect />
-      <Selection /> */}
+      <Selection />
       <Quote />
     </Container>  
   );

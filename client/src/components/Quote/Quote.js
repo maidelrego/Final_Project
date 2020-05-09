@@ -13,7 +13,7 @@ import Form2 from './Form.2.js';
 import Form3 from './Form3.js';
 import Form4 from './Form4.js';
 import Form5 from './Form5.js';
-
+import Form6 from './Form6.js';
 
 
 function getSteps() {
@@ -42,6 +42,11 @@ function getStepContent(step) {
       return (
         <Form5 />
       )
+
+    case 5:
+    return (
+      <Form6 />
+    )
 
     default:
       return (
