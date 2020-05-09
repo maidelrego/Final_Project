@@ -1,41 +1,66 @@
 import React from 'react';
 import { Row, Col, Form, Container } from 'react-bootstrap';
 
-import './form2.css'
+import './form2.scss'
 
 export default function Form2() {
 
   return (
     <div>
-    <h1 className='display-3 text-center mb-3'>Paints</h1>
-    <Row>
-      
-      <Col md={4}>
-        <div className='paint'></div>
-        <div className='container'>
-        <div class="form-check form-check-inline custom-radio">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-          <label class="form-check-label" for="inlineRadio1">White</label>
-        </div>
-        </div>
-      </Col>
+      <h1 className='text-center mb-5'>Paints</h1>
+      <Row className='mb-4'>
 
-      <Col md={4}>
-        <div className='gray'></div>
-        <div class="form-check form-check-inline custom-radio">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
-          <label class="form-check-label" for="inlineRadio2">Gray</label>
-        </div>
-      </Col>
+        <Col xs={4}>
+          <div className='white'></div>
+          <div class="inputGroup">
+            <input id="radio1" name="radio" type="radio" />
+            <label for="radio1">White</label>
+          </div>
+        </Col>
 
-      <Col md={4}>
-        <div className='paint'></div>
-        <div class="form-check form-check-inline custom-radio">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" />
-          <label class="form-check-label" for="inlineRadio3">Easter Blue</label>
-        </div>
-      </Col>
-    </Row>
+        <Col xs={4}>
+          <div className='grey'></div>
+          <div class="inputGroup">
+            <input id="radio2" name="radio" type="radio" />
+            <label for="radio2">Grey</label>
+          </div>
+        </Col>
+
+        <Col xs={4}>
+          <div className='easter'></div>
+          <div class="inputGroup">
+            <input id="radio3" name="radio" type="radio" />
+            <label for="radio3">Easter Blue</label>
+          </div>
+        </Col>
+      </Row>
+      <h1 className='text-center mb-4'>Stains</h1>
+      <Row className="mb-5">
+
+        <Col xs={4}>
+          <div className='stain-white'></div>
+          <div class="inputGroup">
+            <input id="radio4" name="radio" type="radio" />
+            <label for="radio4">White</label>
+          </div>
+        </Col>
+
+        <Col xs={4}>
+          <div className='stain-grey'></div>
+          <div class="inputGroup">
+            <input id="radio5" name="radio" type="radio" />
+            <label for="radio5">Grey</label>
+          </div>
+        </Col>
+
+        <Col xs={4}>
+          <div className='stain-brown'></div>
+          <div class="inputGroup">
+            <input id="radio6" name="radio" type="radio" />
+            <label for="radio6">M-Brown</label>
+          </div>
+        </Col>
+      </Row>
     </div>
   );
 

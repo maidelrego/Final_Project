@@ -7,15 +7,17 @@ import StepContent from '@material-ui/core/StepContent';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import Form1 from './Form1.js';
 import { Container } from 'react-bootstrap';
+import Form1 from './Form1.js';
 import Form2 from './Form.2.js';
 import Form3 from './Form3.js';
+import Form4 from './Form4.js';
+import Form5 from './Form5.js';
 
 
 
 function getSteps() {
-  return ['Info', 'Finish', 'Door Design', 'Door Design', 'Door Design', 'Door Design'];
+  return ['Info', 'Finish', 'Door Design', 'Barn Door Kit', 'Handle', 'Review'];
 }
 
 function getStepContent(step) {
@@ -32,6 +34,15 @@ function getStepContent(step) {
       return (
         <Form3 />
       )
+    case 3:
+      return (
+        <Form4 />
+      )
+    case 4:
+      return (
+        <Form5 />
+      )
+
     default:
       return (
         <Form1 />

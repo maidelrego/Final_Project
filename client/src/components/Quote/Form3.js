@@ -1,9 +1,6 @@
 import React from 'react';
 import { Row, Col, Media } from 'react-bootstrap';
-import design1 from '../../images/Gallery1.jpg';
-import design2 from '../../images/Gallery2.jpg';
-import design3 from '../../images/Gallery3.jpg';
-import './form1.scss';
+import './form3.scss';
 
 
 
@@ -14,57 +11,51 @@ export default function Form3() {
         <div>
             <h1 className='display-4 text-center'>Door Design</h1>
             <p className='text-center mb-5'>All our doors are made out of high grade cabinet pine</p>
-            <Row>
-                <Col md={{ span: 6, offset: 3 }}>
-                    <ul className="list-unstyled">
-                        <Media as="li">
-                            <img
-                                width={200}
-                                height={200}
-                                className="mr-3 mb-3"
-                                src={design1}
-                                alt="Generic placeholder"
-                            />
-                            <Media.Body>
-                                <h5>Name of Design</h5>
-                                <label>
-                                    <input type="checkbox" class="option-input checkbox" />
-                                    Checkbox
-                                </label>
-                            </Media.Body>
-                        </Media>
+            <Row className='mb-4'>
 
-                        <Media as="li">
-                            <img
-                                width={200}
-                                height={200}
-                                className="mr-3 mb-3"
-                                src={design2}
-                                alt="Generic placeholder"
-                            />
-                            <Media.Body>
-                            <h5>Name of Design</h5>
-                               
-                            </Media.Body>
-                        </Media>
+                <Col xs={4}>
+                    <div className='design1'></div>
+                    <div class="inputGroup">
+                        <input id="radio1" name="radio" type="radio" />
+                        <label for="radio1">White</label>
+                    </div>
+                </Col>
 
-                        <Media as="li">
-                            <img
-                                width={200}
-                                height={200}
-                                className="mr-3 mb-5"
-                                src={design3}
-                                alt="Generic placeholder"
-                            />
-                            <Media.Body>
-                            <h5>Name of Design</h5>
-                                
-                            </Media.Body>
-                        </Media>
-                    </ul>
+                <Col xs={4}>
+                    <div className='design2'></div>
+                    <div class="inputGroup">
+                        <input id="radio2" name="radio" type="radio" />
+                        <label for="radio2">Grey</label>
+                    </div>
+                </Col>
+
+                <Col xs={4}>
+                    <div className='design3'></div>
+                    <div class="inputGroup">
+                        <input id="radio3" name="radio" type="radio" />
+                        <label for="radio3">Easter Blue</label>
+                    </div>
                 </Col>
             </Row>
 
+            <Row className='mb-4'>
+
+                <Col xs={6}>
+                    <div className='design4'></div>
+                    <div class="inputGroup">
+                        <input id="radio4" name="radio" type="radio" />
+                        <label for="radio4">White</label>
+                    </div>
+                </Col>
+
+                <Col xs={6}>
+                    <div className='design5'></div>
+                    <div class="inputGroup">
+                        <input id="radio5" name="radio" type="radio" />
+                        <label for="radio5">Grey</label>
+                    </div>
+                </Col>
+            </Row>
         </div>
     );
 
