@@ -29,14 +29,14 @@ const reducer = (state, action) => {
 };
 
 const GlobalStateProvider = ({ value = 0, ...props }) => {
-  const [state, dispatch] = useReducer(reducer, { 
+  const [state, dispatch] = useReducer(reducer, {
     // TODO - set tinitial state in tis object
     firstName: '',
-    lastName:'',
+    lastName: '',
     phoneNumber: '',
     address: '',
     address2: '',
-    email:'',
+    email: '',
     city: '',
     state: '',
     zip: '',
@@ -44,7 +44,7 @@ const GlobalStateProvider = ({ value = 0, ...props }) => {
     doorDesign: '',
     doorKit: '',
     handle: ''
-   });
+  });
 
   return <Provider value={[state, dispatch]} {...props} />;
 };

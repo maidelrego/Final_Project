@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactTypingEffect from 'react-typing-effect';
-import {Row, Col} from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import './typing.css'
- 
+
 const TypingEffect = () => {
   return (
     <Row>

@@ -1,8 +1,7 @@
 import React from 'react';
-import { Row, Col} from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { useGlobalContext } from "../../utils/GlobalState.js";
 import './form3.scss';
-
 
 
 
@@ -11,8 +10,8 @@ export default function Form3() {
     const [state, dispatch] = useGlobalContext();
 
     function updateState(event) {
-        dispatch({type: event.target.name, value: event.target.value})
-     }
+        dispatch({ type: event.target.name, value: event.target.value })
+    }
 
     return (
         <div>
@@ -22,24 +21,24 @@ export default function Form3() {
 
                 <Col xs={4}>
                     <div className='design1'></div>
-                    <div class="inputGroup">
-                        <input id="radio1" type="radio" name="doorDesign" value="Arrow Door" onChange={updateState } />
+                    <div className="inputGroup">
+                        <input id="radio1" type="radio" name="doorDesign" value="Arrow Door" onChange={updateState} />
                         <label for="radio1">Arrow</label>
                     </div>
                 </Col>
 
                 <Col xs={4}>
                     <div className='design2'></div>
-                    <div class="inputGroup">
-                        <input id="radio2" type="radio" name="doorDesign" value="Chevron Door" onChange={updateState } />
+                    <div className="inputGroup">
+                        <input id="radio2" type="radio" name="doorDesign" value="Chevron Door" onChange={updateState} />
                         <label for="radio2">Chevron</label>
                     </div>
                 </Col>
 
                 <Col xs={4}>
                     <div className='design3'></div>
-                    <div class="inputGroup">
-                        <input id="radio3" type="radio" name="doorDesign" value="Multiple X Door" onChange={updateState } />
+                    <div className="inputGroup">
+                        <input id="radio3" type="radio" name="doorDesign" value="Multiple X Door" onChange={updateState} />
                         <label for="radio3">Multiple X</label>
                     </div>
                 </Col>
@@ -49,16 +48,16 @@ export default function Form3() {
 
                 <Col xs={6}>
                     <div className='design4'></div>
-                    <div class="inputGroup">
-                        <input id="radio4" type="radio" name="doorDesign" value="Curved Door" onChange={updateState } />
+                    <div className="inputGroup">
+                        <input id="radio4" type="radio" name="doorDesign" value="Curved Door" onChange={updateState} />
                         <label for="radio4">Curved</label>
                     </div>
                 </Col>
 
                 <Col xs={6}>
                     <div className='design5'></div>
-                    <div class="inputGroup">
-                        <input id="radio5" type="radio" name="doorDesign" value="Paneled Door" onChange={updateState } />
+                    <div className="inputGroup">
+                        <input id="radio5" type="radio" name="doorDesign" value="Paneled Door" onChange={updateState} />
                         <label for="radio5">Paneled</label>
                     </div>
                 </Col>
