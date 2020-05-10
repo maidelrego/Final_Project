@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col, Form, Container } from 'react-bootstrap';
 import { useGlobalContext } from "../../utils/GlobalState.js";
+import logo from '../../images/logo.png';
 
 import './form2.scss'
 
@@ -16,7 +17,17 @@ export default function Form2() {
 
   return (
     <div>
-      <h1 className='text-center mb-5'>Paints</h1>
+      <Row>
+        <Col>
+          <div><img className='logo mb-3' alt={logo} src={logo}></img></div>
+        </Col>
+      </Row>
+      <Row>
+        <Col className='text-center mb-4'>
+          <h1>Finish</h1>
+        </Col>
+      </Row>
+      
       <Row className='mb-4'>
 
         <Col xs={4}>

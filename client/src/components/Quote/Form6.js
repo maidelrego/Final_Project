@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col, Form, Container } from 'react-bootstrap';
 import { useGlobalContext } from "../../utils/GlobalState.js";
+import logo from '../../images/logo.png';
 import './form6.css';
 
 
@@ -10,15 +11,19 @@ export default function Form6() {
 
   const [state, dispatch] = useGlobalContext();
 
-  function updateState(event) {
-    dispatch({ type: event.target.name, value: event.target.value })
-  }
-
-
   return (
 
     <Form className='text-center mb-5'>
-      <h1 className='display-4 mb-5'>Review</h1>
+      <Row>
+        <Col>
+          <div><img className='logo mb-3' alt={logo} src={logo}></img></div>
+        </Col>
+      </Row>
+      <Row>
+        <Col className='text-center mb-4'>
+          <h1>Review</h1>
+        </Col>
+      </Row>
       <Row>
         <Col xs={6}>
           <h3 className='caption'>Your Name:</h3><p>{state.firstName} {state.lastName}</p>
