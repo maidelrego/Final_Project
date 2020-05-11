@@ -13,7 +13,7 @@ import Form2 from './Form.2.js';
 import Form3 from './Form3.js';
 import Form4 from './Form4.js';
 import Form5 from './Form5.js';
-
+import Form6 from './Form6.js';
 
 
 function getSteps() {
@@ -43,6 +43,11 @@ function getStepContent(step) {
         <Form5 />
       )
 
+    case 5:
+      return (
+        <Form6 />
+      )
+
     default:
       return (
         <Form1 />
@@ -51,7 +56,7 @@ function getStepContent(step) {
 }
 
 export default function VerticalLinearStepper() {
- 
+
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
 
@@ -76,7 +81,7 @@ export default function VerticalLinearStepper() {
                   <Button
                     disabled={activeStep === 0}
                     onClick={handleBack}
-                   
+
                   >
                     Back
                   </Button>
@@ -84,7 +89,7 @@ export default function VerticalLinearStepper() {
                     variant="contained"
                     color="primary"
                     onClick={handleNext}
-                   
+
                   >
                     {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                   </Button>
