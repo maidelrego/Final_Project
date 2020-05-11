@@ -13,10 +13,8 @@ function App() {
       <Container fluid>
         <MyParallax />
         <TypingEffect />
-        
         <Selection />
         <Quote />
-        
       </Container>
     </GlobalStateProvider>
   );
