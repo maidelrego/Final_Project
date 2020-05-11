@@ -3,12 +3,12 @@ const mongoose = require('mongoose')
 // const _ = require('underscore')
 const Schema = mongoose.Schema
 
-function validPhoneNum (v) {
-  return /\d{3}-\d{3}-\d{4}/.test(v)
-}
-function validEmail (v) {
-  return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v)
-}
+// function validPhoneNum (v) {
+//   return /\d{3}-\d{3}-\d{4}/.test(v)
+// }
+// function validEmail (v) {
+//   return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v)
+// }
 
 // const validatePhone = [validPhoneNum, `Is not,${Quote.Phone} a phone number`]
 // const validateEmail = [validEmail, `Is not, ${Quote.Email} an email`]
@@ -22,53 +22,61 @@ function validEmail (v) {
 
 // Quote schema
 const quoteSchema = new Schema({
-  FirstName: { type: String, required: true },
-  LastName: { type: String, required: true },
-  Phone: {
-    type: String,
-    // validate: validatePhone,
-    required: 'Phone number is required'
-  },
-  Email: {
-    type: String,
-    required: 'Email is required',
-    unique: true,
-    trim: true,
-    // validate: validateEmail
-  },
-  Address: {
-    type: String,
-    required: true
-  },
-  Door: {
-    type: String,
-    // min: [12, 'too few inches'],
-    // max: 100,
-    required: true
-  },
-  Finish: {
-    type: String,
-    // enum: ['white stain', 'medium brown stain', 'grey', 'white', 'easter blue'],
-    required: true
-  },
-  Glass: {
-    type: Boolean
-  },
-  Hardware: {
-    type: String,
-    required: true
-  },
-  Design: {
-    type: String,
-    reuired: true
-  },
-  Delivery: {
-    type: Boolean
-  },
-  Installation: {
-    type: Boolean
-  },
-  date: { type: Date, default: Date.now }
+  date: { type: Date, default: Date.now },
+  qoute: [
+    {
+      FirstName: { type: String, required: true },
+      LastName: { type: String, required: true },
+      Phone: {
+        type: String,
+        // validate:
+        required: 'Phone number is required'
+      },
+      Email: {
+        type: String,
+        required: 'Email is required',
+        unique: true,
+        trim: true
+        // validate:
+      },
+      Address: {
+        type: String,
+        required: true
+      },
+      Address2: {
+        type: String,
+        required: true
+      },
+      Door: {
+        type: String,
+        // min: [12, 'too few inches'],
+        // max: 100,
+        required: true
+      },
+      Finish: {
+        type: String,
+        // enum: ['white stain', 'medium brown stain', 'grey', 'white', 'easter blue'],
+        required: true
+      },
+      Glass: {
+        type: Boolean
+      },
+      Hardware: {
+        type: String,
+        required: true
+      },
+      Design: {
+        type: String,
+        reuired: true
+      },
+      Delivery: {
+        type: Boolean
+      },
+      Installation: {
+        type: Boolean
+      }
+    }
+  ]
 })
 
 const Quote = mongoose.model('Quote', quoteSchema)
