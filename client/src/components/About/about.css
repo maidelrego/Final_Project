@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+
+.header-about {
+    font-family: 'Raleway', sans-serif;
+    font-size: 70px;
+}
+
+.campbell-p {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 30px;
+}
+
+.signature {
+    font-family: 'Herr Von Muellerhoff', cursive;
+    font-size: 60px;
+}
