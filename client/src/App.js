@@ -12,12 +12,12 @@ import { GlobalStateProvider } from './utils/GlobalState'
 function App() {
   return (
     <GlobalStateProvider>
-      <Container fluid className='p-0'>
+      <Container fluid className='m-0'>
         <MyParallax />
         {/* <TypingEffect /> */}
         <About />
-        {/* <Contact /> */}
         <Selection />
+        <Contact />
         {/* <Quote /> */}
       </Container>
     </GlobalStateProvider>

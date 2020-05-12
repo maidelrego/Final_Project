@@ -11,10 +11,10 @@ export default function MyNav() {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="nav-container">
           <ul>
-            <li><Nav.Link href="#features">Quotes</Nav.Link></li>
-            <li><Nav.Link href="#pricing">Galery</Nav.Link></li>
-            <li><Nav.Link href="#pricing">About us</Nav.Link></li>
-            <li><Nav.Link href="#pricing">Contact us</Nav.Link></li>
+            <li><Nav.Link to="/quotes">Quotes</Nav.Link></li>
+            <li><Nav.Link to="/galery">Galery</Nav.Link></li>
+            <li><Nav.Link href="#about">About us</Nav.Link></li>
+            <li><Nav.Link href="#contact">Contact us</Nav.Link></li>
           </ul>
 
         </Nav>
