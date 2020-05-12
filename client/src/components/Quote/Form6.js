@@ -33,53 +33,49 @@ export default function Form6() {
       <Row>
         <Col>
           <div>
-            <img className="logo mb-3" alt={logo} src={logo}>
-              {" "}
-            </img>{" "}
-          </div>{" "}
-        </Col>{" "}
-      </Row>{" "}
+            <img className="logo mb-3" alt={logo} src={logo}></img>
+          </div>
+        </Col>
+      </Row>
       <Row>
         <Col className="text-center mb-4">
-          <h1> Review </h1>{" "}
-        </Col>{" "}
-      </Row>{" "}
+          <h1> Review </h1>
+        </Col>
+      </Row>
       <Row>
         <Col xs={6}>
-          <h3 className="caption"> Your Name: </h3>{" "}
+          <h3 className="caption"> Your Name: </h3>
           <p>
-            {" "}
-            {state.firstName} {state.lastName}{" "}
-          </p>{" "}
-          <h3 className="caption"> Email: </h3> <p> {state.email} </p>{" "}
-          <h3 className="caption"> Phone Number: </h3>{" "}
-          <p> {state.phoneNumber} </p> <h3 className="caption"> Address: </h3>{" "}
+            {state.firstName} {state.lastName}
+          </p>
+          <h3 className="caption"> Email: </h3> <p> {state.email} </p>
+          <h3 className="caption"> Phone Number: </h3>
+          <p> {state.phoneNumber} </p> <h3 className="caption"> Address: </h3>
           <p>
-            {" "}
-            {state.address} {state.address2} {state.city} {state.state}{" "}
-            {state.zip}{" "}
-          </p>{" "}
-        </Col>{" "}
+            {state.address} {state.address2} {state.city} {state.state}
+            {state.zip}
+          </p>
+        </Col>
         <Col xs={6}>
-          <h3 className="caption"> Dimensions: </h3> <h5> Width(Inches): </h5>{" "}
+          <h3 className="caption"> Dimensions: </h3> <h5> Width(Inches): </h5>
           <p>{state.doorDesign}</p>
           <h5> Height(Inches): </h5> <p>{state.doorDesign}</p>
-        </Col>{" "}
-      </Row>{" "}
+        </Col>
+      </Row>
       <hr />
       <Row className="mt-4">
         <Col xs={3}>
-          <h3 className="caption"> Finish: </h3> <p> {state.finishColor} </p>{" "}
-        </Col>{" "}
+          <h3 className="caption"> Finish: </h3> <p> {state.finishColor} </p>
+        </Col>
         <Col xs={3}>
-          <h3 className="caption"> Design: </h3> <p> {state.doorDesign} </p>{" "}
-        </Col>{" "}
+          <h3 className="caption"> Design: </h3> <p> {state.doorDesign} </p>
+        </Col>
         <Col xs={3}>
-          <h3 className="caption"> Kit: </h3> <p> {state.doorKit} </p>{" "}
-        </Col>{" "}
+          <h3 className="caption"> Kit: </h3> <p> {state.doorKit} </p>
+        </Col>
         <Col xs={3}>
-          <h3 className="caption"> Handle: </h3> <p> {state.handle} </p>{" "}
-        </Col>{" "}
+          <h3 className="caption"> Handle: </h3> <p> {state.handle} </p>
+        </Col>
         <Col>
           <Button
             as="input"
@@ -90,7 +86,7 @@ export default function Form6() {
             onClick={handleFormSubmit}
           ></Button>
         </Col>
-      </Row>{" "}
+      </Row>
     </Form>
   );
 }
