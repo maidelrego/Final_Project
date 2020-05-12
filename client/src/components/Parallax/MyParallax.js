@@ -9,7 +9,7 @@ import './parallaxStyle.scss'
 
 const MyParallax = () => (
   <Row>
-    <Col>
+    <Col className='p-0'>
       <MyNav />
       <Parallax bgImage={parallaxImg} strength={700}>
         <div style={{ height: 860, width: 500 }}>
