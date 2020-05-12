@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios'
 
 export default {
   // Gets all quotes
@@ -17,4 +17,4 @@ export default {
   saveQuote: function(quoteData) {
     return axios.post("/api/quotes", quoteData);
   }
-};
+}
