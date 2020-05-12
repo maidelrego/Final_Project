@@ -1,7 +1,7 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 // const addressValidator = require('address-validator')
 // const _ = require('underscore')
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 
 // function validPhoneNum (v) {
 //   return /\d{3}-\d{3}-\d{4}/.test(v)
@@ -23,62 +23,70 @@ const Schema = mongoose.Schema
 // Quote schema
 const quoteSchema = new Schema({
   date: { type: Date, default: Date.now },
-  qoute: [
+  quote: [
     {
-      FirstName: { type: String, required: true },
-      LastName: { type: String, required: true },
-      Phone: {
+      firstName: { type: String, required: true },
+      lastName: { type: String, required: true },
+      phone: {
         type: String,
         // validate:
-        required: 'Phone number is required'
+        required: "Phone number is required",
       },
-      Email: {
+      email: {
         type: String,
-        required: 'Email is required',
+        required: "Email is required",
         unique: true,
-        trim: true
+        trim: true,
         // validate:
       },
-      Address: {
+      address: {
         type: String,
-        required: true
+        required: true,
       },
-      Address2: {
+      address2: {
         type: String,
-        required: true
+        required: false,
       },
-      Door: {
+      city: {
+        type: String,
+        required: "Please enter a city",
+      },
+      state: {
+        type: String,
+        required: "Please enter the state",
+      },
+      zipCode: {
+        type: Number,
+        required: "Please enter as zip code",
+      },
+      doorKit: {
         type: String,
         // min: [12, 'too few inches'],
         // max: 100,
-        required: true
       },
-      Finish: {
+      finishColor: {
         type: String,
         // enum: ['white stain', 'medium brown stain', 'grey', 'white', 'easter blue'],
-        required: true
       },
-      Glass: {
-        type: Boolean
-      },
-      Hardware: {
+      doorDesign: {
         type: String,
-        required: true
       },
-      Design: {
+      handle: {
         type: String,
-        reuired: true
       },
-      Delivery: {
-        type: Boolean
+      delivery: {
+        type: String,
       },
-      Installation: {
-        type: Boolean
-      }
-    }
-  ]
-})
+      installation: {
+        type: String,
+      },
+      doorMeasurements: {
+        type: String,
+      },
+    },
+  ],
+});
 
-const Quote = mongoose.model('Quote', quoteSchema)
+const Quote = mongoose.model("Quote", quoteSchema);
 
-module.exports = Quote
+module.exports = Quote;
