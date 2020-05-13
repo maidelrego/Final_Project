@@ -1,6 +1,7 @@
 import React from 'react';
-import { Row, Col, Form, Container } from 'react-bootstrap';
+import { Row, Col, Form, Button, Container } from 'react-bootstrap';
 import { useGlobalContext } from "../../utils/GlobalState.js";
+import API from '../../utils/API.js';
 import logo from '../../images/logo.png';
 import './form6.css';
 
@@ -11,9 +12,32 @@ export default function Form6() {
 
   const [state, dispatch] = useGlobalContext();
 
+
+   function handleFormSubmit(event) {
+    event.preventDefault();
+    API.saveQuote({
+      firstName: state.firstName,
+      lastName: state.lastName,
+      phoneNumber: state.phoneNumber,
+      address: state.address,
+      address2: state.address2,
+      email: state.email,
+      city: state.city,
+      state: state.state,
+      zip: state.zip,
+      finishColor: state.finishColor,
+      doorDesign: state.doorDesign,
+      doorKit: state.doorKit,
+      handle: state.handle
+    })
+      .then(res => alert('Form Submited'))
+      .catch(err => console.log(err));
+    
+  };
+
   return (
 
-    <Form className='text-center mb-5'>
+    <Form className='text-center mb-5' onSubmit={handleFormSubmit}>
       <Row>
         <Col>
           <div><img className='logo mb-3' alt={logo} src={logo}></img></div>
@@ -57,7 +81,7 @@ export default function Form6() {
           <h3 className='caption'>Handle:</h3><p>{state.handle}</p>
         </Col>
       </Row>
-
+      <Button type="submit">Submit form</Button>
     </Form>
 
   );

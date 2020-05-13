@@ -5,6 +5,7 @@ import './about.css'
 
 const About = () => {
     return (
+        
         <Container>
         <Row>
             <Col>
@@ -25,6 +26,7 @@ const About = () => {
             {/* <Col><img className="logo" alt={logo} src={logo}></img></Col> */}
         </Row>
         </Container>
+        
     );
 };
 

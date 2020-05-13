@@ -15,10 +15,10 @@ function App() {
       <Container fluid className='m-0'>
         <MyParallax />
         {/* <TypingEffect /> */}
-        <About />
+        {/* <About />
         <Selection />
-        <Contact />
-        {/* <Quote /> */}
+        <Contact /> */}
+        <Quote />
       </Container>
     </GlobalStateProvider>
   );

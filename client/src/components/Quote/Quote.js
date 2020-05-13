@@ -75,27 +75,27 @@ export default function VerticalLinearStepper() {
   }
 
   
-  function handleFormSubmit(event) {
-    event.preventDefault();
-    API.saveQuote({
-      firstName: state.firstName,
-      lastName: state.lastName,
-      phoneNumber: state.phoneNumber,
-      address: state.address,
-      address2: state.address2,
-      email: state.email,
-      city: state.city,
-      state: state.state,
-      zip: state.zip,
-      finishColor: state.finishColor,
-      doorDesign: state.doorDesign,
-      doorKit: state.doorKit,
-      handle: state.handle
-    })
-      .then(res => loadQuotes())
-      .catch(err => console.log(err));
+  // function handleFormSubmit(event) {
+  //   event.preventDefault();
+  //   API.saveQuote({
+  //     firstName: state.firstName,
+  //     lastName: state.lastName,
+  //     phoneNumber: state.phoneNumber,
+  //     address: state.address,
+  //     address2: state.address2,
+  //     email: state.email,
+  //     city: state.city,
+  //     state: state.state,
+  //     zip: state.zip,
+  //     finishColor: state.finishColor,
+  //     doorDesign: state.doorDesign,
+  //     doorKit: state.doorKit,
+  //     handle: state.handle
+  //   })
+  //     .then(res => loadQuotes())
+  //     .catch(err => console.log(err));
     
-  };
+  // };
 
 
 
@@ -106,8 +106,38 @@ export default function VerticalLinearStepper() {
   const steps = getSteps();
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    if(activeStep === 5){
+      API.saveQuote({
+            firstName: state.firstName,
+            lastName: state.lastName,
+            phoneNumber: state.phoneNumber,
+            address: state.address,
+            address2: state.address2,
+            email: state.email,
+            city: state.city,
+            state: state.state,
+            zip: state.zip,
+            finishColor: state.finishColor,
+            doorDesign: state.doorDesign,
+            doorKit: state.doorKit,
+            handle: state.handle
+          })  
+            .then(res => alert("finished"))
+            .catch(err => console.log(err));
+            setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    } else {
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    }
+    // look at the current step
+    // use a ref for the corresponding form
+    // call .validateForm() using that ref
+    // if its valid, then call setACtiveStep
+    
   };
+
+
+
+
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
