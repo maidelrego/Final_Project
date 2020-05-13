@@ -6,6 +6,7 @@ import Selection from './components/Selection/Selection.js';
 import About from './components/About/About.js';
 import Contact from './components/Contact/Contact.js';
 import Quote from './components/Quote/Quote.js';
+import Admin from './pages/Admin/Admin.js';
 import { GlobalStateProvider } from './utils/GlobalState'
 
 
@@ -19,6 +20,7 @@ function App() {
         <Selection />
         <Contact /> */}
         <Quote />
+        <Admin />
       </Container>
     </GlobalStateProvider>
   );

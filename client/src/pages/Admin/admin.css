@@ -1,0 +1,11 @@
+.admin-head {
+    background-color: white;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+    height: 70px;
+}
+
+.logout {
+    color: red;
+    margin-top: 25px;
+}

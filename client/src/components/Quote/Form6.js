@@ -81,7 +81,6 @@ export default function Form6() {
           <h3 className='caption'>Handle:</h3><p>{state.handle}</p>
         </Col>
       </Row>
-      <Button type="submit">Submit form</Button>
     </Form>
 
   );

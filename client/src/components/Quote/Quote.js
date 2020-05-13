@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useRef} from 'react';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
@@ -56,47 +56,23 @@ function getStepContent(step) {
   }
 }
 
-export default function VerticalLinearStepper() {
+export default function VerticalLinearStepper(props) {
 
   const [state, dispatch] = useGlobalContext();
 
-  function loadQuotes() {
-    API.getQuotes()
-      .then(res => 
-        dispatch(res.data)
-      )
-      .catch(err => console.log(err));
-  };
-
-  function deleteQuote(id) {
-    API.deleteQuote(id)
-      .then(res => loadQuotes())
-      .catch(err => console.log(err));
-  }
-
-  
-  // function handleFormSubmit(event) {
-  //   event.preventDefault();
-  //   API.saveQuote({
-  //     firstName: state.firstName,
-  //     lastName: state.lastName,
-  //     phoneNumber: state.phoneNumber,
-  //     address: state.address,
-  //     address2: state.address2,
-  //     email: state.email,
-  //     city: state.city,
-  //     state: state.state,
-  //     zip: state.zip,
-  //     finishColor: state.finishColor,
-  //     doorDesign: state.doorDesign,
-  //     doorKit: state.doorKit,
-  //     handle: state.handle
-  //   })
-  //     .then(res => loadQuotes())
+  // function loadQuotes() {
+  //   API.getQuotes()
+  //     .then(res => 
+  //       dispatch(res.data)
+  //     )
   //     .catch(err => console.log(err));
-    
   // };
 
+  // function deleteQuote(id) {
+  //   API.deleteQuote(id)
+  //     .then(res => loadQuotes())
+  //     .catch(err => console.log(err));
+  // }
 
 
 

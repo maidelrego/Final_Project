@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Form, Col, Button, Row } from 'react-bootstrap';
 import { useGlobalContext } from "../../utils/GlobalState.js";
 import logo from '../../images/logo.png';
@@ -11,7 +11,6 @@ export default function Form1() {
 
 
   const handleSubmit = (event) => {
-
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
