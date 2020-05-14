@@ -1,14 +1,22 @@
 import React from "react";
-import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from "mdbreact";
-import gallery1 from '../../images/Gallery1.jpg';
-import gallery2 from '../../images/Gallery2.jpg';
-import gallery3 from '../../images/Gallery3.jpg';
-import './gallery.css';
+import {
+  MDBCarousel,
+  MDBCarouselCaption,
+  MDBCarouselInner,
+  MDBCarouselItem,
+  MDBView,
+  MDBMask,
+  MDBContainer,
+} from "mdbreact";
+import gallery1 from "../../images/Gallery1.jpg";
+import gallery2 from "../../images/Gallery2.jpg";
+import gallery3 from "../../images/Gallery3.jpg";
+import "./gallery.css";
 
 const CarouselPage = () => {
   return (
     <div className="galleryC">
-      <h1 id="gallery-tittle">Gallery</h1>
+      <h1 id="gallery-title">Gallery</h1>
       <MDBContainer>
         <MDBCarousel
           activeItem={1}
@@ -65,6 +73,6 @@ const CarouselPage = () => {
       </MDBContainer>
     </div>
   );
-}
+};
 
 export default CarouselPage;
