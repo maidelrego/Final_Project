@@ -7,6 +7,7 @@ import About from "./components/About/About.js";
 import Contact from "./components/Contact/Contact.js";
 import Quote from "./components/Quote/Quote.js";
 import Admin from "./pages/Admin/Admin.js";
+import Gallery from "./pages/Gallery/Gallery.js";
 import { GlobalStateProvider } from "./utils/GlobalState";
 
 
@@ -19,8 +20,9 @@ function App() {
         {/* <About />
         <Selection />
         <Contact /> */}
-        <Quote />
-        <Admin />
+        {/* <Quote />
+        <Admin /> */}
+        <Gallery />
       </Container>
     </GlobalStateProvider>
   );
