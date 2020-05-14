@@ -28,7 +28,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  remove: function(req, res) {
+  delete: function(req, res) {
     db.Quote
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
