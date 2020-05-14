@@ -14,22 +14,22 @@ export default function MyNav() {
             </Row>
             <Row>
                 <Col>
-                    <div class="conatiner">
-                        <div class="wrap">
+                    <div className="conatiner">
+                        <div className="wrap">
 
-                            <div class="box one">
+                            <div className="box one">
                                 <h1>GET A QUOTE</h1>
                             </div>
 
-                            <div class="box two">
+                            <div className="box two">
                                 <h1>How we Do it</h1>
                             </div>
 
-                            <div class="box three">
+                            <div className="box three">
                                 <h1>CREATIVITY</h1>
                             </div>
 
-                            <div class="box four">
+                            <div className="box four">
                                 <h1>CREATIVITY</h1>
                             </div>
                         </div>
