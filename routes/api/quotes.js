@@ -7,6 +7,8 @@ router.route("/")
   .post(quotesController.create)
 
 router.route("/:id")
+  .get(quotesController.findById)
   .delete(quotesController.delete);
 
-module.exports = router;
+
+  module.exports = router;

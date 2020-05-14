@@ -1,6 +1,6 @@
-import React from 'react';
-import { Navbar, Nav, } from 'react-bootstrap';
-import './myNav.scss';
+import React from "react";
+import { Navbar, Nav, } from "react-bootstrap";
+import "./myNav.scss";
 
 
 export default function MyNav() {

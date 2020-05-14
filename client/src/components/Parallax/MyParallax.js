@@ -1,9 +1,9 @@
-import React from 'react';
-import { Parallax } from 'react-parallax';
-import parallaxImg from '../../images/parallax.jpg'
-import MyNav from '../NavBar/MyNav';
-import { Row, Col } from 'react-bootstrap';
-import './parallaxStyle.scss'
+import React from "react";
+import { Parallax } from "react-parallax";
+import parallaxImg from "../../images/parallax.jpg";
+import MyNav from "../NavBar/MyNav";
+import { Row, Col } from "react-bootstrap";
+import "./parallaxStyle.scss";
 
 
 

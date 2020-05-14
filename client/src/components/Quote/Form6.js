@@ -1,9 +1,10 @@
-import React from 'react';
-import { Row, Col, Form, Button, Container } from 'react-bootstrap';
+/* eslint-disable linebreak-style */
+import React from "react";
+import { Row, Col, Form } from "react-bootstrap";
 import { useGlobalContext } from "../../utils/GlobalState.js";
-import API from '../../utils/API.js';
-import logo from '../../images/logo.png';
-import './form6.css';
+import API from "../../utils/API.js";
+import logo from "../../images/logo.png";
+import "./form6.css";
 
 
 
@@ -13,7 +14,7 @@ export default function Form6() {
   const [state, dispatch] = useGlobalContext();
 
 
-   function handleFormSubmit(event) {
+  function handleFormSubmit(event) {
     event.preventDefault();
     API.saveQuote({
       firstName: state.firstName,
@@ -30,10 +31,10 @@ export default function Form6() {
       doorKit: state.doorKit,
       handle: state.handle
     })
-      .then(res => alert('Form Submited'))
+      .then(res => alert("Form Submited"))
       .catch(err => console.log(err));
-    
-  };
+
+  }
 
   return (
 

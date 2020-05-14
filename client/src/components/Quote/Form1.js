@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
-import { Form, Col, Button, Row } from 'react-bootstrap';
+import React, { useState } from "react";
+import { Form, Col, Button, Row } from "react-bootstrap";
 import { useGlobalContext } from "../../utils/GlobalState.js";
-import logo from '../../images/logo.png';
-import './form1.css'
+import logo from "../../images/logo.png";
+import "./form1.css";
 
 export default function Form1() {
   const [validated, setValidated] = useState(false);
@@ -19,11 +19,11 @@ export default function Form1() {
 
     setValidated(true);
 
-    
+
   };
 
   function updateState(event) {
-    dispatch({ type: event.target.name, value: event.target.value })
+    dispatch({ type: event.target.name, value: event.target.value });
   }
 
   return (
