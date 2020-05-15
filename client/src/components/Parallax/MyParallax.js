@@ -1,16 +1,12 @@
 import React from "react";
 import { Parallax } from "react-parallax";
 import parallaxImg from "../../images/parallax.jpg";
-import MyNav from "../NavBar/MyNav";
 import { Row, Col } from "react-bootstrap";
 import "./parallaxStyle.scss";
 
-
-
 const MyParallax = () => (
   <Row>
-    <Col className='p-0'>
-      <MyNav />
+    <Col>
       <Parallax bgImage={parallaxImg} strength={700}>
         <div style={{ height: 860, width: 500 }}>
           <div className="frame">
@@ -29,6 +25,5 @@ const MyParallax = () => (
       </Parallax>
     </Col>
   </Row>
-
 );
 export default MyParallax;
