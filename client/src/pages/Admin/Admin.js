@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Container, Jumbotron, Table, } from "react-bootstrap";
 import API from "../../utils/API.js";
+import { Link } from "react-router-dom";
 import "./admin.css";
 
 
@@ -10,25 +11,17 @@ import "./admin.css";
 export default function Admin() {
 
   const [quotes, setQuotes] = useState([]);
-  // const [showQuote, setShowQuote] = useState(false);
-
 
   function loadQuotes() {
     API.getQuotes()
       .then(res => setQuotes(res.data))
       .catch(err => console.log(err));
-    // setShowQuote(!showQuote);
+
 
   }
   useEffect(() => {
     loadQuotes();
   }, []);
-
-  function oneQuote() {
-    API.getQuote()
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err));
-  }
 
 
   function deleteQuote(id) {
@@ -60,8 +53,7 @@ export default function Admin() {
 
                       <td>{quote.firstName} {quote.lastName}</td>
                       <td>
-                        <button className='btn' onClick={() => oneQuote()}>View Quote</button>
-
+                        <Link to={"/books/" + quote._id}>View Quote</Link>
                         <button className='btn' onClick={() => deleteQuote(quote._id)}><i className="fas fa-trash delete"></i></button>
                       </td>
                     </tr>
@@ -72,11 +64,6 @@ export default function Admin() {
               )}
             </Table>
           </Jumbotron>
-        </Col>
-      </Row>
-      <Row>
-        <Col className='p-0'>
-          {/* {showQuote && <div>{quotes.map(quote => (<div key={quote._id}><p>{quote.firstName}</p></div>))}</div>} */}
         </Col>
       </Row>
     </Container>

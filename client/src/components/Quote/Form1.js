@@ -40,7 +40,7 @@ export default function Form1() {
       </Row>
 
 
-      <Form noValidate validated={validated} onSubmit={handleSubmit}>
+      <Form noValidate validated={validated} onSubmit={handleSubmit} id="form0">
         <Form.Row>
           <Form.Group as={Col} md="5">
             <Form.Label>First name</Form.Label>
