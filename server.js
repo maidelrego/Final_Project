@@ -23,21 +23,24 @@ app.use(morgan('dev'))
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+//  CORS auth
+if (app.get('env') === 'development') {
+  app.use(function(_, res, next) {
+    res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+}
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 // // required for passport
 
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 // app.use(flash());
+require('./config/passport.js')(passport);
 
 // // Add routes, both API and view
-require('./config/passport')(passport)
-app.use('/api', routes);
+app.use(routes);
 // mongoose.connect("mongodb://heroku_mfsxx4tk:imoqrp9hkg1ce78taesoskai8o@ds117739.mlab.com(opens in new tab):17739/heroku_mfsxx4tk");
 // Start the API server
 app.listen(PORT, function () {

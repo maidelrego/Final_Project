@@ -21,14 +21,14 @@ function Login() {
     console.log(formObject)
     // if (!formObject.user && formObject.password) {
         API.postUser({
-          user: formObject.user,
+          username: formObject.user,
           password: formObject.password
         })
           .then(res => {
-            res.redirect('http://localhost:3000/dashboard')
-            // if (res.data.user === formObject.user          // };
-
-
+            API.getUser(res.data.id)
+            // res.redirect('/dashboard')
+            // return res.data
+            console.log("API post user" , res.data);
           })
           .catch(err => console.log(err))
     //   }
