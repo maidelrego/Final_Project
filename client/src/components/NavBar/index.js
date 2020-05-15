@@ -17,13 +17,20 @@ export default function MyNav() {
           <ul>
             <li>
               <Nav.Link
+                to="/"
+                className={window.location.pathname === "/" ? " active" : " "}
+                href="/"
+              >
+                Home
+              </Nav.Link>
+            </li>
+            <li>
+              <Nav.Link
                 to="/quote"
                 className={
-                  window.location.pathname === "/quote"
-                    ? "nav-link active"
-                    : "nav-link"
+                  window.location.pathname === "/quote" ? " active" : " "
                 }
-                href="#features"
+                href="/quote"
               >
                 Quotes
               </Nav.Link>
@@ -32,11 +39,9 @@ export default function MyNav() {
               <Nav.Link
                 to="/gallery"
                 className={
-                  window.location.pathname === "/gallery"
-                    ? "nav-link active"
-                    : "nav-link"
+                  window.location.pathname === "/gallery" ? " active" : " "
                 }
-                href="#pricing"
+                href="/gallery"
               >
                 Gallery
               </Nav.Link>
@@ -45,11 +50,9 @@ export default function MyNav() {
               <Nav.Link
                 to="/about"
                 className={
-                  window.location.pathname === "/about"
-                    ? "nav-link active"
-                    : "nav-link"
+                  window.location.pathname === "/about" ? " active" : " "
                 }
-                href="#pricing"
+                href="/about"
               >
                 About us
               </Nav.Link>
@@ -58,11 +61,9 @@ export default function MyNav() {
               <Nav.Link
                 to="/contact"
                 className={
-                  window.location.pathname === "/contact"
-                    ? "nav-link active"
-                    : "nav-link"
+                  window.location.pathname === "/contact" ? " active" : ""
                 }
-                href="#pricing"
+                href="/contact"
               >
                 Contact us
               </Nav.Link>

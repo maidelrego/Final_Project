@@ -8,9 +8,9 @@ import {
   MDBMask,
   MDBContainer,
 } from "mdbreact";
-import gallery1 from "../../images/Gallery1.jpg";
-import gallery2 from "../../images/Gallery2.jpg";
-import gallery3 from "../../images/Gallery3.jpg";
+import gallery1 from "../../images/Design1.jpg";
+import gallery2 from "../../images/Design2.jpg";
+import gallery3 from "../../images/Design3.jpg";
 import "./gallery.css";
 
 const CarouselPage = () => {
