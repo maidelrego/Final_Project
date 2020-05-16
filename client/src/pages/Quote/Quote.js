@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import StepContent from "@material-ui/core/StepContent";
-import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import { Container, Form, Col, Row } from "react-bootstrap";
@@ -22,7 +21,7 @@ export default function VerticalLinearStepper() {
   const [state, dispatch] = useGlobalContext();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
-
+  const [validated, setValidated] = useState(false);
 
   function updateState(event) {
     dispatch({ type: event.target.name, value: event.target.value });
@@ -32,7 +31,20 @@ export default function VerticalLinearStepper() {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const handleNext = () => {
+
+
+  const handleNext = (event) => {
+    event.preventDefault();
+    if(activeStep === 0){
+      const form = event.currentTarget;
+      if (form.checkValidity() === false) {
+        setActiveStep((prevActiveStep) => prevActiveStep - 1);
+      }
+      setValidated(true);
+    }else {
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    }
+
 
     if (activeStep === 5) {
       API.saveQuote({
@@ -56,7 +68,6 @@ export default function VerticalLinearStepper() {
     } else {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
-
   };
 
   function getStepContent(step) {
@@ -74,21 +85,29 @@ export default function VerticalLinearStepper() {
               <h1>Info</h1>
             </Col>
           </Row>
-          <Form>
+
+
+          <Form noValidate validated={validated} onSubmit={handleNext} id="form0">
             <Form.Row>
               <Form.Group as={Col} md="5">
-                <Form.Label>First name*</Form.Label>
-                <Form.Control name="firstName" placeholder="First Name (required)" onChange={updateState} />
+                <Form.Label>First name</Form.Label>
+                <Form.Control required type="text" name="firstName" placeholder="First name" onChange={updateState} />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Ooops!</Form.Control.Feedback>
               </Form.Group>
 
               <Form.Group as={Col} md="5">
-                <Form.Label>First name*</Form.Label>
-                <Form.Control name="lastName" placeholder="Last Name(required)" onChange={updateState} />
+                <Form.Label>First name</Form.Label>
+                <Form.Control required type="text" name="lastName" placeholder="Last name" onChange={updateState} />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Ooops!</Form.Control.Feedback>
               </Form.Group>
 
               <Form.Group as={Col} md="2">
-                <Form.Label>Phone Number*</Form.Label>
-                <Form.Control placeholder="(required)" name="phoneNumber" onChange={updateState} />
+                <Form.Label>Phone Number</Form.Label>
+                <Form.Control required type="number" placeholder="555-555-5555" name="phoneNumber" onChange={updateState} />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Phone Number Missing!</Form.Control.Feedback>
               </Form.Group>
 
             </Form.Row>
@@ -96,8 +115,10 @@ export default function VerticalLinearStepper() {
             <Form.Row>
 
               <Form.Group as={Col} md="12">
-                <Form.Label>Email*</Form.Label>
-                <Form.Control placeholder="Email (required)" name="email" onChange={updateState} />
+                <Form.Label>Email</Form.Label>
+                <Form.Control required type="email" placeholder="@example.com" name="email" onChange={updateState} />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Ooops!</Form.Control.Feedback>
               </Form.Group>
 
             </Form.Row>
@@ -131,6 +152,8 @@ export default function VerticalLinearStepper() {
               </Form.Group>
 
             </Form.Row>
+            <button disabled={activeStep === 0} className='btn' onClick={handleBack}>Back</button>
+            <button type="submit" className='btn btn-primary'>Next</button>
           </Form>
         </div>
       );
@@ -151,7 +174,7 @@ export default function VerticalLinearStepper() {
           <Row className='mb-4'>
 
             <Col xs={4}>
-              <div className='white'></div>
+              <div className='White'></div>
               <div className="inputGroup">
                 <input id="radio1" type="radio" name="finishColor" value="White Paint" onChange={updateState} />
                 <label htmlFor="radio1">White</label>
@@ -159,7 +182,7 @@ export default function VerticalLinearStepper() {
             </Col>
 
             <Col xs={4}>
-              <div className='grey'></div>
+              <div className='Grey'></div>
               <div className="inputGroup">
                 <input id="radio2" type="radio" name="finishColor" value="Grey Paint" onChange={updateState} />
                 <label htmlFor="radio2">Grey</label>
@@ -167,7 +190,7 @@ export default function VerticalLinearStepper() {
             </Col>
 
             <Col xs={4}>
-              <div className='easter'></div>
+              <div className='Easter'></div>
               <div className="inputGroup">
                 <input id="radio3" type="radio" name="finishColor" value="Easter Blue Paint" onChange={updateState} />
                 <label htmlFor="radio3">Easter</label>
@@ -178,7 +201,7 @@ export default function VerticalLinearStepper() {
           <Row className="mb-5">
 
             <Col xs={4}>
-              <div className='stain-white'></div>
+              <div className='White-Stain'></div>
               <div className="inputGroup">
                 <input id="radio4" type="radio" name="finishColor" value="White Stain" onChange={updateState} />
                 <label htmlFor="radio4">White</label>
@@ -186,7 +209,7 @@ export default function VerticalLinearStepper() {
             </Col>
 
             <Col xs={4}>
-              <div className='stain-grey'></div>
+              <div className='Grey-Stain'></div>
               <div className="inputGroup">
                 <input id="radio5" type="radio" name="finishColor" value="Grey Stain" onChange={updateState} />
                 <label htmlFor="radio5">Grey</label>
@@ -194,13 +217,15 @@ export default function VerticalLinearStepper() {
             </Col>
 
             <Col xs={4}>
-              <div className='stain-brown'></div>
+              <div className='Medium'></div>
               <div className="inputGroup">
                 <input id="radio6" type="radio" name="finishColor" value="Medium Brown Stain" onChange={updateState} />
                 <label htmlFor="radio6">M-Brown</label>
               </div>
             </Col>
           </Row>
+          <button className='btn' onClick={handleBack}>Back</button>
+          <button type="submit" onClick={handleNext} className='btn btn-primary'>Next</button>
         </div>
       );
     case 2:
@@ -220,7 +245,7 @@ export default function VerticalLinearStepper() {
           <Row className='mb-4'>
 
             <Col xs={4}>
-              <div className='design1'></div>
+              <div className='Arrow'></div>
               <div className="inputGroup">
                 <input id="radio1" type="radio" name="doorDesign" value="Arrow Door" onChange={updateState} />
                 <label htmlFor="radio1">Arrow</label>
@@ -228,7 +253,7 @@ export default function VerticalLinearStepper() {
             </Col>
 
             <Col xs={4}>
-              <div className='design2'></div>
+              <div className='Chevron'></div>
               <div className="inputGroup">
                 <input id="radio2" type="radio" name="doorDesign" value="Chevron Door" onChange={updateState} />
                 <label htmlFor="radio2">Chevron</label>
@@ -236,7 +261,7 @@ export default function VerticalLinearStepper() {
             </Col>
 
             <Col xs={4}>
-              <div className='design3'></div>
+              <div className='Multiple'></div>
               <div className="inputGroup">
                 <input id="radio3" type="radio" name="doorDesign" value="Multiple X Door" onChange={updateState} />
                 <label htmlFor="radio3">Multiple X</label>
@@ -247,7 +272,7 @@ export default function VerticalLinearStepper() {
           <Row className='mb-4'>
 
             <Col xs={6}>
-              <div className='design4'></div>
+              <div className='Curved'></div>
               <div className="inputGroup">
                 <input id="radio4" type="radio" name="doorDesign" value="Curved Door" onChange={updateState} />
                 <label htmlFor="radio4">Curved</label>
@@ -255,13 +280,15 @@ export default function VerticalLinearStepper() {
             </Col>
 
             <Col xs={6}>
-              <div className='design5'></div>
+              <div className='Paneled'></div>
               <div className="inputGroup">
                 <input id="radio5" type="radio" name="doorDesign" value="Paneled Door" onChange={updateState} />
                 <label htmlFor="radio5">Paneled</label>
               </div>
             </Col>
           </Row>
+          <button className='btn' onClick={handleBack}>Back</button>
+          <button type="submit" onClick={handleNext} className='btn btn-primary'>Next</button>
         </div>
       );
     case 3:
@@ -280,7 +307,7 @@ export default function VerticalLinearStepper() {
           <Row className='mb-4'>
 
             <Col xs={4}>
-              <div className='kit1'></div>
+              <div className='J'></div>
               <div className="inputGroup">
                 <input id="radio1" type="radio" name="doorKit" value="J Shape Hanger" onChange={updateState} />
                 <label htmlFor="radio1">J Shape</label>
@@ -288,7 +315,7 @@ export default function VerticalLinearStepper() {
             </Col>
 
             <Col xs={4}>
-              <div className='kit2'></div>
+              <div className='Rhombic'></div>
               <div className="inputGroup">
                 <input id="radio2" type="radio" name="doorKit" value="Rhombic Shape Hanger" onChange={updateState} />
                 <label htmlFor="radio2">Rhombic</label>
@@ -296,13 +323,15 @@ export default function VerticalLinearStepper() {
             </Col>
 
             <Col xs={4}>
-              <div className='kit3'></div>
+              <div className='Big'></div>
               <div className="inputGroup">
                 <input id="radio3" type="radio" name="doorKit" value="Big Wheel Hanger" onChange={updateState} />
                 <label htmlFor="radio3">Big Wheel</label>
               </div>
             </Col>
           </Row>
+          <button className='btn' onClick={handleBack}>Back</button>
+          <button type="submit" onClick={handleNext} className='btn btn-primary'>Next</button>
         </div>
       );
     case 4:
@@ -321,7 +350,7 @@ export default function VerticalLinearStepper() {
           <Row className='mb-4'>
 
             <Col xs={4}>
-              <div className='handle1'></div>
+              <div className='Square'></div>
               <div className="inputGroup">
                 <input id="radio1" type="radio" name="handle" value="Square" onChange={updateState} />
                 <label htmlFor="radio1">Square</label>
@@ -329,7 +358,7 @@ export default function VerticalLinearStepper() {
             </Col>
 
             <Col xs={4}>
-              <div className='handle2'></div>
+              <div className='Round'></div>
               <div className="inputGroup">
                 <input id="radio2" type="radio" name="handle" value="Round" onChange={updateState} />
                 <label htmlFor="radio2">Round</label>
@@ -337,15 +366,15 @@ export default function VerticalLinearStepper() {
             </Col>
 
             <Col xs={4}>
-              <div className='handle3'></div>
+              <div className='Latch'></div>
               <div className="inputGroup">
                 <input id="radio3" type="radio" name="handle" value="Round with Latch" onChange={updateState} />
                 <label htmlFor="radio3">With Latch</label>
               </div>
             </Col>
           </Row>
-
-
+          <button className='btn' onClick={handleBack}>Back</button>
+          <button type="submit" onClick={handleNext} className='btn btn-primary'>Next</button>
         </div>
       );
 
@@ -395,6 +424,7 @@ export default function VerticalLinearStepper() {
               <h3 className='caption'>Handle:</h3><p>{state.handle}</p>
             </Col>
           </Row>
+          <button type='submit' className='btn btn-success' onClick={handleNext}>Finish</button>
         </Form>
       );
 
@@ -416,27 +446,7 @@ export default function VerticalLinearStepper() {
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
             <StepContent>
-              <Typography>{getStepContent(index)}</Typography>
-              <div >
-                <div>
-                  <Button
-                    disabled={activeStep === 0}
-                    onClick={handleBack}
-
-                  >
-                    Back
-                  </Button>
-                  <Button
-                    disabled={!(state.firstName && state.lastName && state.phoneNumber && state.email)}
-                    variant="contained"
-                    color="primary"
-                    onClick={handleNext}
-
-                  >
-                    {activeStep === steps.length - 1 ? "Finish" : "Next"}
-                  </Button>
-                </div>
-              </div>
+              {getStepContent(index)}
             </StepContent>
           </Step>
         ))}

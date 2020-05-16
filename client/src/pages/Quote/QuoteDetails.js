@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { Col, Row, Container, Jumbotron } from "react-bootstrap";
 import API from "../../utils/API.js";
 import logo from "../../images/logo.png";
-import "../../components/Quote/quote.scss";
+import "./quote.scss";
 
 function Detail() {
   const [quotes, setQuotes] = useState([]);
@@ -16,23 +16,13 @@ function Detail() {
       .catch(err => console.log(err));
   }, []);
 
-  function renderPic() {
-    let paintText = document.getElementById("colorText").textContent;
-    console.log(paintText);
-    if(paintText === "Grey Paint") {
-      let paintDiv = document.getElementById("divPicture");
-      paintDiv.classList.add("grey");
-    }
-  }
-
-
 
   return (
     <Container fluid className='mt-5'>
       <Jumbotron>
         <Row>
           <Col>
-            <button onClick={renderPic}>sd</button>
+            <button>sd</button>
             <div><img className='logo mb-3' alt={logo} src={logo}></img></div>
           </Col>
         </Row>
@@ -60,29 +50,37 @@ function Detail() {
         <Row className='mt-4'>
           <Col xs={4}>
             <div><h3 className='caption'>Finish Color:</h3></div>
-            <div id="divPicture"></div>
+            <div className={quotes.finishColor}></div>
             <div className="inputGroup">
-              <p id="colorText">{quotes.finishColor}</p>
+              <p>{quotes.finishColor}</p>
             </div>
           </Col>
 
           <Col xs={4}>
-            <div><h3 className='caption'>doorDesign:</h3></div>
-            <div id="greyPic"></div>
+            <div><h3 className='caption'>Door Design:</h3></div>
+            <div className={quotes.doorDesign}></div>
             <div className="inputGroup">
-              <p id="designText">{quotes.doorDesign}</p>
+              <p>{quotes.doorDesign}</p>
             </div>
           </Col>
 
         </Row>
         <Row>
 
-          <Col xs={6}>
-            <h3 className='caption'>Kit:</h3><p>{quotes.doorKit}</p>
+          <Col xs={4}>
+            <div><h3 className='caption'>Door Kit:</h3></div>
+            <div className={quotes.doorKit}></div>
+            <div className="inputGroup">
+              <p>{quotes.doorKit}</p>
+            </div>
           </Col>
 
-          <Col xs={6}>
-            <h3 className='caption'>Handle:</h3><p>{quotes.handle}</p>
+          <Col xs={4}>
+            <div><h3 className='caption'>Handle:</h3></div>
+            <div className={quotes.handle}></div>
+            <div className="inputGroup">
+              <p>{quotes.handle}</p>
+            </div>
           </Col>
         </Row>
       </Jumbotron>
