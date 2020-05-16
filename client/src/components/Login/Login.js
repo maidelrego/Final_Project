@@ -24,12 +24,18 @@ function Login() {
           username: formObject.user,
           password: formObject.password
         })
-          .then(res => {
-            API.getUser(res.data.id)
-            // res.redirect('/dashboard')
-            // return res.data
-            console.log("API post user" , res.data);
-          })
+          .then(
+          //   res => {
+          //   API.getUser(res.data.id)
+          //   // res.redirect('/dashboard')
+          //   // return res.data
+          //   console.log("API post user" , res.data);
+          // }
+          function () {
+            window.location.replace('/admin')
+            // If there's an error, log the error
+          }
+          )
           .catch(err => console.log(err))
     //   }
     // else(

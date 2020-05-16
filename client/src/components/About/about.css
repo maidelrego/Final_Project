@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+
+.header-about {
+    font-family: 'Special Elite', cursive;
+    color:#566473;
+    font-size: 70px;
+}
+
+.campbell-p {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 30px;
+}
+
+.signature {
+    font-family: 'Herr Von Muellerhoff', cursive;
+    font-size: 60px;
+}
+
+.family {
+    margin: 0 auto;
+    height: 400px;
+}

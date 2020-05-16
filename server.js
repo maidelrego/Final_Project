@@ -32,7 +32,15 @@ if (app.get('env') === 'development') {
   });
 }
 
-// // required for passport
+// Connect to the Mongo DB
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/campbellwooddesigns",
+  {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  }
+);
 
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions

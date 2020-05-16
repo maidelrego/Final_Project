@@ -1,0 +1,12 @@
+[0507/205030.466:ERROR:process_info.cc(329)] VirtualQueryEx: Access is denied. (0x5)
+[0507/205030.467:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0507/205030.467:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[0510/154015.390:ERROR:process_info.cc(329)] VirtualQueryEx: Access is denied. (0x5)
+[0510/154015.391:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0510/154015.391:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[0510/154019.765:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0510/154019.765:ERROR:exception_snapshot_win.cc(98)] thread ID 12924 not found in process
+[0510/154019.770:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[0511/183716.349:ERROR:process_info.cc(329)] VirtualQueryEx: Access is denied. (0x5)
+[0511/183716.354:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0511/183716.354:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)

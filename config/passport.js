@@ -1,8 +1,9 @@
 
+const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
 const User = require('../models/User/User.js')
 
-module.exports = function (passport) {
+module.exports = function () {
   console.log("CONFIGURING PASSPORT")
   passport.serializeUser(function (user, done) {
     done(null, user.id);
