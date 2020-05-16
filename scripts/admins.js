@@ -10,7 +10,7 @@ const admins = [
   },
   {
     user: "admin2",
-    password: "admin2"
+    password: "$2b$08$EXxqyhPNEF.T5gibMikEQ.DJkpcOStsckXsh5gYhFDleHcVL4bf3K"
   }
 ];
 

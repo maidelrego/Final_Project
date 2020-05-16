@@ -1,42 +1,21 @@
 // Requiring our models and passport as we've configured it
 const passport = require('passport')
 const router = require("express").Router();
+const isAuthenticated = require("../../config/isAuthenticated")
 // const User = require('../models/User')
 
-router.route('/health')
-  .get((_, res) => {
+router.get('/admin', isAuthenticated, (req, res) => {
     res.json({ status: 'ok' })
   })
 
-
-
-// router.route("/login").post(
-//   passport.authenticate('local'), 
-//   (req, _) => {
-//     console.log('YOU DIDIT YAY', req.body)
-//   }
-// )
-
 router.post('/login',
-  passport.authenticate('local', { failureRedirect: '/login' }),
-  function (_, res) {
-    console.log('bonjour')
-    res.redirect('/');
+  passport.authenticate('local',
+  { failureRedirect: '/login' }),
+  function (req, res) {
+    console.log('bonjour', req)
+    res.json(req.user);
   });
 
-// router.post("/login",
-//   passport.authenticate('local'), 
-//   (req, res) => {
-//     console.log('YOU DIDIT YAY', req.body)
-//   })
-
-//   () => {    passport.authenticate('local', { failureRedirect: '/' })},
-//   (_, res) => {
-//     console.log('redirect...');
-
-//     res.redirect('/dashboard')
-//   }
-// )
 module.exports = router
 
 
