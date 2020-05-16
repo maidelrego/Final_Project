@@ -1,90 +1,54 @@
 const mongoose = require("mongoose");
-// const addressValidator = require('address-validator')
-// const _ = require('underscore')
 const Schema = mongoose.Schema;
 
-// function validPhoneNum (v) {
-//   return /\d{3}-\d{3}-\d{4}/.test(v)
-// }
-// function validEmail (v) {
-//   return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v)
-// }
-
-// const validatePhone = [validPhoneNum, `Is not,${Quote.Phone} a phone number`]
-// const validateEmail = [validEmail, `Is not, ${Quote.Email} an email`]
-
-// let addressSchema = new Schema({
-//   street: String,
-//   city: String,
-//   state: String,
-//   country: 'US'
-// })
 
 // Quote schema
 const quoteSchema = new Schema({
   date: { type: Date, default: Date.now },
-  quote: [
-    {
-      firstName: { type: String, required: true },
-      lastName: { type: String, required: true },
+      firstName: { type: String },
+      lastName: { type: String },
       phone: {
-        type: String,
-        // validate:
-        required: "Phone number is required",
+        type: String
       },
       email: {
-        type: String,
-        required: "Email is required",
-        unique: true,
-        trim: true,
-        // validate:
+        type: String
       },
       address: {
-        type: String,
-        required: true,
+        type: String
       },
       address2: {
-        type: String,
-        required: false,
+        type: String
       },
       city: {
-        type: String,
-        required: "Please enter a city",
+        type: String
       },
       state: {
-        type: String,
-        required: "Please enter the state",
+        type: String
       },
       zipCode: {
-        type: Number,
-        required: "Please enter as zip code",
+        type: Number
       },
       doorKit: {
-        type: String,
-        // min: [12, 'too few inches'],
-        // max: 100,
+        type: String
       },
       finishColor: {
-        type: String,
-        // enum: ['white stain', 'medium brown stain', 'grey', 'white', 'easter blue'],
+        type: String
       },
       doorDesign: {
-        type: String,
+        type: String
       },
       handle: {
-        type: String,
+        type: String
       },
       delivery: {
-        type: String,
+        type: String
       },
       installation: {
-        type: String,
+        type: String
       },
       doorMeasurements: {
-        type: String,
-      },
-    },
-  ],
+        type: String
+      }
 });
 
 const Quote = mongoose.model("Quote", quoteSchema);

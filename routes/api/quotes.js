@@ -1,16 +1,14 @@
-const router = require('express').Router()
-const quoteController = require('../../controllers/quoteController')
+const router = require("express").Router();
+const quotesController = require("../../controllers/quoteController.js");
 
-// Matches with "/api/quotes"
-router
-    .route('/')
-    .get(quoteController.findAll)
-    .post(quoteController.create)
+// Matches with "/api/books"
+router.route("/")
+  .get(quotesController.findAll)
+  .post(quotesController.create)
 
-// Matches with "/api/quotes/:id"
-router
-    .route('/:id')
-    .get(quoteController.findById)
-    .delete(quoteController.remove)
+router.route("/:id")
+  .get(quotesController.findById)
+  .delete(quotesController.delete);
 
-module.exports = router
+
+  module.exports = router;
