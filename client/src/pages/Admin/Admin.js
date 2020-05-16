@@ -50,7 +50,7 @@ export default function Admin() {
                 <tbody>
                   {quotes.map(quote => (
                     <tr key={quote._id}>
-
+                      <td>{quote.date}</td>
                       <td>{quote.firstName} {quote.lastName}</td>
                       <td>
                         <Link className='btn' to={"/admin/" + quote._id}>View Quote</Link>
