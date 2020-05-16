@@ -53,7 +53,7 @@ export default function Admin() {
 
                       <td>{quote.firstName} {quote.lastName}</td>
                       <td>
-                        <Link to={"/books/" + quote._id}>View Quote</Link>
+                        <Link className='btn' to={"/admin/" + quote._id}>View Quote</Link>
                         <button className='btn' onClick={() => deleteQuote(quote._id)}><i className="fas fa-trash delete"></i></button>
                       </td>
                     </tr>

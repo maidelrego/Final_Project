@@ -47,26 +47,10 @@ export default function MyNav() {
               </Nav.Link>
             </li>
             <li>
-              <Nav.Link
-                to="/about"
-                className={
-                  window.location.pathname === "/about" ? " active" : " "
-                }
-                href="/about"
-              >
-                About us
-              </Nav.Link>
+              <Nav.Link href="#about">About us</Nav.Link>
             </li>
             <li>
-              <Nav.Link
-                to="/contact"
-                className={
-                  window.location.pathname === "/contact" ? " active" : ""
-                }
-                href="/contact"
-              >
-                Contact us
-              </Nav.Link>
+              <Nav.Link href="#contact">Contact us</Nav.Link>
             </li>
           </ul>
         </Nav>
