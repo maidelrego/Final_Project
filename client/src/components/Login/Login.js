@@ -32,7 +32,8 @@ function Login() {
           // function () {
           if (res.status === 200) {
             if (res.data.role === "admin") {
-              window.location.replace('/admin')
+              // window.location.replace('/admin')
+              API.getUser(res.data._id)
             } else {
               // window.location.replace('/')
               console.log("denied!")
@@ -43,51 +44,48 @@ function Login() {
             console.log("plz don't hack us")
           }
         }
-          
-          )
-          .catch (err => console.log(err))
-  //   }
-  // else(
-  //   console.log("the end")
-  // )
-};
 
-return (
-  <Container fluid>
-    <Row>
-      <Col size="md-12">
-        <Jumbotron>
-          <form>
-            <div>
+      )
+      .catch(err => console.log(err))
+    //   }
+    // else(
+    //   console.log("the end")
+    // )
+  };
+
+  return (
+    <Container fluid>
+      <Row>
+        <Col size="md-12">
+          <Jumbotron>
+            <form>
+              <div>
 
 
-              <label>Username:</label>
-              <input id="un" type="text" name="user" onChange={handleInputChange} />
-            </div>
-            <div>
-              <label>Password:</label>
-              <input id="pw" type="password" name="password" onChange={handleInputChange} />
-            </div>
-            <Link to={"/dashboard" + formObject._id}>
-              <strong>
-                {formObject.user} by {formObject.password}
-              </strong>
-            </Link>
-            {/* <div> */}
-            <FormBtn
+                <label>Username:</label>
+                <input id="un" type="text" name="user" onChange={handleInputChange} />
+              </div>
+              <div>
+                <label>Password:</label>
+                <input id="pw" type="password" name="password" onChange={handleInputChange} />
+              </div>
+              <Link to={"/dashboard" + formObject._id}>
+                <strong>
+                  {formObject.user} by {formObject.password}
+                </strong>
+              </Link>
+              <FormBtn
 
-              onClick={handleFormSubmit}
-            >
-              Sign in
+                onClick={handleFormSubmit}
+              >
+                Sign in
               </FormBtn>
-            {/* <input type="submit" onSubmit={()=>handleFormSubmit} value="Log In"/>
-                </div> */}
-          </form>
-        </Jumbotron>
-      </Col>
-    </Row>
-  </Container>
-);
+            </form>
+          </Jumbotron>
+        </Col>
+      </Row>
+    </Container>
+  );
 }
 
 export default Login;

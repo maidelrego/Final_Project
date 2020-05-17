@@ -13,9 +13,9 @@ export default function Admin() {
   const [quotes, setQuotes] = useState([]);
 
   function loadQuotes() {
-    API.getQuotes()
-      .then(res => setQuotes(res.data))
-      .catch(err => console.log(err));
+    // API.getQuotes()
+    //   .then(res => setQuotes(res.data))
+    //   .catch(err => console.log(err));
 
 
   }
@@ -26,7 +26,7 @@ export default function Admin() {
 
   function deleteQuote(id) {
     API.deleteQuote(id)
-      .then(res => loadQuotes())
+      .then(res => loadQuotes(res))
       .catch(err => console.log(err));
   }
 
