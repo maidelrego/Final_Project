@@ -1,89 +1,144 @@
 /* eslint-disable linebreak-style */
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Col, Row, Container, Jumbotron } from "react-bootstrap";
+import { Col, Row, Container, Jumbotron, Table } from "react-bootstrap";
 import API from "../../utils/API.js";
 import logo from "../../images/logo.png";
-import "./quote.scss";
+import "./quoteDetails.css";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
+import Avatar from "@material-ui/core/Avatar";
+import { makeStyles } from "@material-ui/core/styles";
+import { green, red } from "@material-ui/core/colors";
 
 function Detail() {
-  const [quotes, setQuotes] = useState([]);
 
-  const {id} = useParams();
+  const [quotes, setQuotes] = useState([]);
+  console.log(quotes)
+  const { id } = useParams();
   useEffect(() => {
     API.getQuote(id)
       .then(res => setQuotes(res.data))
       .catch(err => console.log(err));
   }, []);
 
+  const useStyles = makeStyles((theme) => ({
+
+    red: {
+      color: theme.palette.getContrastText(red[500]),
+      backgroundColor: red[500],
+    },
+    green: {
+      color: "#fff",
+      backgroundColor: green[500],
+    },
+  }));
+
+  const classes = useStyles();
 
   return (
-    <Container fluid className='mt-5'>
-      <Jumbotron>
-        <Row>
-          <Col>
-            <button>sd</button>
-            <div><img className='logo mb-3' alt={logo} src={logo}></img></div>
-          </Col>
-        </Row>
-        <Row>
-          <Col className='text-center mb-4'>
-            <h1>Review</h1>
-          </Col>
-        </Row>
-        <Row className="text-center">
-          <Col xs={6}>
-            <h3 className='caption'>Your Name:</h3><p>{quotes.firstName} {quotes.lastName}</p>
-            <h3 className='caption'>Email:</h3><p>{quotes.email}</p>
-            <h3 className='caption'>Phone Number:</h3><p>{quotes.phoneNumber}</p>
-            <h3 className='caption'>Address:</h3><p>{quotes.address} {quotes.address2} {quotes.city} {quotes.state} {quotes.zip} </p>
-          </Col>
+    <Container>
+      <div className='text-center mt-3 mb-3'><img id='logoDetails' alt={logo} src={logo}></img></div>
+      <Row id='quote-details'>
+        <Col xs={4}>
+          <h3 className='mt-2'>Quote Details For : </h3>
+        </Col>
+        <Col xs={4}>
+          <h2 className=' mt-2 text-center'>{quotes.firstName} {quotes.lastName}</h2>
+        </Col>
+      </Row>
 
-          <Col xs={6}>
-            <h3 className='caption'>Dimensions:</h3>
-            <h5>Width (Inches):</h5> <p>{quotes.doorDesign}</p>
-            <h5>Height (Inches):</h5> <p>{quotes.doorDesign}</p>
-          </Col>
+      <Row className='mt-4'>
+        <Col>
+          <Jumbotron>
+            <h3>Basic Info :</h3>
+            <hr></hr>
+            <List className={classes.root}>
+              <ListItem>
+                <ListItemAvatar>
+                  <i className="fas fa-user fa-2x iconDetail"></i>
+                </ListItemAvatar>
+                <ListItemText>{quotes.firstName} {quotes.lastName}</ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemAvatar>
+                  <i className="fas fa-phone-alt fa-2x iconDetail"></i>
+                </ListItemAvatar>
+                <ListItemText>{quotes.phoneNumber}</ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemAvatar>
+                  <i className="fas fa-envelope fa-2x iconDetail"></i>
+                </ListItemAvatar>
+                <ListItemText>{quotes.email}</ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemAvatar>
+                  <i className="fas fa-address-card fa-2x iconDetail"></i>
+                </ListItemAvatar>
+                <ListItemText>{quotes.address} {quotes.address2} {quotes.city} {quotes.state} {quotes.zip}</ListItemText>
+              </ListItem>
+            </List>
+          </Jumbotron>
+        </Col>
+        <Col>
+          <Jumbotron>
+            <h3>Address :</h3>
+            <hr></hr>
+            <List className={classes.root}>
+              <ListItem>
+                <ListItemAvatar>
+                  <i className="fas fa-address-card fa-2x iconDetail"></i>
+                </ListItemAvatar>
+                <ListItemText>{quotes.firstName} {quotes.lastName}</ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemAvatar>
+                  <Avatar className={classes.red}>
+                    <i className="fas fa-phone-alt"></i>
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText>{quotes.phoneNumber}</ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemAvatar>
+                  <Avatar className={classes.red}>
+                    <i className="fas fa-envelope"></i>
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText>{quotes.email}</ListItemText>
+              </ListItem>
+            </List>
+          </Jumbotron>
+        </Col>
+      </Row>
 
-        </Row>
-        <hr />
-        <Row className='mt-4'>
-          <Col xs={4}>
-            <div><h3 className='caption'>Finish Color:</h3></div>
-            <div className={quotes.finishColor}></div>
-            <div className="inputGroup">
-              <p>{quotes.finishColor}</p>
-            </div>
-          </Col>
-
-          <Col xs={4}>
-            <div><h3 className='caption'>Door Design:</h3></div>
-            <div className={quotes.doorDesign}></div>
-            <div className="inputGroup">
-              <p>{quotes.doorDesign}</p>
-            </div>
-          </Col>
-
-        </Row>
-        <Row>
-
-          <Col xs={4}>
-            <div><h3 className='caption'>Door Kit:</h3></div>
-            <div className={quotes.doorKit}></div>
-            <div className="inputGroup">
-              <p>{quotes.doorKit}</p>
-            </div>
-          </Col>
-
-          <Col xs={4}>
-            <div><h3 className='caption'>Handle:</h3></div>
-            <div className={quotes.handle}></div>
-            <div className="inputGroup">
-              <p>{quotes.handle}</p>
-            </div>
-          </Col>
-        </Row>
-      </Jumbotron>
+      <Row className='mt-3'>
+        <Col>
+          <Jumbotron>
+            <Table responsive>
+              <thead>
+                <tr>
+                  <th className='th-details'>Finish Color</th>
+                  <th className='th-details'>Door Design</th>
+                  <th className='th-details'>Door Kit</th>
+                  <th className='th-details'>Handle</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{quotes.finishColor}</td>
+                  <td>{quotes.doorDesign}</td>
+                  <td>{quotes.doorKit}</td>
+                  <td>{quotes.handle}</td>
+                </tr>
+              </tbody>
+            </Table>
+          </Jumbotron>
+        </Col>
+      </Row>
     </Container>
   );
 }

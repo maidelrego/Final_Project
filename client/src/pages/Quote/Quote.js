@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import { Container, Form, Col, Row } from "react-bootstrap";
 import API from "../../utils/API.js";
 import logo from "../../images/logo.png";
+import Alert from "../../components/Alert/Alert.js";
 import { useGlobalContext } from "../../utils/GlobalState.js";
 import "./quote.scss";
 
@@ -41,10 +42,7 @@ export default function VerticalLinearStepper() {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
       }
       setValidated(true);
-    }else {
-      setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
-
 
     if (activeStep === 5) {
       API.saveQuote({
@@ -62,13 +60,15 @@ export default function VerticalLinearStepper() {
         doorKit: state.doorKit,
         handle: state.handle
       })
-        .then(() => alert("finished"))
+        .then(() => alert("Success"))
         .catch(err => console.log(err));
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     } else {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
   };
+
+
 
   function getStepContent(step) {
     switch (step) {
@@ -225,7 +225,7 @@ export default function VerticalLinearStepper() {
             </Col>
           </Row>
           <button className='btn' onClick={handleBack}>Back</button>
-          <button type="submit" onClick={handleNext} className='btn btn-primary'>Next</button>
+          <button type="submit" disabled={!(state.finishColor)} onClick={handleNext} className='btn btn-primary'>Next</button>
         </div>
       );
     case 2:
@@ -288,7 +288,7 @@ export default function VerticalLinearStepper() {
             </Col>
           </Row>
           <button className='btn' onClick={handleBack}>Back</button>
-          <button type="submit" onClick={handleNext} className='btn btn-primary'>Next</button>
+          <button type="submit" disabled={!(state.doorDesign)} onClick={handleNext} className='btn btn-primary'>Next</button>
         </div>
       );
     case 3:
@@ -331,7 +331,7 @@ export default function VerticalLinearStepper() {
             </Col>
           </Row>
           <button className='btn' onClick={handleBack}>Back</button>
-          <button type="submit" onClick={handleNext} className='btn btn-primary'>Next</button>
+          <button type="submit" disabled={!(state.doorKit)} onClick={handleNext} className='btn btn-primary'>Next</button>
         </div>
       );
     case 4:
@@ -374,7 +374,7 @@ export default function VerticalLinearStepper() {
             </Col>
           </Row>
           <button className='btn' onClick={handleBack}>Back</button>
-          <button type="submit" onClick={handleNext} className='btn btn-primary'>Next</button>
+          <button type="submit" disabled={!(state.handle)} onClick={handleNext} className='btn btn-primary'>Next</button>
         </div>
       );
 
