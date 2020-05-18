@@ -18,10 +18,9 @@ const quoteSchema = new Schema({
       finishColor: { type: String },
       doorDesign: { type: String },
       handle: { type: String },
-      delivery: { type: Boolean },
-      installation: { type: Boolean },
-      dimensionsH: { type: String },
-      dimensionsW: { type: String }
+      installOrDelivery: { type: String },
+      dimensionsH: { type: Number },
+      dimensionsW: { type: Number }
 });
 
 const Quote = mongoose.model("Quote", quoteSchema);
