@@ -13,9 +13,9 @@ export default function Admin() {
   const [quotes, setQuotes] = useState([]);
 
   function loadQuotes() {
-    // API.getQuotes()
-    //   .then(res => setQuotes(res.data))
-    //   .catch(err => console.log(err));
+    API.getQuotes()
+      .then(res => API.setQuotes(res.data))
+      .catch(err => console.log(err));
 
 
   }
@@ -37,7 +37,7 @@ export default function Admin() {
           <h2 id='josh-text'>Josh Campbell</h2>
         </Col>
         <Col>
-          <button className='btn logout'><i className="fas fa-sign-out-alt"></i>Log Out</button>
+          <button className='btn logout'><a href="/logout"><i className="fas fa-sign-out-alt"></i>Log Out</a></button>
         </Col>
       </Row>
       <Row>

@@ -20,9 +20,9 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
+      <Link color="inherit" href="/">
+Campbell Wood Designs      
+</Link>{" "}
       {new Date().getFullYear()}
       {"."}
     </Typography>
@@ -76,7 +76,7 @@ export default function SignIn() {
               // API.getUser(res.data._id)
             } else {
               console.log("denied!")
-              window.location.replace("/")
+              window.location.replace("/login")
             }
           }
           else {
