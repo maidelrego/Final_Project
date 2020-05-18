@@ -16,7 +16,7 @@ import { green, red } from "@material-ui/core/colors";
 function Detail() {
 
   const [quotes, setQuotes] = useState([]);
-  console.log(quotes);
+  console.log(quotes)
   const { id } = useParams();
   useEffect(() => {
     API.getQuote(id)
@@ -50,10 +50,11 @@ function Detail() {
         </Col>
       </Row>
 
-      <Jumbotron className='mt-4'>
-        <Row>
-          <Col xs={6}>
+      <Row className='mt-4'>
+        <Col>
+          <Jumbotron>
             <h3>Basic Info :</h3>
+            <hr></hr>
             <List className={classes.root}>
               <ListItem>
                 <ListItemAvatar>
@@ -80,28 +81,39 @@ function Detail() {
                 <ListItemText>{quotes.address} {quotes.address2} {quotes.city} {quotes.state} {quotes.zip}</ListItemText>
               </ListItem>
             </List>
-          </Col>
-          <Col xs={6}>
-            <h3>Preferences :</h3>
+          </Jumbotron>
+        </Col>
+        <Col>
+          <Jumbotron>
+            <h3>Address :</h3>
+            <hr></hr>
             <List className={classes.root}>
               <ListItem>
                 <ListItemAvatar>
-                  <i className="fas fa-user fa-2x iconDetail"></i>
+                  <i className="fas fa-address-card fa-2x iconDetail"></i>
                 </ListItemAvatar>
-                <ListItemText>{quotes.firstName} wants {quotes.installOrDelivery}</ListItemText>
+                <ListItemText>{quotes.firstName} {quotes.lastName}</ListItemText>
               </ListItem>
-              <h3 className='mt-3'>Dimensions :</h3>
               <ListItem>
                 <ListItemAvatar>
-                  <i className="fas fa-ruler fa-2x iconDetail"></i>
+                  <Avatar className={classes.red}>
+                    <i className="fas fa-phone-alt"></i>
+                  </Avatar>
                 </ListItemAvatar>
-                <ListItemText>Width : {quotes.dimensionsW}</ListItemText>
-                <ListItemText>Height : {quotes.dimensionsH}</ListItemText>
+                <ListItemText>{quotes.phoneNumber}</ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemAvatar>
+                  <Avatar className={classes.red}>
+                    <i className="fas fa-envelope"></i>
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText>{quotes.email}</ListItemText>
               </ListItem>
             </List>
-          </Col>
-        </Row>
-      </Jumbotron>
+          </Jumbotron>
+        </Col>
+      </Row>
 
       <Row className='mt-3'>
         <Col>
@@ -109,10 +121,10 @@ function Detail() {
             <Table responsive>
               <thead>
                 <tr>
-                  <th className='th-details'><h3>Finish Color</h3></th>
-                  <th className='th-details'><h3>Door Design</h3></th>
-                  <th className='th-details'><h3>Door Kit</h3></th>
-                  <th className='th-details'><h3>Handle</h3></th>
+                  <th className='th-details'>Finish Color</th>
+                  <th className='th-details'>Door Design</th>
+                  <th className='th-details'>Door Kit</th>
+                  <th className='th-details'>Handle</th>
                 </tr>
               </thead>
               <tbody>

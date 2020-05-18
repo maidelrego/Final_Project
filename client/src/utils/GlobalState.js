@@ -20,9 +20,6 @@ const reducer = (state, action) => {
     case "doorDesign":
     case "handle":
     case "doorKit":
-    case "installOrDelivery":
-    case "dimensionsH":
-    case "dimensionsW":
 
       return { ...state, [action.type]: action.value };
 
@@ -46,10 +43,7 @@ const GlobalStateProvider = ({ value = 0, ...props }) => {
     finishColor: '',
     doorDesign: '',
     doorKit: '',
-    handle: '',
-    installOrDelivery: '',
-    dimensionsH: '',
-    dimensionsW: ''
+    handle: ''
   });
 
   return <Provider value={[state, dispatch]} {...props} />;

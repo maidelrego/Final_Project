@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
@@ -8,12 +8,13 @@ import Typography from "@material-ui/core/Typography";
 import { Container, Form, Col, Row } from "react-bootstrap";
 import API from "../../utils/API.js";
 import logo from "../../images/logo.png";
+import Alert from "../../components/Alert/Alert.js";
 import { useGlobalContext } from "../../utils/GlobalState.js";
 import "./quote.scss";
 
 
 function getSteps() {
-  return ["Info", "Finish", "Door Design", "Barn Door Kit", "Handle", "Preferences", "Review"];
+  return ["Info", "Finish", "Door Design", "Barn Door Kit", "Handle", "Review"];
 }
 
 export default function VerticalLinearStepper() {
@@ -35,7 +36,7 @@ export default function VerticalLinearStepper() {
 
   const handleNext = (event) => {
     event.preventDefault();
-    if (activeStep === 0) {
+    if(activeStep === 0){
       const form = event.currentTarget;
       if (form.checkValidity() === false) {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
@@ -43,7 +44,7 @@ export default function VerticalLinearStepper() {
       setValidated(true);
     }
 
-    if (activeStep === 6) {
+    if (activeStep === 5) {
       API.saveQuote({
         firstName: state.firstName,
         lastName: state.lastName,
@@ -57,10 +58,7 @@ export default function VerticalLinearStepper() {
         finishColor: state.finishColor,
         doorDesign: state.doorDesign,
         doorKit: state.doorKit,
-        handle: state.handle,
-        installOrDelivery: state.installOrDelivery,
-        dimensionsH: state.dimensionsH,
-        dimensionsW: state.dimensionsW
+        handle: state.handle
       })
         .then(() => alert("Success"))
         .catch(err => console.log(err));
@@ -124,9 +122,8 @@ export default function VerticalLinearStepper() {
               </Form.Group>
 
             </Form.Row>
-            <br />
-            <h3>Optional</h3>
-            <p className="text-muted">We need your address if you are chosing Delivery</p>
+            <hr></hr>
+            <h3 className="Display-3">Optional</h3>
 
             <Form.Row>
               <Form.Group as={Col} md="12">
@@ -151,10 +148,11 @@ export default function VerticalLinearStepper() {
 
               <Form.Group as={Col} md="4">
                 <Form.Label>Zip Code</Form.Label>
-                <Form.Control type="number" placeholder="Zip" name="zip" onChange={updateState} />
+                <Form.Control type="text" placeholder="Zip" name="zip" onChange={updateState} />
               </Form.Group>
 
             </Form.Row>
+            <button disabled={activeStep === 0} className='btn' onClick={handleBack}>Back</button>
             <button type="submit" className='btn btn-primary'>Next</button>
           </Form>
         </div>
@@ -382,61 +380,6 @@ export default function VerticalLinearStepper() {
 
     case 5:
       return (
-        <div>
-          <Row>
-            <Col>
-              <div><img className='logo mb-3' alt={logo} src={logo}></img></div>
-            </Col>
-          </Row>
-          <Row>
-            <Col className='text-center mt-3 mb-4'>
-              <h1>Preferences</h1>
-            </Col>
-          </Row>
-          <Row className='mb-4'>
-            <Col>
-              <div className="inputGroup">
-                <input id="radio1" type="radio" name="installOrDelivery" value='Installation' onChange={updateState} />
-                <label htmlFor="radio1">Install</label>
-              </div>
-            </Col>
-            <h3>Or</h3>
-            <Col>
-              <div className="inputGroup">
-                <input id="radio2" type="radio" name="installOrDelivery" value='Delivery' onChange={updateState} />
-                <label htmlFor="radio2">Delivery</label>
-              </div>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <h3 className='text-center mt-4'>Dimensions ?</h3>
-              <p className='text-center'><span className="text-muted">(Optional)</span></p>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={{ span: 6, offset: 3 }}>
-              <Form>
-                <Form.Row>
-                  <Form.Group as={Col} xs="6">
-                    <Form.Label>Height (Inches):</Form.Label>
-                    <Form.Control required type="number" name="dimensionsH" onChange={updateState} />
-                  </Form.Group>
-                  <Form.Group as={Col} xs="6">
-                    <Form.Label>Width (Inches):</Form.Label>
-                    <Form.Control required type="number" name="dimensionsW" onChange={updateState} />
-                  </Form.Group>
-                </Form.Row>
-              </Form>
-            </Col>
-          </Row>
-          <button className='btn' onClick={handleBack}>Back</button>
-          <button type="submit" onClick={handleNext} className='btn btn-primary'>Next</button>
-        </div>
-      );
-
-    case 6:
-      return (
         <Form className='text-center mb-5' onSubmit={handleNext}>
           <Row>
             <Col>
@@ -458,8 +401,8 @@ export default function VerticalLinearStepper() {
 
             <Col xs={6}>
               <h3 className='caption'>Dimensions:</h3>
-              <h5>Width :</h5> <p>{state.dimensionsW} In</p>
-              <h5>Height :</h5> <p>{state.dimensionsH} In</p>
+              <h5>Width (Inches):</h5> <p>{state.doorDesign}</p>
+              <h5>Height (Inches):</h5> <p>{state.doorDesign}</p>
             </Col>
 
           </Row>
