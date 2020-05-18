@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+require("mongoose-moment")(mongoose);
+const moment = require("moment");
 
 // Quote schema
 const quoteSchema = new Schema({
@@ -46,8 +48,11 @@ const quoteSchema = new Schema({
   },
   doorMeasurements: {
     type: String,
+    width: "type in Inches",
+    height: "type in Inches",
   },
-  date: { type: Date, default: Date.now },
+
+  date: { type: String, default: Date.now },
   created_at: { type: Date, default: Date.now },
   updated_at: { type: Date, default: Date.now },
 });
@@ -55,9 +60,9 @@ const quoteSchema = new Schema({
 // sets the date parameter eqaul to the current or local time
 // created_at and updated_at were added to app to index entries to require effeciency
 // created_at and updated_at are stored in default which is in milliseconds
-
-Quote.pre("save", function (next) {
-  now = new Date();
+quoteSchema.pre("save", function (next) {
+  event = new Date();
+  now = moment(event).format("LLLL");
   this.date = now;
   if (!this.date) {
     this.date = now;
