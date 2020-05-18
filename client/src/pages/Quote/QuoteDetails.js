@@ -9,14 +9,12 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import Avatar from "@material-ui/core/Avatar";
 import { makeStyles } from "@material-ui/core/styles";
 import { green, red } from "@material-ui/core/colors";
 
 function Detail() {
 
   const [quotes, setQuotes] = useState([]);
-  console.log(quotes);
   const { id } = useParams();
   useEffect(() => {
     API.getQuote(id)
