@@ -1,4 +1,4 @@
 module.exports = {
-  // Quote: require('./quote/quote'),
+  Quote: require('./quote/quote'),
   User: require('./User/User')
 }

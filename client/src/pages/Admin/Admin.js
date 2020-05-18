@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Container, Jumbotron, Table, } from "react-bootstrap";
+import Dashboard from "./Admin-Dashboard/Dashboard.js"
 import API from "../../utils/API.js";
 import { Link } from "react-router-dom";
 import "./admin.css";
@@ -14,7 +15,10 @@ export default function Admin() {
 
   function loadQuotes() {
     API.getQuotes()
-      .then(res => API.setQuotes(res.data))
+      .then(res => {
+        console.log(res);
+        setQuotes(res);
+      })
       .catch(err => console.log(err));
 
 
@@ -37,13 +41,14 @@ export default function Admin() {
           <h2 id='josh-text'>Josh Campbell</h2>
         </Col>
         <Col>
-          <button className='btn logout'><a href="/logout"><i className="fas fa-sign-out-alt"></i>Log Out</a></button>
+          <Link className='btn logout' to={"/logout"}><i className="fas fa-sign-out-alt"></i>Log Out</Link>
         </Col>
       </Row>
       <Row>
         <Col className='p-0'>
           <Jumbotron>
             <h2 className='text-center' id='table-header'>Quotes</h2>
+            <Dashboard />
           </Jumbotron>
           <Table responsive hover className='text-center'>
             {quotes.length ? (
