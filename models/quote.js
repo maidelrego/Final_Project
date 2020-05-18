@@ -48,8 +48,6 @@ const quoteSchema = new Schema({
   },
   doorMeasurements: {
     type: String,
-    width: "type in Inches",
-    height: "type in Inches",
   },
 
   date: { type: String, default: Date.now },
