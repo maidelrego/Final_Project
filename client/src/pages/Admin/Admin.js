@@ -14,7 +14,7 @@ export default function Admin() {
 
   function loadQuotes() {
     API.getQuotes()
-      .then(res => API.setQuotes(res.data))
+      .then(res => setQuotes(res.data))
       .catch(err => console.log(err));
 
 
@@ -26,7 +26,7 @@ export default function Admin() {
 
   function deleteQuote(id) {
     API.deleteQuote(id)
-      .then(res => loadQuotes(res))
+      .then(res => loadQuotes())
       .catch(err => console.log(err));
   }
 
@@ -37,7 +37,7 @@ export default function Admin() {
           <h2 id='josh-text'>Josh Campbell</h2>
         </Col>
         <Col>
-          <button className='btn logout'><a href="/logout"><i className="fas fa-sign-out-alt"></i>Log Out</a></button>
+          <button className='btn logout'><i className="fas fa-sign-out-alt"></i>Log Out</button>
         </Col>
       </Row>
       <Row>
