@@ -31,7 +31,7 @@ export default function Admin() {
   }
 
   return (
-    <Container fluid>
+    <Container fluid id='admin-container'>
       <Row className='admin-head'>
         <Col>
           <h2 id='josh-text'>Josh Campbell</h2>
@@ -42,28 +42,30 @@ export default function Admin() {
       </Row>
       <Row>
         <Col className='p-0'>
-          <Jumbotron id='admin-jumbo'>
+          <Jumbotron>
             <h2 className='text-center' id='table-header'>Quotes</h2>
-
-            <Table responsive hover className='text-center'>
-              {quotes.length ? (
-                <tbody>
-                  {quotes.map(quote => (
-                    <tr key={quote._id}>
-
-                      <td>{quote.firstName} {quote.lastName}</td>
-                      <td>
-                        <Link className='btn' to={"/admin/" + quote._id}>View Quote</Link>
-                        <button className='btn' onClick={() => deleteQuote(quote._id)}><i className="fas fa-trash delete"></i></button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              ) : (
-                <h3>No Results to Display</h3>
-              )}
-            </Table>
           </Jumbotron>
+          <Table responsive hover className='text-center'>
+            {quotes.length ? (
+              <tbody>
+                {quotes.map(quote => (
+                  <tr key={quote._id}>
+                    <td>{quote.date}</td>
+                    <td>{quote.firstName} {quote.lastName}</td>
+                    <td>
+                      <Link className='btn' to={"/admin/" + quote._id}>View Quote</Link>
+                      <button className='btn' onClick={() => deleteQuote(quote._id)}><i className="fas fa-trash delete"></i></button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            ) : (
+              <caption>
+                <h3>No Results to Display</h3>
+              </caption>
+            )}
+          </Table>
+
         </Col>
       </Row>
     </Container>
