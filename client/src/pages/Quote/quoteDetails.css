@@ -1,0 +1,20 @@
+#quote-details {
+    background-color: white;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    height: 70px;
+    margin: 0;
+}
+
+.avatarDetails {
+    width: 50px !important;
+    height: 50px !important;
+}
+
+#logoDetails {
+    width: 200px;
+    height: 100px;
+}
+
+.iconDetail {
+    color: #F44336;
+}

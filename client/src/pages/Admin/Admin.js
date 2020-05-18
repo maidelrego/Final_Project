@@ -14,7 +14,7 @@ export default function Admin() {
 
   function loadQuotes() {
     API.getQuotes()
-      .then(res => API.setQuotes(res.data))
+      .then(res => setQuotes(res.data))
       .catch(err => console.log(err));
 
 
@@ -26,18 +26,18 @@ export default function Admin() {
 
   function deleteQuote(id) {
     API.deleteQuote(id)
-      .then(res => loadQuotes(res))
+      .then(res => loadQuotes())
       .catch(err => console.log(err));
   }
 
   return (
-    <Container fluid id='admin-container'>
+    <Container>
       <Row className='admin-head'>
         <Col>
           <h2 id='josh-text'>Josh Campbell</h2>
         </Col>
         <Col>
-          <button className='btn logout'><a href="/logout"><i className="fas fa-sign-out-alt"></i>Log Out</a></button>
+          <button className='btn logout'><i className="fas fa-sign-out-alt"></i>Log Out</button>
         </Col>
       </Row>
       <Row>
@@ -45,27 +45,28 @@ export default function Admin() {
           <Jumbotron>
             <h2 className='text-center' id='table-header'>Quotes</h2>
           </Jumbotron>
-          <Table responsive hover className='text-center'>
-            {quotes.length ? (
-              <tbody>
-                {quotes.map(quote => (
-                  <tr key={quote._id}>
-                    <td>{quote.date}</td>
-                    <td>{quote.firstName} {quote.lastName}</td>
-                    <td>
-                      <Link className='btn' to={"/admin/" + quote._id}>View Quote</Link>
-                      <button className='btn' onClick={() => deleteQuote(quote._id)}><i className="fas fa-trash delete"></i></button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            ) : (
-              <caption>
-                <h3>No Results to Display</h3>
-              </caption>
-            )}
-          </Table>
-
+          <Jumbotron>
+            <Table responsive hover className='text-center'>
+              {quotes.length ? (
+                <tbody>
+                  {quotes.map(quote => (
+                    <tr key={quote._id}>
+                      <td className='td-admin'>{quote.date}</td>
+                      <td className='td-admin'>{quote.firstName} {quote.lastName}</td>
+                      <td>
+                        <Link className='btn' to={"/admin/" + quote._id}>View Quote</Link>
+                        <button className='btn' onClick={() => deleteQuote(quote._id)}><i className="fas fa-trash delete"></i></button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              ) : (
+                <caption>
+                  <h3>No Results to Display</h3>
+                </caption>
+              )}
+            </Table>
+          </Jumbotron>
         </Col>
       </Row>
     </Container>
