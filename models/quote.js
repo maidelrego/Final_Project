@@ -8,7 +8,7 @@ const quoteSchema = new Schema({
   firstName: { type: String },
   lastName: { type: String },
   phone: {
-    type: String,
+    type: Number,
   },
   email: {
     type: String,
@@ -43,13 +43,9 @@ const quoteSchema = new Schema({
   delivery: {
     type: String,
   },
-  installation: {
-    type: String,
-  },
-  doorMeasurements: {
-    type: String,
-  },
-
+  installOrDelivery: { type: String },
+  dimensionsH: { type: Number },
+  dimensionsW: { type: Number },
   date: { type: String, default: Date.now },
   created_at: { type: Date, default: Date.now },
   updated_at: { type: Date, default: Date.now },
@@ -67,7 +63,6 @@ quoteSchema.pre("save", function (next) {
   }
   next();
 });
-
 const Quote = mongoose.model("Quote", quoteSchema);
 
 module.exports = Quote;

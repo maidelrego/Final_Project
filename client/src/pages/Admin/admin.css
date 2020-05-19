@@ -1,10 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
-
-
 .admin-head {
     background-color: white;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-    border-radius: 8px;
     margin-bottom: 20px;
     height: 70px;
 }
@@ -33,13 +30,9 @@
   color: red;
 }
 
-/* td {
-  font-family: 'Special Elite', cursive;
-  color:#566473;
+.td-admin {
   font-size: 20px !important;
-  padding-bottom: 5px !important;
-  padding-top: 5px !important;
-} */
+}
 
 #admin-jumbo {
   padding-top: 12px;
