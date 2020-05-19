@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
 
 html{
     min-width: 100vh;
@@ -6,11 +6,11 @@ html{
 }
 
 h1{
-    font-family: 'Special Elite', cursive;
-    color:#566473;
+    font-family: 'Neucha', cursive;
 	text-decoration: none;
  	text-transform: uppercase;
  	letter-spacing: 1px;
   	text-shadow: 0 0 1px rgba(255,255,255,0.3);
     font-size: 3em;
+    font-size: 55px !important;
 }

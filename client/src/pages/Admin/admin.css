@@ -16,8 +16,7 @@
 #josh-text {
     margin-top: 20px;
     margin-left: 30px;
-    font-family: 'Special Elite', cursive;
-    color:#566473;
+    font-family: 'Neucha', cursive;
 }
 
 #table-header {
@@ -32,6 +31,7 @@
 
 .td-admin {
   font-size: 20px !important;
+  font-family: 'Forum', cursive;
 }
 
 #admin-jumbo {

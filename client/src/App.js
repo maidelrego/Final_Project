@@ -20,7 +20,8 @@ function Home() {
       <MyParallax />
       <About />
       {/* <TypingEffect /> */}
-      <SignIn />
+      {/* <SignIn /> */}
+      <Admin />
     </Container>
   );
 }
