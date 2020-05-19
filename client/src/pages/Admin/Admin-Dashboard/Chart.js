@@ -1,54 +1,66 @@
-import React from 'react';
-import { useTheme } from '@material-ui/core/styles';
-import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
-import Title from './Title';
+import React, { Component } from 'react'
+import Chart from "chart.js";
+import classes from "./LineGraph.module.css";
+let myLineChart;
 
-// Generate Sales Data
-function createData(time, amount) {
-  return { time, amount };
-}
+//--Chart Style Options--//
+Chart.defaults.global.defaultFontFamily = "'PT Sans', sans-serif"
+Chart.defaults.global.legend.display = false;
+//--Chart Style Options--//
 
-const data = [
-  createData('00:00', 0),
-  createData('03:00', 300),
-  createData('06:00', 600),
-  createData('09:00', 800),
-  createData('12:00', 1500),
-  createData('15:00', 2000),
-  createData('18:00', 2400),
-  createData('21:00', 2400),
-  createData('24:00', undefined),
-];
+export default class LineGraph extends Component {
+    chartRef = React.createRef();
 
-export default function Chart() {
-  const theme = useTheme();
+    componentDidMount() {
+        this.buildChart();
+    }
 
-  return (
-    <React.Fragment>
-      <Title>Today</Title>
-      <ResponsiveContainer>
-        <LineChart
-          data={data}
-          margin={{
-            top: 16,
-            right: 16,
-            bottom: 0,
-            left: 24,
-          }}
-        >
-          <XAxis dataKey="time" stroke={theme.palette.text.secondary} />
-          <YAxis stroke={theme.palette.text.secondary}>
-            <Label
-              angle={270}
-              position="left"
-              style={{ textAnchor: 'middle', fill: theme.palette.text.primary }}
-            >
-              Sales ($)
-            </Label>
-          </YAxis>
-          <Line type="monotone" dataKey="amount" stroke={theme.palette.primary.main} dot={false} />
-        </LineChart>
-      </ResponsiveContainer>
-    </React.Fragment>
-  );
+    componentDidUpdate() {
+        this.buildChart();
+    }
+
+    buildChart = () => {
+        const myChartRef = this.chartRef.current.getContext("2d");
+        const { data, average, labels } = this.props;
+
+        if (typeof myLineChart !== "undefined") myLineChart.destroy();
+
+        myLineChart = new Chart(myChartRef, {
+            type: "line",
+            data: {
+                //Bring in data
+                labels: labels,
+                datasets: [
+                    {
+                        label: "Sales",
+                        data: data,
+                        fill: false,
+                        borderColor: "#6610f2"
+                    },
+                    {
+                        label: "National Average",
+                        data: average,
+                        fill: false,
+                        borderColor: "#E0E0E0"
+                    }
+                ]
+            },
+            options: {
+                //Customize chart options
+            }
+        });
+
+    }
+
+    render() {
+
+        return (
+            <div className={classes.graphContainer}>
+                <canvas
+                    id="myChart"
+                    ref={this.chartRef}
+                />
+            </div>
+        )
+    }
 }

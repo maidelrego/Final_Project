@@ -7,6 +7,9 @@ export default {
   getUser: function (id) {
     return axios.get("/api/admin/" + id);
   },
+  logout: function () {
+    return axios.get("/api/logout");
+  },
 
   // Gets all quotes
   getQuotes: function () {

@@ -27,6 +27,11 @@ export default function Admin() {
     loadQuotes();
   }, []);
 
+  function handleLogout(e) {
+    e.preventDefault();
+    API.logout()
+  }
+
 
   function deleteQuote(id) {
     API.deleteQuote(id)
@@ -41,7 +46,7 @@ export default function Admin() {
           <h2 id='josh-text'>Josh Campbell</h2>
         </Col>
         <Col>
-          <Link className='btn logout' to={"/logout"}><i className="fas fa-sign-out-alt"></i>Log Out</Link>
+          <button className='btn logout' onSubmit={handleLogout}><i className="fas fa-sign-out-alt"></i>Log Out</button>
         </Col>
       </Row>
       <Row>
@@ -65,10 +70,10 @@ export default function Admin() {
                 ))}
               </tbody>
             ) : (
-              <caption>
-                <h3>No Results to Display</h3>
-              </caption>
-            )}
+                <caption>
+                  <h3>No Results to Display</h3>
+                </caption>
+              )}
           </Table>
 
         </Col>
