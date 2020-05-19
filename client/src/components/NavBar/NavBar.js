@@ -47,10 +47,10 @@ export default function MyNav() {
               </Nav.Link>
             </li>
             <li>
-              <Nav.Link href="#about">About us</Nav.Link>
+              <Nav.Link href="/#about">About us</Nav.Link>
             </li>
             <li>
-              <Nav.Link href="#contact">Contact us</Nav.Link>
+              <Nav.Link href="/#contact">Contact us</Nav.Link>
             </li>
           </ul>
         </Nav>

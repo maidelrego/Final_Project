@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+
+
+.MuiStepIcon-root.MuiStepIcon-active {
+  color: #4285F4 !important;
+}
+
+.MuiStepIcon-root.MuiStepIcon-completed {
+  color: #00C851 !important;
+}
+
+
+
 .logo {
     width: 200px;
     height: 100px;
@@ -9,8 +22,13 @@
 
 // ************ FINISH CSS **************** //
 .caption {
-  font-family: 'Special Elite', cursive;
-  color:#566473;
+  font-family: 'Neucha', cursive;
+  font-size: 30px;
+}
+
+.detailsText {
+  font-size: 20px;
+  font-family: 'Forum', cursive;
 }
 
 .logo {

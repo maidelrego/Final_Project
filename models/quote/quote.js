@@ -7,7 +7,7 @@ const moment = require("moment");
 const quoteSchema = new Schema({
   firstName: { type: String },
   lastName: { type: String },
-  phone: {
+  phoneNumber: {
     type: Number,
   },
   email: {
@@ -25,7 +25,7 @@ const quoteSchema = new Schema({
   state: {
     type: String,
   },
-  zipCode: {
+  zip: {
     type: Number,
   },
   doorKit: {

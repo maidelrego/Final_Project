@@ -20,7 +20,8 @@ function Home() {
       <MyParallax />
       <About />
       {/* <TypingEffect /> */}
-      <SignIn />
+      {/* <SignIn /> */}
+      <Admin />
     </Container>
   );
 }
@@ -32,6 +33,8 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/#about" component={Home} />
+          <Route exact path="/#contact" component={Home} />
           <Route exact path="/quote" component={Quote} />
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/admin">
