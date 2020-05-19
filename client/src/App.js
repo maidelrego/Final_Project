@@ -11,6 +11,7 @@ import About from "./components/About/About.js";
 import QuoteDetail from "./pages/Quote/QuoteDetails.js";
 import Admin from "./pages/Admin/Admin";
 import NoMatch from "./pages/NoMatch/NoMatch.js";
+import SignIn from "./pages/SignIn/SignIn.js";
 // import Contact from "./pages/Contact Us";
 
 function Home() {
@@ -19,6 +20,7 @@ function Home() {
       <MyParallax />
       <About />
       {/* <TypingEffect /> */}
+      <SignIn />
     </Container>
   );
 }
