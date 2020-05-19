@@ -10,7 +10,7 @@ import Gallery from "./pages/Gallery";
 import About from "./components/About/About.js";
 import QuoteDetail from "./pages/Quote/QuoteDetails.js";
 import Admin from "./pages/Admin/Admin";
-import NoMatch from "./pages/NoMatch";
+import NoMatch from "./pages/NoMatch/NoMatch.js";
 // import Contact from "./pages/Contact Us";
 
 function Home() {
@@ -19,8 +19,6 @@ function Home() {
       <MyParallax />
       <About />
       {/* <TypingEffect /> */}
-      <Admin />
-      <QuoteDetail />
     </Container>
   );
 }
@@ -30,18 +28,20 @@ function App() {
     <GlobalStateProvider>
       <Router>
         <NavBar />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/quote" component={Quote} />
-        <Route exact path="/gallery" component={Gallery} />
         <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/quote" component={Quote} />
+          <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/admin">
             <Admin />
           </Route>
           <Route exact path="/admin/:id">
             <QuoteDetail />
           </Route>
+          <Route>
+            <NoMatch />
+          </Route>
         </Switch>
-        <Route component={NoMatch} />
       </Router>
     </GlobalStateProvider>
   );
