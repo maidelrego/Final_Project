@@ -64,7 +64,6 @@ export default function VerticalLinearStepper() {
       })
         .then(() => alert("Success"))
         .catch(err => console.log(err));
-      setActiveStep((prevActiveStep) => prevActiveStep + 1);
     } else {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
@@ -79,7 +78,7 @@ export default function VerticalLinearStepper() {
         <div>
           <Row>
             <Col>
-              <div><img className='logo mb-3' alt={logo} src={logo}></img></div>
+              <div><img className='logo mb-5' alt={logo} src={logo}></img></div>
             </Col>
           </Row>
           <Row>
@@ -164,7 +163,7 @@ export default function VerticalLinearStepper() {
         <div>
           <Row>
             <Col>
-              <div><img className='logo mb-3' alt={logo} src={logo}></img></div>
+              <div><img className='logo mb-5' alt={logo} src={logo}></img></div>
             </Col>
           </Row>
           <Row>
@@ -235,7 +234,7 @@ export default function VerticalLinearStepper() {
         <div>
           <Row>
             <Col>
-              <div><img className='logo mb-3' alt={logo} src={logo}></img></div>
+              <div><img className='logo mb-5' alt={logo} src={logo}></img></div>
             </Col>
           </Row>
           <Row>
@@ -298,7 +297,7 @@ export default function VerticalLinearStepper() {
         <div>
           <Row>
             <Col>
-              <div><img className='logo mb-3' alt={logo} src={logo}></img></div>
+              <div><img className='logo mb-5' alt={logo} src={logo}></img></div>
             </Col>
           </Row>
           <Row>
@@ -341,7 +340,7 @@ export default function VerticalLinearStepper() {
         <div>
           <Row>
             <Col>
-              <div><img className='logo mb-3' alt={logo} src={logo}></img></div>
+              <div><img className='logo mb-5' alt={logo} src={logo}></img></div>
             </Col>
           </Row>
           <Row>
@@ -385,7 +384,7 @@ export default function VerticalLinearStepper() {
         <div>
           <Row>
             <Col>
-              <div><img className='logo mb-3' alt={logo} src={logo}></img></div>
+              <div><img className='logo mb-5' alt={logo} src={logo}></img></div>
             </Col>
           </Row>
           <Row>
@@ -431,7 +430,7 @@ export default function VerticalLinearStepper() {
             </Col>
           </Row>
           <button className='btn' onClick={handleBack}>Back</button>
-          <button type="submit" onClick={handleNext} className='btn btn-primary'>Next</button>
+          <button type="submit" disabled={!(state.installOrDelivery)} onClick={handleNext} className='btn btn-primary'>Next</button>
         </div>
       );
 
@@ -440,7 +439,7 @@ export default function VerticalLinearStepper() {
         <Form className='text-center mb-5' onSubmit={handleNext}>
           <Row>
             <Col>
-              <div><img className='logo mb-3' alt={logo} src={logo}></img></div>
+              <div><img className='logo mb-5' alt={logo} src={logo}></img></div>
             </Col>
           </Row>
           <Row>
@@ -450,38 +449,40 @@ export default function VerticalLinearStepper() {
           </Row>
           <Row>
             <Col xs={6}>
-              <h3 className='caption'>Your Name:</h3><p>{state.firstName} {state.lastName}</p>
-              <h3 className='caption'>Email:</h3><p>{state.email}</p>
-              <h3 className='caption'>Phone Number:</h3><p>{state.phoneNumber}</p>
-              <h3 className='caption'>Address:</h3><p>{state.address} {state.address2} {state.city} {state.state} {state.zip} </p>
+              <h3 className='caption'>Your Name:</h3><p className='detailsText'>{state.firstName} {state.lastName}</p>
+              <h3 className='caption'>Email:</h3><p className='detailsText'>{state.email}</p>
+              <h3 className='caption'>Phone Number:</h3><p className='detailsText'>{state.phoneNumber}</p>
+              <h3 className='caption'>Address:</h3><p className='detailsText'>{state.address} {state.address2} {state.city} {state.state} {state.zip} </p>
             </Col>
 
             <Col xs={6}>
               <h3 className='caption'>Dimensions:</h3>
-              <h5>Width :</h5> <p>{state.dimensionsW} In</p>
-              <h5>Height :</h5> <p>{state.dimensionsH} In</p>
+              <h5>Width (In) :</h5> <p className='detailsText'>{state.dimensionsW}</p>
+              <h5>Height (In) :</h5> <p className='detailsText'>{state.dimensionsH}</p>
+              <h3 className='caption mt-4'>You Selected:</h3>{state.installOrDelivery}
             </Col>
 
           </Row>
           <hr />
           <Row className='mt-4'>
             <Col xs={3}>
-              <h3 className='caption'>Finish:</h3><p>{state.finishColor}</p>
+              <h3 className='caption'>Finish:</h3><p className='detailsText'>{state.finishColor}</p>
             </Col>
 
             <Col xs={3}>
-              <h3 className='caption'>Design:</h3><p>{state.doorDesign}</p>
+              <h3 className='caption'>Design:</h3><p className='detailsText'>{state.doorDesign}</p>
             </Col>
 
             <Col xs={3}>
-              <h3 className='caption'>Kit:</h3><p>{state.doorKit}</p>
+              <h3 className='caption'>Kit:</h3><p className='detailsText'>{state.doorKit}</p>
             </Col>
 
             <Col xs={3}>
-              <h3 className='caption'>Handle:</h3><p>{state.handle}</p>
+              <h3 className='caption'>Handle:</h3><p className='detailsText'>{state.handle}</p>
             </Col>
           </Row>
-          <button type='submit' className='btn btn-success' onClick={handleNext}>Finish</button>
+          <button className='btn mt-5' onClick={handleBack}>Back</button>
+          <button type='submit' className='btn btn-success mt-5' onClick={handleNext}>Finish</button>
         </Form>
       );
 

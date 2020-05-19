@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Container, Jumbotron, Table, } from "react-bootstrap";
+import { MDBBtn } from "mdbreact";
 import API from "../../utils/API.js";
 import { Link } from "react-router-dom";
 import "./admin.css";
+
 
 export default function Admin() {
 
@@ -39,10 +41,10 @@ export default function Admin() {
       <Row>
         <Col className='p-0'>
           <Jumbotron>
-            <h2 className='text-center' id='table-header'>Quotes</h2>
+            <h1 className='text-center'>Quotes</h1>
           </Jumbotron>
           <Jumbotron>
-            <Table responsive hover className='text-center'>
+            <Table responsive className='text-center'>
               {quotes.length ? (
                 <tbody>
                   {quotes.map(quote => (
@@ -69,3 +71,5 @@ export default function Admin() {
   );
 
 }
+
+
