@@ -13,11 +13,10 @@
     "react": "^16.6.3",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.6.3",
-    "react-form-stepper": "^1.2.3",
+    "react-grid-gallery": "^0.5.5",
     "react-parallax": "^3.0.3",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^2.1.1",
-    "react-stepzilla": "^6.0.2",
     "react-typing-effect": "^2.0.3"
   },
   "scripts": {
@@ -36,9 +35,8 @@
   ],
   "devDependencies": {
     "concurrently": "^4.1.0",
-    "nodemon": "^1.18.7",
-    "eslint": "^6.8.0",
     "lint": "^0.7.0",
+    "nodemon": "^1.18.7",
     "prettier": "^2.0.2"
   }
 }

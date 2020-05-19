@@ -1,15 +1,9 @@
-.galleryC {
-  margin: 0 auto;
-  width: 700px;
-  height: 700px;
-}
-
-#gallery-title {
-  font-family: "Lato", Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
-  font-size: 4em;
-  color: #566473;
-  text-align: center;
+.gallery-head{
+  background-color: white;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+  padding-top: 5px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  height: 70px;
 }

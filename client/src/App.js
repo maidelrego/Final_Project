@@ -1,22 +1,27 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import MyParallax from "./components/Parallax/MyParallax.js";
-import TypingEffect from "./components/TypingEffect/TypingEffect.js";
-import Selection from "./components/Selection/Selection.js";
-import Quote from "./components/Quote/Quote.js";
+// import TypingEffect from "./components/TypingEffect/TypingEffect.js";
+import Quote from "./pages/Quote/Quote.js";
 import { GlobalStateProvider } from "./utils/GlobalState";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import NavBar from "./components/NavBar";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import NavBar from "./components/NavBar/NavBar.js";
 import Gallery from "./pages/Gallery";
-import About from "./pages/About Us";
-import Contact from "./pages/Contact Us";
+import About from "./components/About/About.js";
+import QuoteDetail from "./pages/Quote/QuoteDetails.js";
+import Admin from "./pages/Admin/Admin";
+import NoMatch from "./pages/NoMatch/NoMatch.js";
+import SignIn from "./pages/SignIn/SignIn.js";
+// import Contact from "./pages/Contact Us";
 
 function Home() {
   return (
     <Container fluid>
       <MyParallax />
-      <TypingEffect />
-      <Selection />
+      <About />
+      {/* <TypingEffect /> */}
+      {/* <SignIn /> */}
+      <Admin />
     </Container>
   );
 }
@@ -26,11 +31,22 @@ function App() {
     <GlobalStateProvider>
       <Router>
         <NavBar />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/quote" component={Quote} />
-        <Route exact path="/gallery" component={Gallery} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/contact" component={Contact} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/#about" component={Home} />
+          <Route exact path="/#contact" component={Home} />
+          <Route exact path="/quote" component={Quote} />
+          <Route exact path="/gallery" component={Gallery} />
+          <Route exact path="/admin">
+            <Admin />
+          </Route>
+          <Route exact path="/admin/:id">
+            <QuoteDetail />
+          </Route>
+          <Route>
+            <NoMatch />
+          </Route>
+        </Switch>
       </Router>
     </GlobalStateProvider>
   );

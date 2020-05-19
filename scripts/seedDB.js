@@ -9,25 +9,21 @@ mongoose.connect(
 
 const quoteSeed = [
   {
+    firstName: "Jessi",
+    lastName: "Jacki",
+    phone: 1231234567,
+    email: "jessie@yahoo.vom",
+    address: "123 SOmewhere",
+    address2: "",
+    city: "KC",
+    state: "California",
+    zipCode: 11234,
+    Door: " 80 inches",
+    finishColor: "white stain",
+    doorKit: "rohmbic",
+    doorDesign: "X's",
+    handle: "black steel",
     date: new Date().setDate(new Date().getDate() - 10),
-    quote: [
-      {
-        firstName: "Jessi",
-        lastName: "Jacki",
-        phone: "123-123-4567",
-        email: "jessie@yahoo.vom",
-        address: "123 SOmewhere",
-        address2: "",
-        city: "KC",
-        state: "California",
-        zipCode: 11234,
-        Door: " 80 inches",
-        finishColor: "white stain",
-        doorKit: "rohmbic",
-        doorDesign: "X's",
-        handle: "black steel",
-      },
-    ],
   },
 ];
 
