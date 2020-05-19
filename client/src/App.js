@@ -8,8 +8,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar.js";
 import Gallery from "./pages/Gallery";
 import About from "./components/About/About.js";
-import QuoteDetail from "./pages/Admin/QuoteDetails.js"     ;
+import QuoteDetail from "./pages/Admin/QuoteDetails.js";
 import Admin from "./pages/Admin/Admin";
+import NoMatch from "./pages/NoMatch";
 // import Contact from "./pages/Contact Us";
 
 function Home() {
@@ -40,6 +41,7 @@ function App() {
             <QuoteDetail />
           </Route>
         </Switch>
+        <Route component={NoMatch} />
       </Router>
     </GlobalStateProvider>
   );
