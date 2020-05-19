@@ -11,13 +11,19 @@ import logo from "../../images/logo.png";
 import { useGlobalContext } from "../../utils/GlobalState.js";
 import "./quote.scss";
 
-
 function getSteps() {
-  return ["Info", "Finish", "Door Design", "Barn Door Kit", "Handle", "Preferences", "Review"];
+  return [
+    "Info",
+    "Finish",
+    "Door Design",
+    "Barn Door Kit",
+    "Handle",
+    "Preferences",
+    "Review",
+  ];
 }
 
 export default function VerticalLinearStepper() {
-
   const [state, dispatch] = useGlobalContext();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
@@ -30,8 +36,6 @@ export default function VerticalLinearStepper() {
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
-
-
 
   const handleNext = (event) => {
     event.preventDefault();
@@ -60,7 +64,7 @@ export default function VerticalLinearStepper() {
         handle: state.handle,
         installOrDelivery: state.installOrDelivery,
         dimensionsH: state.dimensionsH,
-        dimensionsW: state.dimensionsW
+        dimensionsW: state.dimensionsW,
       })
         .then(() => alert("Success"))
         .catch(err => console.log(err));
@@ -68,8 +72,6 @@ export default function VerticalLinearStepper() {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
   };
-
-
 
   function getStepContent(step) {
     switch (step) {
@@ -495,22 +497,18 @@ export default function VerticalLinearStepper() {
 
   // STEPPER FROM MATERIAL UI
 
-
-
   return (
     <Container>
       <Stepper activeStep={activeStep} orientation="vertical">
         {steps.map((label, index) => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
-            <StepContent>
-              {getStepContent(index)}
-            </StepContent>
+            <StepContent>{getStepContent(index)}</StepContent>
           </Step>
         ))}
       </Stepper>
       {activeStep === steps.length && (
-        <Paper square elevation={0} >
+        <Paper square elevation={0}>
           <Typography>All steps completed - you&apos;re finished</Typography>
         </Paper>
       )}
