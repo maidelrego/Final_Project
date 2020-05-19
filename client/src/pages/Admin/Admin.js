@@ -4,10 +4,6 @@ import API from "../../utils/API.js";
 import { Link } from "react-router-dom";
 import "./admin.css";
 
-
-
-
-
 export default function Admin() {
 
   const [quotes, setQuotes] = useState([]);
@@ -73,5 +69,3 @@ export default function Admin() {
   );
 
 }
-
-
