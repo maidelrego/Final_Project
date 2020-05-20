@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Container, Jumbotron, Table, } from "react-bootstrap";
-import { MDBBtn } from "mdbreact";
 import API from "../../utils/API.js";
 import { Link } from "react-router-dom";
 import "./admin.css";
@@ -9,18 +8,35 @@ import "./admin.css";
 export default function Admin() {
 
   const [quotes, setQuotes] = useState([]);
+  const [messages, setMessages] = useState([]);
 
   function loadQuotes() {
     API.getQuotes()
       .then(res => setQuotes(res.data))
       .catch(err => console.log(err));
 
+  }
+
+  function loadMessages() {
+    API.getMessages()
+      .then(res => setMessages(res.data))
+      .catch(err => console.log(err));
 
   }
+
   useEffect(() => {
     loadQuotes();
   }, []);
 
+  useEffect(() => {
+    loadMessages();
+  }, []);
+
+  function deleteMessage(id) {
+    API.deleteMessage(id)
+      .then(res => loadMessages())
+      .catch(err => console.log(err));
+  }
 
   function deleteQuote(id) {
     API.deleteQuote(id)
@@ -38,6 +54,36 @@ export default function Admin() {
           <button className='btn logout'><i className="fas fa-sign-out-alt"></i>Log Out</button>
         </Col>
       </Row>
+      <Row>
+        <Col className='p-0'>
+          <Jumbotron>
+            <h1 className='text-center'>Messages</h1>
+          </Jumbotron>
+          <Jumbotron>
+            <Table responsive className='text-center'>
+              {messages.length ? (
+                <tbody>
+                  {messages.map(messages => (
+                    <tr key={messages._id}>
+                      <td className='td-admin'>{messages.date}</td>
+                      <td className='td-admin'>{messages.name}</td>
+                      <td>
+                        <Link className='btn' to={"/admin/" + messages._id}>View Quote</Link>
+                        <button className='btn' onClick={() => deleteMessage(messages._id)}><i className="fas fa-trash delete"></i></button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              ) : (
+                <caption>
+                  <h3>No Results to Display</h3>
+                </caption>
+              )}
+            </Table>
+          </Jumbotron>
+        </Col>
+      </Row>
+
       <Row>
         <Col className='p-0'>
           <Jumbotron>

@@ -20,11 +20,11 @@ function Home() {
   return (
     <Container fluid>
       <MyParallax />
-      <About />
-      {/* <Contact /> */}
+      {/* <About /> */}
+      <Contact />
       {/* <TypingEffect /> */}
-      <SignIn />
-      {/* <Admin /> */}
+      {/* <SignIn /> */}
+      <Admin />
     </Container>
   );
 }
