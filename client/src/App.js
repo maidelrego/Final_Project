@@ -36,11 +36,6 @@ function App() {
         <Route exact path="/login" component={SignIn} />
         <Route path='/admin' component={Admin} />
         <Switch>
-          {/* <Route exact path="/admin/:id">
-        <Switch>
-          <Route exact path="/admin">
-            <Admin />
-          </Route>
           <Route exact path="/admin/:id">
             <QuoteDetail />
           </Route> */}

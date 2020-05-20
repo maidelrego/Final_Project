@@ -23,12 +23,12 @@ router.post('/login',
   passport.authenticate('local',
   { failureRedirect: '/login' }),
   function (req, res) {
-    console.log('bonjour', req.user)
     res.json(req.user);
   });
 
   // Route for logging user out
   router.get('/logout', function (req, res) {
+    console.log("logout")
     res.redirect('/')
     req.logout()
     

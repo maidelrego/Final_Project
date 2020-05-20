@@ -27,14 +27,9 @@ default: "user",
 // plugin for passport-local-mongoose 
 // userSchema.plugin(passportLocalMongoose); 
 UserSchema.methods.generateHash = function(password){
-  console.log("gen Hash")
-  console.log(bcrypt.hashSync(password, bcrypt.genSaltSync(8), null))
   return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null)
 }
 UserSchema.methods.validPassword = function(password){
-  console.log(password)
-  console.log()
-  console.log(bcrypt.compareSync(password, this.password))
   return bcrypt.compareSync(password, this.password)
 }
 

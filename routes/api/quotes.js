@@ -7,7 +7,7 @@ router.route("/")
   .post(quotesController.create)
 
 router.route("/admin:id")
-  .get(quotesController.findById, isAuthenticated
+  .get(quotesController.findById, isAuthenticated)
   .delete(quotesController.delete);
 
 router.route("/quotes").get(quotesController.findAll).
