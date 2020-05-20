@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Chart from "chart.js";
-import classes from "./LineGraph.module.css";
-import { nationalAverageQuarterData, quarterLabels } from "../../pages/Admin/Admin-Dashboard/data.js"
+import { nationalAverageQuarterData, quarterLabels } from "./data.js"
 let myLineChart;
 
 
@@ -12,32 +11,15 @@ Chart.defaults.global.legend.display = false;
 
 export default class LineGraph extends Component {
 
-  //  [quotes, setQuotes] = useState([]);
-  //  loadQuotes(){
-  //   API.getQuotes()
-  //     .then(res => {
-  //       setQuotes(res.data);
-  //       console.log(res.data.length);
-  //     })
-  //     .catch(err => console.log(err));
-  // }
-  // useEffect(() => {
-  //   loadQuotes();
-  // }, []);
-
   chartRef = React.createRef();
 
   componentDidMount() {
     this.buildChart();
   }
 
-  componentDidUpdate() {
-    this.buildChart();
-  }
-
   buildChart = () => {
     const myChartRef = this.chartRef.current.getContext("2d");
-    const { data, average, labels } = this.props;
+    // const { data, average, labels } = this.props;
 
     if (typeof myLineChart !== "undefined") myLineChart.destroy();
 
@@ -45,27 +27,20 @@ export default class LineGraph extends Component {
       type: "bar",
       data: {
         //Bring in data
-        labels: quarterLabels,
+        labels: quarterLabels, // ['WE May 1st', 'WE May 7th'] -- use moment to get this array
         datasets: [
           {
             label: "chicken tendies",
-            data: nationalAverageQuarterData,
+            data: nationalAverageQuarterData, // [5, 7] -- .find -> .then((data)=> data.length)
             fill: true,
             borderColor: "#6610f2"
-          },
-          {
-            label: "National Average",
-            data: average,
-            fill: false,
-            borderColor: "#417584"
           }
-        ],
-        backgroundColor: [
-          '#36a2eb'
         ],
         options: {
           //Customize chart options
-
+          backgroundColor: [
+            '#36a2eb'
+          ]
         }
       }});
 
@@ -73,7 +48,7 @@ export default class LineGraph extends Component {
   render() {
 
     return (
-      <div className={classes.graphContainer}>
+      <div>
         <canvas
           id="myChart"
           ref={this.chartRef}

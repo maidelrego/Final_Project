@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Row, Col, Container, Jumbotron, Table, } from "react-bootstrap";
 import Chart from "../../components/Chart/Chart.js";
 import API from "../../utils/API.js";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import "./admin.css";
 
 export default function Admin() {
@@ -13,8 +13,6 @@ export default function Admin() {
     API.getQuotes()
       .then(res => setQuotes(res.data))
       .catch(err => console.log(err));
-
-
   }
   useEffect(() => {
     loadQuotes();
@@ -23,7 +21,7 @@ export default function Admin() {
   function handleLogout(e) {
     e.preventDefault();
     API.logout().then(() => {
-      window.location.replace("/login");
+      window.location.replace("/login")
     });
   }
 
@@ -41,7 +39,7 @@ export default function Admin() {
           <h2 id='josh-text'>Josh Campbell</h2>
         </Col>
         <Col>
-          <button className='btn logout' onSubmit={handleLogout}><i className="fas fa-sign-out-alt"></i>Log Out</button>
+          <button className='btn logout' onClick={handleLogout} ><i className="fas fa-sign-out-alt"></i>Log Out</button>
         </Col>
       </Row>
       <Row>
@@ -66,10 +64,10 @@ export default function Admin() {
                   ))}
                 </tbody>
               ) : (
-                <caption>
-                  <h3>No Results to Display</h3>
-                </caption>
-              )}
+                  <caption>
+                    <h3>No Results to Display</h3>
+                  </caption>
+                )}
             </Table>
           </Jumbotron>
         </Col>
