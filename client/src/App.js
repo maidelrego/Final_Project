@@ -8,20 +8,25 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar.js";
 import Gallery from "./pages/Gallery";
 import About from "./components/About/About.js";
+import Contact from "./components/Contact/Contact.js";
+import Display from "./components/Alert/Alert.js";
 import QuoteDetail from "./pages/Quote/QuoteDetails.js";
 import Admin from "./pages/Admin/Admin";
 import NoMatch from "./pages/NoMatch/NoMatch.js";
 import SignIn from "./pages/SignIn/SignIn.js";
+import Footer from "./components/Footer/Footer.js";
 // import Contact from "./pages/Contact Us";
 
 function Home() {
   return (
-    <Container fluid>
+    <Container fluid className='p-0'>
       <MyParallax />
       <About />
+      <Contact />
       {/* <TypingEffect /> */}
       {/* <SignIn /> */}
-      <Admin />
+      {/* <Admin /> */}
+      <Footer />
     </Container>
   );
 }
@@ -36,6 +41,7 @@ function App() {
           <Route exact path="/#about" component={Home} />
           <Route exact path="/#contact" component={Home} />
           <Route exact path="/quote" component={Quote} />
+          <Route exact path="/thankyou" component={Display} />
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/admin">
             <Admin />

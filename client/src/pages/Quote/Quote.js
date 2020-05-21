@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
@@ -24,6 +25,7 @@ function getSteps() {
 }
 
 export default function VerticalLinearStepper() {
+  const history = useHistory();
   const [state, dispatch] = useGlobalContext();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
@@ -33,9 +35,11 @@ export default function VerticalLinearStepper() {
     dispatch({ type: event.target.name, value: event.target.value });
   }
 
-  const handleBack = () => {
+  const handleBack = (event) => {
+    event.preventDefault();
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
+
 
   const handleNext = (event) => {
     event.preventDefault();
@@ -66,9 +70,12 @@ export default function VerticalLinearStepper() {
         dimensionsH: state.dimensionsH,
         dimensionsW: state.dimensionsW,
       })
-        .then(() => alert("Success"))
+        .then(() => {
+          history.push("/thankyou");
+        })
         .catch(err => console.log(err));
-    } else {
+    }
+    if (activeStep < 6) {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
   };
@@ -89,12 +96,11 @@ export default function VerticalLinearStepper() {
             </Col>
           </Row>
 
-
           <Form noValidate validated={validated} onSubmit={handleNext} id="form0">
             <Form.Row>
               <Form.Group as={Col} md="5">
                 <Form.Label>First name</Form.Label>
-                <Form.Control required type="text" name="firstName" placeholder="First name" onChange={updateState} />
+                <Form.Control required type="text" name="firstName" placeholder="First name" value={state.firstName} onChange={updateState} />
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 <Form.Control.Feedback type="invalid">Ooops!</Form.Control.Feedback>
               </Form.Group>
@@ -179,7 +185,7 @@ export default function VerticalLinearStepper() {
             <Col xs={4}>
               <div className='White'></div>
               <div className="inputGroup">
-                <input id="radio1" type="radio" name="finishColor" value="White Paint" onChange={updateState} />
+                <input id="radio1" type="radio" name="finishColor" checked={state.finishColor === 'White Paint'} value="White Paint" onChange={updateState} />
                 <label htmlFor="radio1">White</label>
               </div>
             </Col>
@@ -507,11 +513,6 @@ export default function VerticalLinearStepper() {
           </Step>
         ))}
       </Stepper>
-      {activeStep === steps.length && (
-        <Paper square elevation={0}>
-          <Typography>All steps completed - you&apos;re finished</Typography>
-        </Paper>
-      )}
     </Container>
   );
 }
