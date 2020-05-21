@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import MyParallax from "./components/Parallax/MyParallax.js";
+
 // import TypingEffect from "./components/TypingEffect/TypingEffect.js";
 import Quote from "./pages/Quote/Quote.js";
 import { GlobalStateProvider } from "./utils/GlobalState";
@@ -20,8 +21,7 @@ function Home() {
       <MyParallax />
       <About />
       {/* <TypingEffect /> */}
-      {/* <SignIn /> */}
-      <Admin />
+      <SignIn />
     </Container>
   );
 }
