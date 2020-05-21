@@ -4,8 +4,6 @@ import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import StepContent from "@material-ui/core/StepContent";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
 import { Container, Form, Col, Row } from "react-bootstrap";
 import API from "../../utils/API.js";
 import logo from "../../images/logo.png";

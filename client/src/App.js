@@ -25,7 +25,7 @@ function Home() {
       <Contact />
       {/* <TypingEffect /> */}
       {/* <SignIn /> */}
-      {/* <Admin /> */}
+      <Admin />
       <Footer />
     </Container>
   );

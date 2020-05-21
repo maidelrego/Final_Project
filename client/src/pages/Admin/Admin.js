@@ -46,7 +46,7 @@ export default function Admin() {
 
   return (
     <Container>
-      <Row className='admin-head'>
+      {/* <Row className='admin-head'>
         <Col>
           <h2 id='josh-text'>Josh Campbell</h2>
         </Col>
@@ -82,7 +82,7 @@ export default function Admin() {
             </Table>
           </Jumbotron>
         </Col>
-      </Row>
+      </Row> */}
 
       <Row>
         <Col className='p-0'>

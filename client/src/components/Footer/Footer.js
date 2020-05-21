@@ -36,7 +36,7 @@ export default function Footer () {
         <Col xs={4}>
           <p className='social-text text-center'>Follow Us!</p>
           <div className="social-buttons">
-            <a href="#" className="social-buttons__button social-button social-button--facebook" aria-label="Facebook">
+            <a href="https://www.facebook.com/campbellwooddesigns" target='blank' className="social-buttons__button social-button social-button--facebook" aria-label="Facebook">
               <span className="social-button__inner">
                 <i className="fab fa-facebook-f"></i>
               </span>
