@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
@@ -11,13 +12,20 @@ import logo from "../../images/logo.png";
 import { useGlobalContext } from "../../utils/GlobalState.js";
 import "./quote.scss";
 
-
 function getSteps() {
-  return ["Info", "Finish", "Door Design", "Barn Door Kit", "Handle", "Preferences", "Review"];
+  return [
+    "Info",
+    "Finish",
+    "Door Design",
+    "Barn Door Kit",
+    "Handle",
+    "Preferences",
+    "Review",
+  ];
 }
 
 export default function VerticalLinearStepper() {
-
+  const history = useHistory();
   const [state, dispatch] = useGlobalContext();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
@@ -27,10 +35,10 @@ export default function VerticalLinearStepper() {
     dispatch({ type: event.target.name, value: event.target.value });
   }
 
-  const handleBack = () => {
+  const handleBack = (event) => {
+    event.preventDefault();
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
-
 
 
   const handleNext = (event) => {
@@ -60,17 +68,17 @@ export default function VerticalLinearStepper() {
         handle: state.handle,
         installOrDelivery: state.installOrDelivery,
         dimensionsH: state.dimensionsH,
-        dimensionsW: state.dimensionsW
+        dimensionsW: state.dimensionsW,
       })
-        .then(() => alert("Success"))
+        .then(() => {
+          history.push("/thankyou");
+        })
         .catch(err => console.log(err));
-      setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    } else {
+    }
+    if (activeStep < 6) {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
   };
-
-
 
   function getStepContent(step) {
     switch (step) {
@@ -79,7 +87,7 @@ export default function VerticalLinearStepper() {
         <div>
           <Row>
             <Col>
-              <div><img className='logo mb-3' alt={logo} src={logo}></img></div>
+              <div><img className='logo mb-5' alt={logo} src={logo}></img></div>
             </Col>
           </Row>
           <Row>
@@ -88,12 +96,11 @@ export default function VerticalLinearStepper() {
             </Col>
           </Row>
 
-
           <Form noValidate validated={validated} onSubmit={handleNext} id="form0">
             <Form.Row>
               <Form.Group as={Col} md="5">
                 <Form.Label>First name</Form.Label>
-                <Form.Control required type="text" name="firstName" placeholder="First name" onChange={updateState} />
+                <Form.Control required type="text" name="firstName" placeholder="First name" value={state.firstName} onChange={updateState} />
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 <Form.Control.Feedback type="invalid">Ooops!</Form.Control.Feedback>
               </Form.Group>
@@ -164,7 +171,7 @@ export default function VerticalLinearStepper() {
         <div>
           <Row>
             <Col>
-              <div><img className='logo mb-3' alt={logo} src={logo}></img></div>
+              <div><img className='logo mb-5' alt={logo} src={logo}></img></div>
             </Col>
           </Row>
           <Row>
@@ -178,7 +185,7 @@ export default function VerticalLinearStepper() {
             <Col xs={4}>
               <div className='White'></div>
               <div className="inputGroup">
-                <input id="radio1" type="radio" name="finishColor" value="White Paint" onChange={updateState} />
+                <input id="radio1" type="radio" name="finishColor" checked={state.finishColor === 'White Paint'} value="White Paint" onChange={updateState} />
                 <label htmlFor="radio1">White</label>
               </div>
             </Col>
@@ -235,7 +242,7 @@ export default function VerticalLinearStepper() {
         <div>
           <Row>
             <Col>
-              <div><img className='logo mb-3' alt={logo} src={logo}></img></div>
+              <div><img className='logo mb-5' alt={logo} src={logo}></img></div>
             </Col>
           </Row>
           <Row>
@@ -298,7 +305,7 @@ export default function VerticalLinearStepper() {
         <div>
           <Row>
             <Col>
-              <div><img className='logo mb-3' alt={logo} src={logo}></img></div>
+              <div><img className='logo mb-5' alt={logo} src={logo}></img></div>
             </Col>
           </Row>
           <Row>
@@ -341,7 +348,7 @@ export default function VerticalLinearStepper() {
         <div>
           <Row>
             <Col>
-              <div><img className='logo mb-3' alt={logo} src={logo}></img></div>
+              <div><img className='logo mb-5' alt={logo} src={logo}></img></div>
             </Col>
           </Row>
           <Row>
@@ -385,7 +392,7 @@ export default function VerticalLinearStepper() {
         <div>
           <Row>
             <Col>
-              <div><img className='logo mb-3' alt={logo} src={logo}></img></div>
+              <div><img className='logo mb-5' alt={logo} src={logo}></img></div>
             </Col>
           </Row>
           <Row>
@@ -431,7 +438,7 @@ export default function VerticalLinearStepper() {
             </Col>
           </Row>
           <button className='btn' onClick={handleBack}>Back</button>
-          <button type="submit" onClick={handleNext} className='btn btn-primary'>Next</button>
+          <button type="submit" disabled={!(state.installOrDelivery)} onClick={handleNext} className='btn btn-primary'>Next</button>
         </div>
       );
 
@@ -440,7 +447,7 @@ export default function VerticalLinearStepper() {
         <Form className='text-center mb-5' onSubmit={handleNext}>
           <Row>
             <Col>
-              <div><img className='logo mb-3' alt={logo} src={logo}></img></div>
+              <div><img className='logo mb-5' alt={logo} src={logo}></img></div>
             </Col>
           </Row>
           <Row>
@@ -450,38 +457,40 @@ export default function VerticalLinearStepper() {
           </Row>
           <Row>
             <Col xs={6}>
-              <h3 className='caption'>Your Name:</h3><p>{state.firstName} {state.lastName}</p>
-              <h3 className='caption'>Email:</h3><p>{state.email}</p>
-              <h3 className='caption'>Phone Number:</h3><p>{state.phoneNumber}</p>
-              <h3 className='caption'>Address:</h3><p>{state.address} {state.address2} {state.city} {state.state} {state.zip} </p>
+              <h3 className='caption'>Your Name:</h3><p className='detailsText'>{state.firstName} {state.lastName}</p>
+              <h3 className='caption'>Email:</h3><p className='detailsText'>{state.email}</p>
+              <h3 className='caption'>Phone Number:</h3><p className='detailsText'>{state.phoneNumber}</p>
+              <h3 className='caption'>Address:</h3><p className='detailsText'>{state.address} {state.address2} {state.city} {state.state} {state.zip} </p>
             </Col>
 
             <Col xs={6}>
               <h3 className='caption'>Dimensions:</h3>
-              <h5>Width :</h5> <p>{state.dimensionsW} In</p>
-              <h5>Height :</h5> <p>{state.dimensionsH} In</p>
+              <h5>Width (In) :</h5> <p className='detailsText'>{state.dimensionsW}</p>
+              <h5>Height (In) :</h5> <p className='detailsText'>{state.dimensionsH}</p>
+              <h3 className='caption mt-4'>You Selected:</h3>{state.installOrDelivery}
             </Col>
 
           </Row>
           <hr />
           <Row className='mt-4'>
             <Col xs={3}>
-              <h3 className='caption'>Finish:</h3><p>{state.finishColor}</p>
+              <h3 className='caption'>Finish:</h3><p className='detailsText'>{state.finishColor}</p>
             </Col>
 
             <Col xs={3}>
-              <h3 className='caption'>Design:</h3><p>{state.doorDesign}</p>
+              <h3 className='caption'>Design:</h3><p className='detailsText'>{state.doorDesign}</p>
             </Col>
 
             <Col xs={3}>
-              <h3 className='caption'>Kit:</h3><p>{state.doorKit}</p>
+              <h3 className='caption'>Kit:</h3><p className='detailsText'>{state.doorKit}</p>
             </Col>
 
             <Col xs={3}>
-              <h3 className='caption'>Handle:</h3><p>{state.handle}</p>
+              <h3 className='caption'>Handle:</h3><p className='detailsText'>{state.handle}</p>
             </Col>
           </Row>
-          <button type='submit' className='btn btn-success' onClick={handleNext}>Finish</button>
+          <button className='btn mt-5' onClick={handleBack}>Back</button>
+          <button type='submit' className='btn btn-success mt-5' onClick={handleNext}>Finish</button>
         </Form>
       );
 
@@ -494,25 +503,16 @@ export default function VerticalLinearStepper() {
 
   // STEPPER FROM MATERIAL UI
 
-
-
   return (
     <Container>
       <Stepper activeStep={activeStep} orientation="vertical">
         {steps.map((label, index) => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
-            <StepContent>
-              {getStepContent(index)}
-            </StepContent>
+            <StepContent>{getStepContent(index)}</StepContent>
           </Step>
         ))}
       </Stepper>
-      {activeStep === steps.length && (
-        <Paper square elevation={0} >
-          <Typography>All steps completed - you&apos;re finished</Typography>
-        </Paper>
-      )}
     </Container>
   );
 }
