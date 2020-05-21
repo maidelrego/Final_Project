@@ -17,4 +17,18 @@ export default {
   saveQuote: function (quoteData) {
     return axios.post("/api/quotes", quoteData);
   },
+
+  saveMessage: function (messageData) {
+    return axios.post("/api/message", messageData);
+  },
+
+  getMessages: function () {
+    return axios.get("/api/message");
+  },
+  getMessage: function (id) {
+    return axios.get("/api/message/" + id);
+  },
+  deleteMessage: function (id) {
+    return axios.delete("/api/message/" + id);
+  },
 };

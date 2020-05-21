@@ -1,24 +1,56 @@
+// ********** FORM CSS **********//
+
 .map{
     width: 100%;
     height: 600px;
     border: 0;
 }
 
-// .overmap {
-//     width: 500px;
-//     z-index: 10;
-//     position: absolute;
-//     left: 725px;
-//     top: 400px;
-//     background-color: #fff;
-//     border: 3px solid;
-//     padding: 10px;
-// }
 
-// .contact {
-//     position: relative;
-//     bottom: 35px;
-//     background-color: #fff;
-//     width: 50%;
-//     left: 120px;
-// }
+.contact-list .list-item {
+    list-style-type: none;
+    line-height: 5; 
+}
+
+.contact-text a {
+    text-decoration: none;
+    transition-duration: 0.2s;
+    color: black;
+    
+  }
+  
+  .contact-text a:hover {
+    text-decoration: none;
+  }
+  
+
+.contact-list a {
+    text-decoration: none;
+}
+
+.contact-text {
+    letter-spacing: 1.9px;
+    font-family: 'Forum', cursive;
+    margin-left: 40px;
+    font-size: 20px;
+}
+
+
+#contact-img {
+  position: relative;
+  margin-bottom: 40em;
+  display: block;
+}
+
+#contact-form {
+    display: block;
+    background-color: white;
+    position: absolute;
+    // width: 50%;
+    // z-index: 1;
+    // left: 450px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    padding-bottom: 10px;
+    transform: translateY(-15em);
+    width: 100%;
+}
