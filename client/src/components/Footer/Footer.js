@@ -3,6 +3,9 @@ import React from "react";
 import { Row, Col, Container} from "react-bootstrap";
 import "./footer.scss";
 
+import { Link } from "react-router-dom";
+
+
 
 
 export default function Footer () {
@@ -47,7 +50,8 @@ export default function Footer () {
               </span>
             </a>
           </div>
-          <div className='text-center mt-4 login'><button className='btn'>Login</button></div>
+          <div className='text-center mt-4 login'><Link className='btn' to={"/login"}>Login</Link></div>
+
         </Col>
       </Row>
       <hr />
