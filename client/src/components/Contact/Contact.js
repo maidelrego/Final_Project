@@ -85,7 +85,7 @@ const About = () => {
             <button className='btn btn-primary btn-block' type="submit">Send</button>
           </Form>
           <hr />
-          <ul className="contact-list">
+          <ul className="contact-list text-center mt-3">
             <li className="list-item"><i className="fas fa-map-marked-alt fa-2x"><span className="contact-text">Excelsior Springs | MO</span></i></li>
             <li className="list-item"><i className="fas fa-phone-alt fa-2x"><span className="contact-text"><a href="tel:1-816-500-7218" title="Give me a call">(816) 500-7218</a></span></i></li>
             <li className="list-item"><i className="fa fa-envelope fa-2x"><span className="contact-text"><a href="mailto:campbellwooddesigns@gmail.com" title="Send me an email">campbellwooddesigns@gmail.com</a></span></i></li>

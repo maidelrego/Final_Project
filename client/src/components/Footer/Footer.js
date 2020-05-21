@@ -26,9 +26,9 @@ export default function Footer () {
         </Col>
 
         <Col xs={4}>
-          <p className='logo-name'>Capmbell Wood Designs</p>
+          <p className='logo-name'>Campbell Wood Designs</p>
           <div className='about-text'>
-            Family owned business ,located in our hometown of Excelsior Springs, Missouri.
+            Family owned business located in our hometown of Excelsior Springs, Missouri.
             We are here to help you and delivery the best service.
           </div>
         </Col>
