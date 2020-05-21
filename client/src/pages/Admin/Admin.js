@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Container, Jumbotron, Table, } from "react-bootstrap";
-import Chart from "../../components/Chart/Chart.js";
+// import Chart from "../../components/Chart/Chart.js";
+// import NewChart from "../../components/NewChart/ChartParent"
 import API from "../../utils/API.js";
 import { Link, Redirect } from "react-router-dom";
 import "./admin.css";
@@ -46,7 +47,7 @@ export default function Admin() {
         <Col className='p-0'>
           <Jumbotron>
             <h2 className='text-center' id='table-header'>Quotes</h2>
-            <Chart />
+            {/* <Chart /> */}
           </Jumbotron>
           <Jumbotron>
             <Table responsive hover className='text-center'>

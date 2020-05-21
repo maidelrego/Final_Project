@@ -10,10 +10,6 @@ export default {
   logout: function () {
     return axios.get("/api/logout");
   },
-  chartGen: function () {
-    return axios.get("/api/chart");
-  },
-
   // Gets all quotes
   getQuotes: function () {
     return axios.get("/api/quotes");

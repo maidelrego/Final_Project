@@ -1,6 +1,6 @@
 const passport = require('passport')
 const router = require("express").Router();
-const isAuthenticated = require("../../config/isAuthenticated")
+// const isAuthenticated = require("../../config/isAuthenticated")
 const quotesController = require("../../controllers/quoteController.js");
 
 // Matches with "/api/books"
@@ -13,7 +13,7 @@ router.route("/quotes/:id")
   .delete(quotesController.delete);
 
 router.get('/admin',
- isAuthenticated, 
+//  isAuthenticated, 
  (req, res) => {
 
     res.json({ status: 'ok' })
