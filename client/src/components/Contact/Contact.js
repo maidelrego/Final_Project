@@ -42,7 +42,7 @@ const About = () => {
 
 
   return (
-    <Container fluid id='contact-img'>
+    <Container fluid id='contact'>
       <Row>
         <Col>
           <h1 className='text-center mt-4'>Contact Us</h1>

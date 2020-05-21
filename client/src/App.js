@@ -57,47 +57,18 @@ function App() {
           <Route exact path="/login">
             <SignIn />
           </Route>
-          {/* <IsAuthenticatedRoute> */}
-
           <Route exact path="/admin">
-
             <Admin />
           </Route>
           <Route exact path="/admin/:id">
             <QuoteDetail />
           </Route>
-
           <Route>
             <NoMatch />
           </Route>
-          {/* </IsAuthenticatedRoute> */}
-
         </Switch>
       </Router>
     </GlobalStateProvider>
-
-
-
-
-    // <GlobalStateProvider>
-    //   <Router>
-    //     <NavBar />
-    //     <UnAuthenticatedRoute exact path="/" component={Home} />
-    //     <UnAuthenticatedRoute exact path="/quote" component={Quote} />
-    //     <UnAuthenticatedRoute exact path="/gallery" component={Gallery} />
-    //     <UnAuthenticatedRoute exact path="/login" component={SignIn} />
-    //     <IsAuthenticatedRoute path='/admin' component={Admin} />
-
-    //     <Switch >
-
-
-
-    //       <IsAuthenticatedRoute exact path="/admin/:id">
-    //         <QuoteDetail />
-    //       </IsAuthenticatedRoute>
-    //     </Switch>
-    //   </Router>
-    // </GlobalStateProvider>
   );
 }
 

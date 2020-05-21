@@ -50,7 +50,7 @@ export default function Footer () {
               </span>
             </a>
           </div>
-          <div className='text-center mt-4 login'><Link className='btn' to={"/login"}>Login</Link></div>
+          <div className='text-center mt-4 login'><Link className='btn' to={"/login"}>Sign In</Link></div>
 
         </Col>
       </Row>
