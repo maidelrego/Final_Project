@@ -23,6 +23,9 @@ const reducer = (state, action) => {
     case "installOrDelivery":
     case "dimensionsH":
     case "dimensionsW":
+    case "name":
+    case "emailMessage":
+    case "message": 
 
       return { ...state, [action.type]: action.value };
 
@@ -49,7 +52,10 @@ const GlobalStateProvider = ({ value = 0, ...props }) => {
     handle: '',
     installOrDelivery: '',
     dimensionsH: '',
-    dimensionsW: ''
+    dimensionsW: '',
+    name: '',
+    emailMessage: '',
+    message: ''
   });
 
   return <Provider value={[state, dispatch]} {...props} />;
