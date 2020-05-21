@@ -87,7 +87,9 @@ export default function VerticalLinearStepper() {
         <div>
           <Row>
             <Col>
+
               <div><img className="logo mb-5" alt={logo} src={logo}></img></div>
+
             </Col>
           </Row>
           <Row>
@@ -171,7 +173,9 @@ export default function VerticalLinearStepper() {
         <div>
           <Row>
             <Col>
+
               <div><img className="logo mb-5" alt={logo} src={logo}></img></div>
+
             </Col>
           </Row>
           <Row>
@@ -185,7 +189,9 @@ export default function VerticalLinearStepper() {
             <Col xs={4}>
               <div className="White"></div>
               <div className="inputGroup">
+
                 <input id="radio1" type="radio" name="finishColor" checked={state.finishColor === "White Paint"} value="White Paint" onChange={updateState} />
+
                 <label htmlFor="radio1">White</label>
               </div>
             </Col>
@@ -242,7 +248,9 @@ export default function VerticalLinearStepper() {
         <div>
           <Row>
             <Col>
+
               <div><img className="logo mb-5" alt={logo} src={logo}></img></div>
+
             </Col>
           </Row>
           <Row>
@@ -305,7 +313,9 @@ export default function VerticalLinearStepper() {
         <div>
           <Row>
             <Col>
+
               <div><img className="logo mb-5" alt={logo} src={logo}></img></div>
+
             </Col>
           </Row>
           <Row>
@@ -348,7 +358,9 @@ export default function VerticalLinearStepper() {
         <div>
           <Row>
             <Col>
+
               <div><img className="logo mb-5" alt={logo} src={logo}></img></div>
+
             </Col>
           </Row>
           <Row>
@@ -392,7 +404,9 @@ export default function VerticalLinearStepper() {
         <div>
           <Row>
             <Col>
+
               <div><img className="logo mb-5" alt={logo} src={logo}></img></div>
+
             </Col>
           </Row>
           <Row>
@@ -437,8 +451,10 @@ export default function VerticalLinearStepper() {
               </Form>
             </Col>
           </Row>
+
           <button className="btn" onClick={handleBack}>Back</button>
           <button type="submit" disabled={!(state.installOrDelivery)} onClick={handleNext} className="btn btn-primary">Next</button>
+
         </div>
       );
 
@@ -447,7 +463,9 @@ export default function VerticalLinearStepper() {
         <Form className="text-center mb-5" onSubmit={handleNext}>
           <Row>
             <Col>
+
               <div><img className="logo mb-5" alt={logo} src={logo}></img></div>
+
             </Col>
           </Row>
           <Row>
@@ -457,6 +475,7 @@ export default function VerticalLinearStepper() {
           </Row>
           <Row>
             <Col xs={6}>
+
               <h3 className="caption">Your Name:</h3><p className="detailsText">{state.firstName} {state.lastName}</p>
               <h3 className="caption">Email:</h3><p className="detailsText">{state.email}</p>
               <h3 className="caption">Phone Number:</h3><p className="detailsText">{state.phoneNumber}</p>
@@ -468,12 +487,14 @@ export default function VerticalLinearStepper() {
               <h5>Width (In) :</h5> <p className="detailsText">{state.dimensionsW}</p>
               <h5>Height (In) :</h5> <p className="detailsText">{state.dimensionsH}</p>
               <h3 className="caption mt-4">You Selected:</h3>{state.installOrDelivery}
+
             </Col>
 
           </Row>
           <hr />
           <Row className="mt-4">
             <Col xs={3}>
+
               <h3 className="caption">Finish:</h3><p className="detailsText">{state.finishColor}</p>
             </Col>
 
@@ -491,6 +512,7 @@ export default function VerticalLinearStepper() {
           </Row>
           <button className="btn mt-5" onClick={handleBack}>Back</button>
           <button type="submit" className="btn btn-success mt-5" onClick={handleNext}>Finish</button>
+
         </Form>
       );
 

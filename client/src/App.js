@@ -13,8 +13,10 @@ import Contact from "./components/Contact/Contact.js";
 import Display from "./components/Alert/Alert.js";
 import QuoteDetail from "./pages/Quote/QuoteDetails.js";
 import Admin from "./pages/Admin/Admin";
+
 // import IsAuthenticatedRoute from "./components/Auth/isAuthenticatedRoute";
 // import UnAuthenticatedRoute from "./components/Auth/unAuthenticatedRoute";
+
 import NoMatch from "./pages/NoMatch/NoMatch.js";
 import SignIn from "./pages/SignIn/SignIn.js";
 import Footer from "./components/Footer/Footer.js";
@@ -27,7 +29,9 @@ function Home() {
       <About />
       <Contact />
       {/* <TypingEffect /> */}
+
       {/* <QuoteDetails /> */}
+
       {/* <SignIn /> */}
       {/* <Admin /> */}
       <Footer />
@@ -49,10 +53,12 @@ function App() {
           <Route exact path="/quote" component={Quote} />
           <Route exact path="/thankyou" component={Display} />
           <Route exact path="/gallery" component={Gallery} />
+
           <Route exact path="/login">
             <SignIn />
           </Route>
           {/* <IsAuthenticatedRoute> */}
+
           <Route exact path="/admin">
 
             <Admin />
@@ -65,6 +71,7 @@ function App() {
             <NoMatch />
           </Route>
           {/* </IsAuthenticatedRoute> */}
+
         </Switch>
       </Router>
     </GlobalStateProvider>

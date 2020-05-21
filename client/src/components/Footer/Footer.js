@@ -2,7 +2,9 @@
 import React from "react";
 import { Row, Col, Container} from "react-bootstrap";
 import "./footer.scss";
+
 import { Link } from "react-router-dom";
+
 
 
 
@@ -49,6 +51,7 @@ export default function Footer () {
             </a>
           </div>
           <div className='text-center mt-4 login'><Link className='btn' to={"/login"}>Login</Link></div>
+
         </Col>
       </Row>
       <hr />

@@ -25,12 +25,14 @@ export default function Admin() {
     loadQuotes();
   }, []);
 
+
   function handleLogout(e) {
     e.preventDefault();
     API.logout().then(() => {
       window.location.replace("/login");
     });
   }
+
 
   useEffect(() => {
     loadMessages();
@@ -55,7 +57,9 @@ export default function Admin() {
           <h2 id="josh-text">Josh Campbell</h2>
         </Col>
         <Col>
+
           <button className='btn logout' onClick={handleLogout} ><i className="fas fa-sign-out-alt"></i>Log Out</button>
+
         </Col>
       </Row>
       <Row>
