@@ -1,10 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
 .admin-head {
-    background-color: white;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
     margin-bottom: 20px;
     height: 70px;
+}
+
+.sms-header {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.logo-admin {
+  width: 200px;
+  height: 100px;
+}
+
+#jumbo {
+  padding-top: 30px;
+  padding-bottom: 10px;
 }
 
 .logout {
@@ -41,12 +54,3 @@
   border-radius: 8px;
 }
 
-#quote-jumbo {
-  background-color: red;
-  width: 300px;
-  height: 300px;
-}
-
-.MuiBox-root-32 {
-  width: 100%;
-}

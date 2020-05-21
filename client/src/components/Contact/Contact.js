@@ -50,7 +50,7 @@ const About = () => {
       </Row>
       <Row>
         <Col xs={12} className='p-0'>
-          <iframe className='map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3085.617735054326!2d-94.2230803843744!3d39.34224552820393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c1a5ee7b4257b5%3A0xa3156fb668eedb48!2s255%20E%20Broadway%20Ave%2C%20Excelsior%20Springs%2C%20MO%2064024!5e0!3m2!1sen!2sus!4v1589251463454!5m2!1sen!2sus"></iframe>
+          <iframe title='map' className='map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3085.617735054326!2d-94.2230803843744!3d39.34224552820393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c1a5ee7b4257b5%3A0xa3156fb668eedb48!2s255%20E%20Broadway%20Ave%2C%20Excelsior%20Springs%2C%20MO%2064024!5e0!3m2!1sen!2sus!4v1589251463454!5m2!1sen!2sus"></iframe>
         </Col>
       </Row>
       <Row>
@@ -59,7 +59,7 @@ const About = () => {
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Form.Row>
               <Form.Group as={Col} xs="12" controlId="validationCustom01">
-                <Form.Label>First name</Form.Label>
+                <Form.Label>Full Name</Form.Label>
                 <Form.Control required type="text" name="name" onChange={updateState} />
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 <Form.Control.Feedback type="invalid">We need your Name!</Form.Control.Feedback>
@@ -85,7 +85,7 @@ const About = () => {
             <button className='btn btn-primary btn-block' type="submit">Send</button>
           </Form>
           <hr />
-          <ul className="contact-list text-center mt-3">
+          <ul className="contact-list ml-5 mt-3">
             <li className="list-item"><i className="fas fa-map-marked-alt fa-2x"><span className="contact-text">Excelsior Springs | MO</span></i></li>
             <li className="list-item"><i className="fas fa-phone-alt fa-2x"><span className="contact-text"><a href="tel:1-816-500-7218" title="Give me a call">(816) 500-7218</a></span></i></li>
             <li className="list-item"><i className="fa fa-envelope fa-2x"><span className="contact-text"><a href="mailto:campbellwooddesigns@gmail.com" title="Send me an email">campbellwooddesigns@gmail.com</a></span></i></li>

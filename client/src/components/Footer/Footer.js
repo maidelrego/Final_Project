@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 import React from "react";
-import { Row, Col, Container} from "react-bootstrap";
+import { Row, Col,} from "react-bootstrap";
 import "./footer.scss";
 
 import { Link } from "react-router-dom";
@@ -44,7 +44,7 @@ export default function Footer () {
                 <i className="fab fa-facebook-f"></i>
               </span>
             </a>
-            <a href="#" className="social-buttons__button social-button social-button--instagram" aria-label="Instagram">
+            <a href="https://www.instagram.com/campbell_wood_designs/?hl=en" className="social-buttons__button social-button social-button--instagram" aria-label="Instagram">
               <span className="social-button__inner">
                 <i className="fab fa-instagram"></i>
               </span>
