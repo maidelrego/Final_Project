@@ -17,12 +17,12 @@ router
 
 // contact routes
 router
-  .route("/contact")
+  .route("/message")
   .get(contactController.findAll)
   .post(contactController.create);
 
 router
-  .route("/contact/:id")
+  .route("/message/:id")
   .get(contactController.findById)
   .delete(contactController.delete);
 

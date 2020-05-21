@@ -20,18 +20,14 @@ import Footer from "./components/Footer/Footer.js";
 
 function Home() {
   return (
-    <Container fluid className='p-0'>
+    <Container fluid className="p-0">
       <MyParallax />
       <About />
       <Contact />
       {/* <TypingEffect /> */}
-<<<<<<< HEAD
-      <SignIn />
-=======
       {/* <SignIn /> */}
       {/* <Admin /> */}
       <Footer />
->>>>>>> 1019f8da863310f2a21413dee2235a96d9d50689
     </Container>
   );
 }

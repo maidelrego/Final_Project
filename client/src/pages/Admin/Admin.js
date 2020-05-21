@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col, Container, Jumbotron, Table, } from "react-bootstrap";
+import { Row, Col, Container, Jumbotron, Table } from "react-bootstrap";
 import API from "../../utils/API.js";
 import { Link } from "react-router-dom";
 import "./admin.css";
@@ -10,16 +10,14 @@ export default function Admin() {
 
   function loadQuotes() {
     API.getQuotes()
-      .then(res => setQuotes(res.data))
-      .catch(err => console.log(err));
-
+      .then((res) => setQuotes(res.data))
+      .catch((err) => console.log(err));
   }
 
   function loadMessages() {
     API.getMessages()
-      .then(res => setMessages(res.data))
-      .catch(err => console.log(err));
-
+      .then((res) => setMessages(res.data))
+      .catch((err) => console.log(err));
   }
 
   useEffect(() => {
@@ -27,19 +25,16 @@ export default function Admin() {
     loadQuotes();
   }, []);
 
-<<<<<<< HEAD
-=======
   useEffect(() => {
     loadMessages();
   }, []);
 
   function deleteMessage(id) {
     API.deleteMessage(id)
-      .then(res => loadMessages())
-      .catch(err => console.log(err));
+      .then((res) => loadMessages())
+      .catch((err) => console.log(err));
   }
 
->>>>>>> 1019f8da863310f2a21413dee2235a96d9d50689
   function deleteQuote(id) {
     API.deleteQuote(id)
       .then((res) => loadQuotes())
@@ -61,22 +56,26 @@ export default function Admin() {
       <Row>
         <Col className="p-0">
           <Jumbotron>
-<<<<<<< HEAD
-            <h1 className="text-center">Quotes</h1>
-=======
-            <h1 className='text-center'>Messages</h1>
+            <h1 className="text-center">Messages</h1>
           </Jumbotron>
           <Jumbotron>
-            <Table responsive className='text-center'>
+            <Table responsive className="text-center">
               {messages.length ? (
                 <tbody>
-                  {messages.map(messages => (
+                  {messages.map((messages) => (
                     <tr key={messages._id}>
-                      <td className='td-admin'>{messages.date}</td>
-                      <td className='td-admin'>{messages.name}</td>
+                      <td className="td-admin">{messages.date}</td>
+                      <td className="td-admin">{messages.name}</td>
                       <td>
-                        <Link className='btn' to={"/admin/" + messages._id}>View Quote</Link>
-                        <button className='btn' onClick={() => deleteMessage(messages._id)}><i className="fas fa-trash delete"></i></button>
+                        <Link className="btn" to={"/admin/" + messages._id}>
+                          View Quote
+                        </Link>
+                        <button
+                          className="btn"
+                          onClick={() => deleteMessage(messages._id)}
+                        >
+                          <i className="fas fa-trash delete"></i>
+                        </button>
                       </td>
                     </tr>
                   ))}
@@ -92,10 +91,9 @@ export default function Admin() {
       </Row>
 
       <Row>
-        <Col className='p-0'>
+        <Col className="p-0">
           <Jumbotron>
-            <h1 className='text-center'>Quotes</h1>
->>>>>>> 1019f8da863310f2a21413dee2235a96d9d50689
+            <h1 className="text-center">Quotes</h1>
           </Jumbotron>
           <Jumbotron>
             <Table responsive className="text-center">

@@ -1,6 +1,6 @@
 const db = require("../models");
 
-// Defining methods for the quoteController
+// Defining methods for the contactController
 module.exports = {
   findAll: function (req, res) {
     db.Contact.find(req.query)
