@@ -46,7 +46,6 @@ const quoteSchema = new Schema({
   installOrDelivery: { type: String },
   dimensionsH: { type: Number },
   dimensionsW: { type: Number },
-
   date: { type: String, default: Date.now },
   created_at: { type: Date, default: Date.now },
   updated_at: { type: Date, default: Date.now },

@@ -1,36 +1,49 @@
-const passport = require('passport')
+const passport = require("passport");
 const router = require("express").Router();
-const isAuthenticated = require("../../config/isAuthenticated")
+const isAuthenticated = require("../../config/isAuthenticated");
 const quotesController = require("../../controllers/quoteController.js");
+const contactController = require("../../controllers/contactController.js");
 
-// Matches with "/api/books"
-router.route("/quotes")
+// each route matches with "/api/.."
+router
+  .route("/quotes")
   .get(quotesController.findAll)
-  .post(quotesController.create)
+  .post(quotesController.create);
 
-router.route("/quotes/:id")
+router
+  .route("/quotes/:id")
   .get(quotesController.findById)
   .delete(quotesController.delete);
 
-router.get('/admin',
- isAuthenticated, 
- (req, res) => {
+// contact routes
+router
+  .route("/message")
+  .get(contactController.findAll)
+  .post(contactController.create);
 
-    res.json({ status: 'ok' })
-  })
+router
+  .route("/message/:id")
+  .get(contactController.findById)
+  .delete(contactController.delete);
 
-router.post('/login',
-  passport.authenticate('local',
-  { failureRedirect: '/login' }),
+// user login/logout routes
+router.get("/admin", isAuthenticated, (req, res) => {
+  res.json({ status: "ok" });
+});
+
+router.post(
+  "/login",
+  passport.authenticate("local", { failureRedirect: "/login" }),
   function (req, res) {
-    console.log('bonjour', req)
+    console.log("bonjour", req);
     res.json(req.user);
-  });
+  }
+);
 
-  // Route for logging user out
-  router.get('/logout', function (req, res) {
-    console.log(req)
-    req.logout()
-    res.redirect('/')
-  })
-module.exports = router
+// Route for logging user out
+router.get("/logout", function (req, res) {
+  console.log(req);
+  req.logout();
+  res.redirect("/");
+});
+module.exports = router;

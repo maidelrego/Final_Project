@@ -1,31 +1,31 @@
 const db = require("../models");
 
-// Defining methods for the quoteController
+// Defining methods for the contactController
 module.exports = {
   findAll: function (req, res) {
-    db.Quote.find(req.query)
+    db.Contact.find(req.query)
       .sort({ date: -1 })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   findById: function (req, res) {
-    db.Quote.findById(req.params.id)
+    db.Contact.findById(req.params.id)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   create: function (req, res) {
     console.log("look here", req.body);
-    db.Quote.create(req.body)
+    db.Contact.create(req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   update: function (req, res) {
-    db.Quote.findOneAndUpdate({ _id: req.params.id }, req.body)
+    db.Contact.findOneAndUpdate({ _id: req.params.id }, req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   delete: function (req, res) {
-    db.Quote.findById({ _id: req.params.id })
+    db.Contact.findById({ _id: req.params.id })
       .then((dbModel) => dbModel.remove())
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));

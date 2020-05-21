@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import MyParallax from "./components/Parallax/MyParallax.js";
+
 // import TypingEffect from "./components/TypingEffect/TypingEffect.js";
 import Quote from "./pages/Quote/Quote.js";
 import { GlobalStateProvider } from "./utils/GlobalState";
@@ -19,7 +20,7 @@ import Footer from "./components/Footer/Footer.js";
 
 function Home() {
   return (
-    <Container fluid className='p-0'>
+    <Container fluid className="p-0">
       <MyParallax />
       <About />
       <Contact />
