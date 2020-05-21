@@ -18,16 +18,6 @@ export default function Admin() {
     loadQuotes();
   }, []);
 
-  // function checkLogin() {
-  //   API.getUser()
-  //     .then((res) => {
-  //       console.log("user is logged in", res.id);
-  //     })
-  //     .catch((err) => {
-  //       console.log("redirect", err);
-  //     });
-  // }
-
   function deleteQuote(id) {
     API.deleteQuote(id)
       .then((res) => loadQuotes())
