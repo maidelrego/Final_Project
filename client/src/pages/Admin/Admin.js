@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Container, Jumbotron, Table } from "react-bootstrap";
 import API from "../../utils/API.js";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import "./admin.css";
 
 export default function Admin() {
@@ -24,6 +24,15 @@ export default function Admin() {
     // checkLogin();
     loadQuotes();
   }, []);
+
+
+  function handleLogout(e) {
+    e.preventDefault();
+    API.logout().then(() => {
+      window.location.replace("/login");
+    });
+  }
+
 
   useEffect(() => {
     loadMessages();
@@ -48,9 +57,9 @@ export default function Admin() {
           <h2 id="josh-text">Josh Campbell</h2>
         </Col>
         <Col>
-          <button className="btn logout">
-            <i className="fas fa-sign-out-alt"></i>Log Out
-          </button>
+
+          <button className='btn logout' onClick={handleLogout} ><i className="fas fa-sign-out-alt"></i>Log Out</button>
+
         </Col>
       </Row>
       <Row>

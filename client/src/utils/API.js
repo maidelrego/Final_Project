@@ -1,6 +1,15 @@
 import axios from "axios";
 
 export default {
+  postUser: function (formData) {
+    return axios.post("/api/login/", formData);
+  },
+  getUser: function (id) {
+    return axios.get("/api/admin/" + id);
+  },
+  logout: function () {
+    return axios.get("/api/logout");
+  },
   // Gets all quotes
   getQuotes: function () {
     return axios.get("/api/quotes");
