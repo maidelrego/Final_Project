@@ -721,9 +721,9 @@ export default function VerticalLinearStepper() {
 
               <Col xs={6}>
                 <h3 className="caption">Dimensions:</h3>
-                <h5>Width (In) :</h5>{" "}
+                <h5>Width (In) :</h5>
                 <p className="detailsText">{state.dimensionsW}</p>
-                <h5>Height (In) :</h5>{" "}
+                <h5>Height (In) :</h5>
                 <p className="detailsText">{state.dimensionsH}</p>
                 <h3 className="caption mt-4">You Selected:</h3>
                 {state.installOrDelivery}
