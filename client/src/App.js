@@ -9,22 +9,24 @@ import NavBar from "./components/NavBar/NavBar.js";
 import Gallery from "./pages/Gallery";
 import About from "./components/About/About.js";
 import Contact from "./components/Contact/Contact.js";
-import Display from './components/Alert/Alert.js';
+import Display from "./components/Alert/Alert.js";
 import QuoteDetail from "./pages/Quote/QuoteDetails.js";
 import Admin from "./pages/Admin/Admin";
 import NoMatch from "./pages/NoMatch/NoMatch.js";
 import SignIn from "./pages/SignIn/SignIn.js";
+import Footer from "./components/Footer/Footer.js";
 // import Contact from "./pages/Contact Us";
 
 function Home() {
   return (
-    <Container fluid>
+    <Container fluid className='p-0'>
       <MyParallax />
-      {/* <About /> */}
+      <About />
       <Contact />
       {/* <TypingEffect /> */}
       {/* <SignIn /> */}
-      <Admin />
+      {/* <Admin /> */}
+      <Footer />
     </Container>
   );
 }
