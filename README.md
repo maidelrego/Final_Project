@@ -40,12 +40,34 @@ A business with it's services on an interactive web application enables a wider 
 
 [Link to deployed application]()
 
-![Home Page](./assets/HomePage.png)
+## Photos
 
-![Quote Page](./assets/QuotePage1.png)
+- Home page
+
+![Home Page](./assets/HomePage.png)
 
 ![About Us Page](./assets/AboutUsPage.png)
 
+- Quote Page
+
+![Quote Page](./assets/QuotePage1.png)
+
+![Quote Page Door Design](./assets/DoorDesign.png)
+
+![Quote Page Finishes](./assets/Finishes.png)
+
+- Gallery Page
+
+![Gallery Page](./assets/Gallery.png)
+
+- Authenticated User Page
+
 ![Admin Page](./assets/AdminPage.png)
 
+- View the quote
+
 ![Admin View of Quote Page](./assets/AdminQuote.png)
+
+- View messages from customers
+
+![Admin View of Messages](./assets/MessagePage.png)
