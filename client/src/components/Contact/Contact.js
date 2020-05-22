@@ -60,14 +60,14 @@ const About = () => {
             <Form.Row>
               <Form.Group as={Col} xs="12" controlId="validationCustom01">
                 <Form.Label>Full Name</Form.Label>
-                <Form.Control required type="text" name="name" onChange={updateState} />
+                <Form.Control required type="text" autoFocus name="name" onChange={updateState} />
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 <Form.Control.Feedback type="invalid">We need your Name!</Form.Control.Feedback>
               </Form.Group>
 
               <Form.Group as={Col} xs="12">
                 <Form.Label>Email</Form.Label>
-                <Form.Control required type="email" name="emailMessage" onChange={updateState} />
+                <Form.Control required type="email" name="emailMessage" autoFocus onChange={updateState} />
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 <Form.Control.Feedback type="invalid">Enter a valid Email!</Form.Control.Feedback>
               </Form.Group>
@@ -75,7 +75,7 @@ const About = () => {
               <Form.Group as={Col} xs="12">
                 <Form.Label>Message</Form.Label>
                 <InputGroup>
-                  <Form.Control as='textarea' name="message" rows="3" required onChange={updateState} />
+                  <Form.Control as='textarea' name="message" rows="3" autoFocus required onChange={updateState} />
                   <Form.Control.Feedback type="invalid">
                       Your Message is Missing!.
                   </Form.Control.Feedback>
