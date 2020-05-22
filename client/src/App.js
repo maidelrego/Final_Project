@@ -42,7 +42,7 @@ function App() {
           <Route path="/login">
             <SignIn />
             <IsAuthenticatedRoute>
-              <Route path="/admin">
+              <Route exact path="/admin">
                 <Admin />
               </Route>
               <Route path="/admin/:id">
