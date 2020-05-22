@@ -22,7 +22,15 @@ app.use(
 app.use(morgan("dev"));
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use(
+    "/static",
+    express.static(path.join(__dirname, "./client/build//static"))
+  );
+  app.get("*", function (req, res) {
+    res.sendFile("index.html", {
+      root: path.join(__dirname, "./client/build/"),
+    });
+  });
 }
 //  CORS auth
 if (app.get("env") === "development") {
