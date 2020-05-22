@@ -11,7 +11,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import "./admin.css";
 import logo from "../../images/logo.png";
 
-
 const useStyles = makeStyles(() => ({
   root: {
     width: "40%",
@@ -36,8 +35,8 @@ export default function Admin() {
 
   useEffect(() => {
     loadQuotes();
+    loadMessages();
   }, []);
-
 
   function handleLogout(e) {
     e.preventDefault();
@@ -45,10 +44,6 @@ export default function Admin() {
       window.location.replace("/login");
     });
   }
-
-  useEffect(() => {
-    loadMessages();
-  }, []);
 
   function deleteMessage(id) {
     API.deleteMessage(id)
@@ -65,21 +60,25 @@ export default function Admin() {
 
   return (
     <div>
-      <Row className='admin-head mt-2'>
+      <Row className="admin-head mt-2">
         <Col>
           <h2 id="josh-text">Josh Campbell Page</h2>
         </Col>
         <Col>
-          <button className='btn logout' onClick={handleLogout} ><i className="fas fa-sign-out-alt"></i>Log Out</button>
+          <button className="btn logout" onClick={handleLogout}>
+            <i className="fas fa-sign-out-alt"></i>Log Out
+          </button>
         </Col>
       </Row>
       <Row>
         <Col>
-          <div className='text-center mb-5'><img className='logo-admin' alt={logo} src={logo}></img></div>
+          <div className="text-center mb-5">
+            <img className="logo-admin" alt={logo} src={logo}></img>
+          </div>
         </Col>
       </Row>
 
-      <div className='container'>
+      <div className="container">
         <Row>
           <Col md={12}>
             <Jumbotron id="jumbo">
@@ -131,14 +130,18 @@ export default function Admin() {
                               aria-controls="panel1a-content"
                               id="panel1a-header"
                             >
-                              <p className='td-admin'>{messages.name}</p>
+                              <p className="td-admin">{messages.name}</p>
                             </ExpansionPanelSummary>
                             <ExpansionPanelDetails>
                               <Typography>
-                                <span className='sms-header'>Email:</span> {messages.emailMessage}
+                                <span className="sms-header">Email:</span>{" "}
+                                {messages.emailMessage}
                                 <br />
                                 <br />
-                                <span className='sms-header'>Message:</span> {messages.message}
+                                <span className="sms-header">
+                                  Message:
+                                </span>{" "}
+                                {messages.message}
                               </Typography>
                             </ExpansionPanelDetails>
                           </ExpansionPanel>

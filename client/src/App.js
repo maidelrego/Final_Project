@@ -45,7 +45,7 @@ function App() {
               <Route exact path="/admin">
                 <Admin />
               </Route>
-              <Route path="/admin/:id">
+              <Route exact path="/admin/:id">
                 <QuoteDetail />
               </Route>
             </IsAuthenticatedRoute>
