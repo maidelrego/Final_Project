@@ -4,7 +4,7 @@ Progressive Web Application in React.js
 
 ## App description
 
-The application is desgined for the small buisness owner, "Cambell Wood Designs", to interact with the public. The public will be able to view the services offered, choose options and request a quote. The application will
+The application is desgined for the small buisness owner, "Campbell Wood Designs", to interact with the public. The public will be able to view the services offered, choose options and request a quote. The application will
 email the quote request with the customer's contact information to the business. Then the buisness will contact the customer with a priced estimate.
 
 ## User Story
