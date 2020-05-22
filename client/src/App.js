@@ -41,15 +41,13 @@ function Home() {
 
 function App() {
   return (
-
-
     <GlobalStateProvider>
       <Router>
         <NavBar />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/#about" component={Home} />
-          <Route exact path="/#contact" component={Home} />
+          <Route exact path="/#contact-img" component={Home} />
           <Route exact path="/quote" component={Quote} />
           <Route exact path="/thankyou" component={Display} />
           <Route exact path="/gallery" component={Gallery} />
@@ -60,7 +58,6 @@ function App() {
           {/* <IsAuthenticatedRoute> */}
 
           <Route exact path="/admin">
-
             <Admin />
           </Route>
           <Route exact path="/admin/:id">
@@ -71,13 +68,9 @@ function App() {
             <NoMatch />
           </Route>
           {/* </IsAuthenticatedRoute> */}
-
         </Switch>
       </Router>
     </GlobalStateProvider>
-
-
-
 
     // <GlobalStateProvider>
     //   <Router>
@@ -89,8 +82,6 @@ function App() {
     //     <IsAuthenticatedRoute path='/admin' component={Admin} />
 
     //     <Switch >
-
-
 
     //       <IsAuthenticatedRoute exact path="/admin/:id">
     //         <QuoteDetail />
