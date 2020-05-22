@@ -21,6 +21,8 @@ const useStyles = makeStyles(() => ({
 export default function Admin() {
   const [quotes, setQuotes] = useState([]);
   const [messages, setMessages] = useState([]);
+  console.log(quotes);
+  console.log(messages);
 
   function loadQuotes() {
     API.getQuotes()
