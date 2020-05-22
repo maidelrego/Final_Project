@@ -48,6 +48,10 @@ A business with it's services on an interactive web application enables a wider 
 
 ![About Us Page](./assets/AboutUsPage.png)
 
+- Contact component for customers
+
+![Contact business](./assets/MessagePage.png)
+
 - Quote Page
 
 ![Quote Page](./assets/QuotePage1.png)
@@ -67,7 +71,3 @@ A business with it's services on an interactive web application enables a wider 
 - View the quote
 
 ![Admin View of Quote Page](./assets/AdminQuote.png)
-
-- View messages from customers
-
-![Admin View of Messages](./assets/MessagePage.png)
