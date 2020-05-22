@@ -43,7 +43,7 @@ if (app.get("env") === "development") {
 // Connect to the Mongo DB
 mongoose.connect(
   // process.env.MONGODB_URI ||
-  "mongodb://user:password@ds049661.mlab.com:49661/heroku_fhfzv9gh",
+  "mongodb://jacki:password12@ds049661.mlab.com:49661/heroku_fhfzv9gh",
   {
     useNewUrlParser: true,
     useFindAndModify: false,
