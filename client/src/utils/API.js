@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export default {
-  
   postUser: function (formData) {
     return axios.post("/api/login/", formData);
   },
@@ -11,19 +10,19 @@ export default {
   logout: function () {
     return axios.get("/api/logout");
   },
-  
+
   getQuotes: function () {
     return axios.get("/api/quotes");
   },
- 
+
   getQuote: function (id) {
     return axios.get("/api/quotes/" + id);
   },
-  
+
   deleteQuote: function (id) {
     return axios.delete("/api/quotes/" + id);
   },
-  
+
   saveQuote: function (quoteData) {
     return axios.post("/api/quotes", quoteData);
   },
