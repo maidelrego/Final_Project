@@ -41,15 +41,15 @@ function App() {
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/login">
             <SignIn />
-            <IsAuthenticatedRoute>
-              <Route exact path="/admin">
-                <Admin />
-              </Route>
-              <Route exact path="/admin/:id">
-                <QuoteDetail />
-              </Route>
-            </IsAuthenticatedRoute>
           </Route>
+          <IsAuthenticatedRoute>
+            <Route exact path="/admin">
+              <Admin />
+            </Route>
+            <Route exact path="/admin/:id">
+              <QuoteDetail />
+            </Route>
+          </IsAuthenticatedRoute>
           <Route>
             <NoMatch />
           </Route>
