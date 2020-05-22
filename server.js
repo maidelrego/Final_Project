@@ -7,6 +7,7 @@ const session = require("express-session");
 const app = express();
 const routes = require("./routes/index");
 const PORT = process.env.PORT || 3001;
+const path = require("path");
 // Connect to the Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/campbellwooddesigns"
