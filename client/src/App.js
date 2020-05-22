@@ -24,17 +24,17 @@ import Footer from "./components/Footer/Footer.js";
 
 function Home() {
   return (
-    <Container fluid className="p-0">
+    <Container fluid="xs" className="p-0">
       <MyParallax />
-      <About />
-      <Contact />
+      {/* <About />
+      <Contact /> */}
       {/* <TypingEffect /> */}
 
       {/* <QuoteDetails /> */}
 
       {/* <SignIn /> */}
       {/* <Admin /> */}
-      <Footer />
+      {/* <Footer /> */}
     </Container>
   );
 }

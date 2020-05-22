@@ -1,5 +1,6 @@
 import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav} from "react-bootstrap";
+import {Link } from "react-router-dom";
 import "./myNav.scss";
 
 export default function MyNav() {
@@ -16,16 +17,16 @@ export default function MyNav() {
         <Nav className="nav-container">
           <ul>
             <li>
-              <Nav.Link
+              <Link
                 to="/"
                 className={window.location.pathname === "/" ? " active" : " "}
                 href="/"
               >
                 Home
-              </Nav.Link>
+              </Link>
             </li>
             <li>
-              <Nav.Link
+              <Link
                 to="/quote"
                 className={
                   window.location.pathname === "/quote" ? " active" : " "
@@ -33,7 +34,7 @@ export default function MyNav() {
                 href="/quote"
               >
                 Quotes
-              </Nav.Link>
+              </Link>
             </li>
             <li>
               <Nav.Link
