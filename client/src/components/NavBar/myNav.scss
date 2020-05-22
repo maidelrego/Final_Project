@@ -24,6 +24,7 @@
   letter-spacing: 0.2em;
   display: inline-block;
   position: relative;
+  color: black;
 }
 
 .nav-container a:after {
@@ -34,7 +35,7 @@
   height: 2px;
   left: 50%;
   position: absolute;
-  background: #566473;
+  background: black;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }

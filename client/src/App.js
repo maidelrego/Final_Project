@@ -18,7 +18,7 @@ import Footer from "./components/Footer/Footer.js";
 
 function Home() {
   return (
-    <Container fluid className="p-0">
+    <Container fluid="xs" className="p-0">
       <MyParallax />
       <About />
       <Contact />
@@ -49,10 +49,10 @@ function App() {
             <Route exact path="/admin/:id">
               <QuoteDetail />
             </Route>
-            <Route>
-              <NoMatch />
-            </Route>
           </IsAuthenticatedRoute>
+          <Route>
+            <NoMatch />
+          </Route>
         </Switch>
       </Router>
     </GlobalStateProvider>

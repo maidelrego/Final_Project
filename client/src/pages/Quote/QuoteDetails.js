@@ -15,11 +15,16 @@ import { useGlobalContext } from "../../utils/GlobalState.js";
 
 function Detail() {
 
-  const [state, dispatch] = useGlobalContext()
+  const [state, dispatch] = useGlobalContext();
   const [quotes, setQuotes] = useState([]);
   const { id } = useParams();
+
+  function keepLogin() {
+    dispatch({ type: "role", value: "admin" });
+
+  }
   useEffect(() => {
-    keepLogin()
+    keepLogin();
     API.getQuote(id)
       .then(res => setQuotes(res.data))
       .catch(err => console.log(err));
@@ -36,11 +41,10 @@ function Detail() {
       backgroundColor: green[500],
     },
   }));
-  function keepLogin(){
-    dispatch({ type: "role", value:"admin"})
 
-  }
-    const classes = useStyles();
+
+
+  const classes = useStyles();
 
   return (
     <Container>

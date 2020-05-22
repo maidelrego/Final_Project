@@ -4,18 +4,9 @@ import Alert from "react-bootstrap/Alert";
 const Display = () => {
 
   return (
-    <Alert variant="success">
-      <Alert.Heading>Hey, nice to see you</Alert.Heading>
-      <p>
-    Aww yeah, you successfully read this important alert message. This example
-    text is going to run a bit longer so that you can see how spacing within an
-    alert works with this kind of content.
-      </p>
-      <hr />
-      <p className="mb-0">
-    Whenever you need to, be sure to use margin utilities to keep things nice
-    and tidy.
-      </p>
+    <Alert variant="success" className='text-center'>
+      <Alert.Heading><h1>Thank You, Your quote has been submited!</h1></Alert.Heading>
+      <h2> Josh will get back to you as soon he's ready to give you an estimate</h2>
     </Alert>
   );
 };

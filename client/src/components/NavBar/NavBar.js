@@ -1,6 +1,8 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./myNav.scss";
+
 
 export default function MyNav() {
   return (
@@ -16,16 +18,16 @@ export default function MyNav() {
         <Nav className="nav-container">
           <ul>
             <li>
-              <Nav.Link
+              <Link
                 to="/"
                 className={window.location.pathname === "/" ? " active" : " "}
                 href="/"
               >
                 Home
-              </Nav.Link>
+              </Link>
             </li>
             <li>
-              <Nav.Link
+              <Link
                 to="/quote"
                 className={
                   window.location.pathname === "/quote" ? " active" : " "
@@ -33,10 +35,10 @@ export default function MyNav() {
                 href="/quote"
               >
                 Quotes
-              </Nav.Link>
+              </Link>
             </li>
             <li>
-              <Nav.Link
+              <Link
                 to="/gallery"
                 className={
                   window.location.pathname === "/gallery" ? " active" : " "
@@ -44,13 +46,13 @@ export default function MyNav() {
                 href="/gallery"
               >
                 Gallery
-              </Nav.Link>
+              </Link>
             </li>
             <li>
-              <Nav.Link href="/#about">About us</Nav.Link>
+              <Link to="/#about" href="/#about">About us</Link>
             </li>
             <li>
-              <Nav.Link href="/#contact-img">Contact us</Nav.Link>
+              <Link to="/#contact" href="/#contact">Contact us</Link>
             </li>
           </ul>
         </Nav>
