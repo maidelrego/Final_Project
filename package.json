@@ -35,7 +35,6 @@
     "nodemon": "^1.19.4",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "prettier": "^2.0.2",
     "react-chartjs-2": "^2.9.0",
     "react-resize-detector": "^4.2.3",
     "react-smooth": "^1.0.5",
