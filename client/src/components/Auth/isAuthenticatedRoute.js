@@ -3,10 +3,13 @@ import { Route, Redirect } from "react-router-dom";
 import { useGlobalContext } from "../../utils/GlobalState";
 
 export default function AuthenticatedRoute({ children, ...rest }) {
-  const { isAuthenticated } = useGlobalContext();
+  const [ state, dispatch ] = useGlobalContext();
+
+
+console.log(state.role)
   return (
     <Route {...rest}>
-      {isAuthenticated ? (
+      {state.role === "admin" ? (
         children
       ) : (
         <Redirect to={

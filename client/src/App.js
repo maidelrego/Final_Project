@@ -14,8 +14,8 @@ import Display from "./components/Alert/Alert.js";
 import QuoteDetail from "./pages/Quote/QuoteDetails.js";
 import Admin from "./pages/Admin/Admin";
 
-// import IsAuthenticatedRoute from "./components/Auth/isAuthenticatedRoute";
-// import UnAuthenticatedRoute from "./components/Auth/unAuthenticatedRoute";
+import IsAuthenticatedRoute from "./components/Auth/isAuthenticatedRoute";
+import UnAuthenticatedRoute from "./components/Auth/unAuthenticatedRoute";
 
 import NoMatch from "./pages/NoMatch/NoMatch.js";
 import SignIn from "./pages/SignIn/SignIn.js";
@@ -43,61 +43,61 @@ function App() {
   return (
 
 
-    <GlobalStateProvider>
-      <Router>
-        <NavBar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/#about" component={Home} />
-          <Route exact path="/#contact" component={Home} />
-          <Route exact path="/quote" component={Quote} />
-          <Route exact path="/thankyou" component={Display} />
-          <Route exact path="/gallery" component={Gallery} />
-
-          <Route exact path="/login">
-            <SignIn />
-          </Route>
-          {/* <IsAuthenticatedRoute> */}
-
-          <Route exact path="/admin">
-
-            <Admin />
-          </Route>
-          <Route exact path="/admin/:id">
-            <QuoteDetail />
-          </Route>
-
-          <Route>
-            <NoMatch />
-          </Route>
-          {/* </IsAuthenticatedRoute> */}
-
-        </Switch>
-      </Router>
-    </GlobalStateProvider>
-
-
-
-
     // <GlobalStateProvider>
     //   <Router>
     //     <NavBar />
-    //     <UnAuthenticatedRoute exact path="/" component={Home} />
-    //     <UnAuthenticatedRoute exact path="/quote" component={Quote} />
-    //     <UnAuthenticatedRoute exact path="/gallery" component={Gallery} />
-    //     <UnAuthenticatedRoute exact path="/login" component={SignIn} />
-    //     <IsAuthenticatedRoute path='/admin' component={Admin} />
+    //     <Switch>
+    //       <Route exact path="/" component={Home} />
+    //       <Route exact path="/#about" component={Home} />
+    //       <Route exact path="/#contact" component={Home} />
+    //       <Route exact path="/quote" component={Quote} />
+    //       <Route exact path="/thankyou" component={Display} />
+    //       <Route exact path="/gallery" component={Gallery} />
 
-    //     <Switch >
+    //       <Route exact path="/login">
+    //         <SignIn />
+    //       </Route>
+    //       {/* <IsAuthenticatedRoute> */}
 
+    //       <Route exact path="/admin">
 
-
-    //       <IsAuthenticatedRoute exact path="/admin/:id">
+    //         <Admin />
+    //       </Route>
+    //       <Route exact path="/admin/:id">
     //         <QuoteDetail />
-    //       </IsAuthenticatedRoute>
+    //       </Route>
+
+    //       <Route>
+    //         <NoMatch />
+    //       </Route>
+    //       {/* </IsAuthenticatedRoute> */}
+
     //     </Switch>
     //   </Router>
     // </GlobalStateProvider>
+
+
+
+
+    <GlobalStateProvider>
+      <Router>
+        <NavBar />
+        <UnAuthenticatedRoute exact path="/" component={Home} />
+        <UnAuthenticatedRoute exact path="/quote" component={Quote} />
+        <UnAuthenticatedRoute exact path="/gallery" component={Gallery} />
+        <UnAuthenticatedRoute exact path="/login" component={SignIn} />
+        <IsAuthenticatedRoute path='/admin' component={Admin} />
+
+        <Switch >
+
+
+
+          <IsAuthenticatedRoute exact path="/admin/:id">
+            <QuoteDetail />
+          </IsAuthenticatedRoute>
+        </Switch>
+      </Router>
+    </GlobalStateProvider>
   );
 }
 
