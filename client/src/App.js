@@ -34,12 +34,12 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/#about" component={Home} />
-          <Route exact path="/#contact-img" component={Home} />
-          <Route exact path="/quote" component={Quote} />
-          <Route exact path="/thankyou" component={Display} />
-          <Route exact path="/gallery" component={Gallery} />
-          <Route exact path="/login">
+          <Route path="/#about" component={Home} />
+          <Route path="/#contact-img" component={Home} />
+          <Route path="/quote" component={Quote} />
+          <Route path="/thankyou" component={Display} />
+          <Route path="/gallery" component={Gallery} />
+          <Route path="/login">
             <SignIn />
           </Route>
           <IsAuthenticatedRoute>
