@@ -43,7 +43,7 @@ function App() {
             <SignIn />
           </Route>
           <IsAuthenticatedRoute>
-            <Route exact path="/admin" component={Admin}>
+            <Route exact path="/admin">
               <Admin />
             </Route>
             <Route exact path="/admin/:id">
