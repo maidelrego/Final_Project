@@ -4,8 +4,11 @@ const db = require("../models");
 // This file empties the Books collection and inserts the books below
 
 mongoose.connect(
-  process.env.MONGODB_URI ||
-    "mongodb://user:password@ds049661.mlab.com:49661/heroku_fhfzv9gh"
+  "mongodb://user:password@ds049661.mlab.com:49661/heroku_fhfzv9gh",
+  {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+  }
 );
 
 const UserSeed = [
