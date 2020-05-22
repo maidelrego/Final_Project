@@ -42,18 +42,18 @@ function App() {
           <Route path="/login">
             <SignIn />
           </Route>
-          <IsAuthenticatedRoute>
-            <Route exact path="/admin">
-              <Admin />
-            </Route>
-            <Route exact path="/admin/:id">
-              <QuoteDetail />
-            </Route>
-          </IsAuthenticatedRoute>
-          <Route>
-            <NoMatch />
-          </Route>
         </Switch>
+        <IsAuthenticatedRoute>
+          <Route exact path="/admin">
+            <Admin />
+          </Route>
+          <Route exact path="/admin/:id">
+            <QuoteDetail />
+          </Route>
+        </IsAuthenticatedRoute>
+        <Route>
+          <NoMatch />
+        </Route>
       </Router>
     </GlobalStateProvider>
   );
