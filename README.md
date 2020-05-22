@@ -45,3 +45,7 @@ A business with it's services on an interactive web application enables a wider 
 ![Quote Page](./assets/QuotePage1.png)
 
 ![About Us Page](./assets/AboutUsPage.png)
+
+![Admin Page](./assets/AdminPage.png)
+
+![Admin View of Quote Page](./assets/AdminQuote.png)
