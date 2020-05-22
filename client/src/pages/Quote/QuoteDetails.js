@@ -11,12 +11,15 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import { makeStyles } from "@material-ui/core/styles";
 import { green, red } from "@material-ui/core/colors";
+import { useGlobalContext } from "../../utils/GlobalState.js";
 
 function Detail() {
 
+  const [state, dispatch] = useGlobalContext()
   const [quotes, setQuotes] = useState([]);
   const { id } = useParams();
   useEffect(() => {
+    keepLogin()
     API.getQuote(id)
       .then(res => setQuotes(res.data))
       .catch(err => console.log(err));
@@ -33,8 +36,11 @@ function Detail() {
       backgroundColor: green[500],
     },
   }));
+  function keepLogin(){
+    dispatch({ type: "role", value:"admin"})
 
-  const classes = useStyles();
+  }
+    const classes = useStyles();
 
   return (
     <Container>
