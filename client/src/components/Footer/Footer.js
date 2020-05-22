@@ -22,7 +22,7 @@ export default function Footer () {
             <ul>
               <li><a to="/" href="/">Home</a></li>
               <li><a to="/quote" href="/quote">Quotes</a></li>
-              <li><a to="/gallery" href="/gallery">Galery</a></li>
+              <li><a to="/gallery" href="/gallery">Gallery</a></li>
               <li><a to="/#about" href="/#about">About Us</a></li>
             </ul>
           </div>
@@ -31,7 +31,7 @@ export default function Footer () {
         <Col xs={4}>
           <p className='logo-name'>Capmbell Wood Designs</p>
           <div className='about-text'>
-            Family owned business ,located in our hometown of Excelsior Springs, Missouri.
+            Family owned business, located in our hometown of Excelsior Springs, Missouri.
             We are here to help you and delivery the best service.
           </div>
         </Col>
