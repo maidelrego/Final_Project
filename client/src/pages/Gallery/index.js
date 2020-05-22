@@ -1,7 +1,6 @@
 import React from "react";
 import Gallery from "react-grid-gallery";
-import { Row, Col, Container} from "react-bootstrap";
-import "./gallery.css";
+import { Row, Col, Container } from "react-bootstrap";
 import gallery1 from "../../images/Gallery1.jpg";
 import gallery2 from "../../images/Gallery2.jpg";
 import gallery3 from "../../images/Gallery3.jpg";
@@ -25,143 +24,144 @@ import gallery20 from "../../images/Gallery20.jpg";
 import gallery21 from "../../images/Gallery21.jpg";
 import gallery22 from "../../images/Gallery21.jpg";
 import gallery23 from "../../images/Gallery23.jpg";
+import "./gallery.css";
 
 
 const IMAGES =
   [{
-    src:gallery1,
+    src: gallery1,
     thumbnail: gallery1,
     thumbnailWidth: 400,
     thumbnailHeight: 400,
   },
   {
-    src:gallery3,
+    src: gallery3,
     thumbnail: gallery3,
     thumbnailWidth: 500,
     thumbnailHeight: 300,
   },
   {
-    src:gallery5,
+    src: gallery5,
     thumbnail: gallery5,
     thumbnailWidth: 400,
     thumbnailHeight: 400,
   },
   {
-    src:gallery7,
+    src: gallery7,
     thumbnail: gallery7,
     thumbnailWidth: 400,
     thumbnailHeight: 400,
   },
   {
-    src:gallery9,
+    src: gallery9,
     thumbnail: gallery9,
     thumbnailWidth: 500,
     thumbnailHeight: 400,
   },
   {
-    src:gallery11,
+    src: gallery11,
     thumbnail: gallery11,
     thumbnailWidth: 400,
     thumbnailHeight: 400,
   },
   {
-    src:gallery13,
+    src: gallery13,
     thumbnail: gallery13,
     thumbnailWidth: 600,
     thumbnailHeight: 500,
   },
   {
-    src:gallery15,
+    src: gallery15,
     thumbnail: gallery15,
     thumbnailWidth: 400,
     thumbnailHeight: 400,
   },
   {
-    src:gallery17,
+    src: gallery17,
     thumbnail: gallery17,
     thumbnailWidth: 400,
     thumbnailHeight: 400,
   },
   {
-    src:gallery19,
+    src: gallery19,
     thumbnail: gallery19,
     thumbnailWidth: 400,
     thumbnailHeight: 400,
   },
   {
-    src:gallery21,
+    src: gallery21,
     thumbnail: gallery21,
     thumbnailWidth: 400,
     thumbnailHeight: 400,
   },
   {
-    src:gallery23,
+    src: gallery23,
     thumbnail: gallery23,
     thumbnailWidth: 400,
     thumbnailHeight: 400,
   },
   {
-    src:gallery2,
+    src: gallery2,
     thumbnail: gallery2,
     thumbnailWidth: 400,
     thumbnailHeight: 400,
   },
   {
-    src:gallery4,
+    src: gallery4,
     thumbnail: gallery4,
     thumbnailWidth: 400,
     thumbnailHeight: 400,
   },
   {
-    src:gallery6,
+    src: gallery6,
     thumbnail: gallery6,
     thumbnailWidth: 400,
     thumbnailHeight: 400,
   },
   {
-    src:gallery8,
+    src: gallery8,
     thumbnail: gallery8,
     thumbnailWidth: 400,
     thumbnailHeight: 400,
   },
   {
-    src:gallery10,
+    src: gallery10,
     thumbnail: gallery10,
     thumbnailWidth: 400,
     thumbnailHeight: 400,
   },
   {
-    src:gallery12,
+    src: gallery12,
     thumbnail: gallery12,
     thumbnailWidth: 400,
     thumbnailHeight: 400,
   },
   {
-    src:gallery14,
+    src: gallery14,
     thumbnail: gallery14,
     thumbnailWidth: 400,
     thumbnailHeight: 400,
   },
   {
-    src:gallery16,
+    src: gallery16,
     thumbnail: gallery16,
     thumbnailWidth: 400,
     thumbnailHeight: 400,
   },
   {
-    src:gallery18,
+    src: gallery18,
     thumbnail: gallery18,
     thumbnailWidth: 400,
     thumbnailHeight: 400,
   },
   {
-    src:gallery20,
+    src: gallery20,
     thumbnail: gallery20,
     thumbnailWidth: 400,
     thumbnailHeight: 400,
   },
   {
-    src:gallery22,
+    src: gallery22,
     thumbnail: gallery22,
     thumbnailWidth: 400,
     thumbnailHeight: 400,

@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -49,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignIn() {
-  
+
   const [state, dispatch] = useGlobalContext()
   const [formObject, setFormObject] = useState({})
 
@@ -59,7 +58,7 @@ export default function SignIn() {
   };
 
   let history = useHistory();
-  
+
   function handleFormSubmit(event) {
     event.preventDefault();
     API.postUser({
@@ -71,7 +70,7 @@ export default function SignIn() {
           console.log(res);
           if (res.status === 200) {
             if (res.data.role === "admin") {
-              dispatch({ type: "role", value:"admin"});
+              dispatch({ type: "role", value: "admin" });
               history.push("/admin");
             } else {
               console.log("denied!")

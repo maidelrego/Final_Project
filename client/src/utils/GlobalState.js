@@ -6,7 +6,6 @@ const { Provider } = GlobalContext;
 const reducer = (state, action) => {
   console.log('updatting global state:', action)
   switch (action.type) {
-
     case "firstName":
     case "lastName":
     case "phoneNumber":

@@ -5,6 +5,7 @@ const moment = require("moment");
 // Quote schema
 const contactSchema = new Schema({
   name: { type: String },
+  emailMessage: { type: String },
   message: { type: String },
   date: { type: String, default: Date.now },
   created_at: { type: Date, default: Date.now },
