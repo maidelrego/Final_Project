@@ -6,7 +6,6 @@ const { Provider } = GlobalContext;
 const reducer = (state, action) => {
   console.log('updatting global state:', action)
   switch (action.type) {
-
     case "firstName":
     case "lastName":
     case "phoneNumber":
@@ -26,6 +25,7 @@ const reducer = (state, action) => {
     case "name":
     case "emailMessage":
     case "message": 
+    case "role":
 
       return { ...state, [action.type]: action.value };
 
@@ -36,7 +36,6 @@ const reducer = (state, action) => {
 
 const GlobalStateProvider = ({ value = 0, ...props }) => {
   const [state, dispatch] = useReducer(reducer, {
-    // TODO - set tinitial state in tis object
     firstName: '',
     lastName: '',
     phoneNumber: '',
@@ -55,7 +54,8 @@ const GlobalStateProvider = ({ value = 0, ...props }) => {
     dimensionsW: '',
     name: '',
     emailMessage: '',
-    message: ''
+    message: '',
+    role: 'user'
   });
 
   return <Provider value={[state, dispatch]} {...props} />;

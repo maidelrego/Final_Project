@@ -8,7 +8,7 @@ const MyParallax = () => (
   <Row>
     <Col>
       <Parallax bgImage={parallaxImg} strength={700}>
-        <div style={{ height: 860}}>
+        <div style={{ height: 860 }}>
           <div className="frame">
             <div className="circle"></div>
             <div className="line left"></div>

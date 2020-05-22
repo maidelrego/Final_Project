@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -12,6 +11,8 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import API from "../../utils/API.js"
+import { useGlobalContext } from "../../utils/GlobalState.js";
+import { useHistory } from "react-router-dom";
 
 function Copyright() {
   return (
@@ -48,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignIn() {
 
+  const [state, dispatch] = useGlobalContext()
   const [formObject, setFormObject] = useState({})
 
   function handleInputChange(event) {
@@ -55,6 +57,7 @@ export default function SignIn() {
     setFormObject({ ...formObject, [name]: value })
   };
 
+  let history = useHistory();
 
   function handleFormSubmit(event) {
     event.preventDefault();
@@ -67,8 +70,8 @@ export default function SignIn() {
           console.log(res);
           if (res.status === 200) {
             if (res.data.role === "admin") {
-              window.location.replace('/admin')
-              // API.getUser(res.data._id)
+              dispatch({ type: "role", value: "admin" });
+              history.push("/admin");
             } else {
               console.log("denied!")
               window.location.replace("/login")
@@ -77,68 +80,68 @@ export default function SignIn() {
         }
       )
       .catch(err => console.log(err));
-      }
-
-
-
-
-    const classes = useStyles();
-
-    return (
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
-        </Typography>
-          <form className={classes.form} noValidate onSubmit={handleFormSubmit}>
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              id="username"
-              label="Username"
-              name="username"
-              autoComplete="username"
-              autoFocus
-              onChange={handleInputChange}
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-              onChange={handleInputChange}
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              Sign In
-          </Button>
-            <Grid container>
-              <Grid item xs>
-              </Grid>
-              <Grid item>
-              </Grid>
-            </Grid>
-          </form>
-        </div>
-        <Box mt={8}>
-          <Copyright />
-        </Box>
-      </Container>
-    );
   }
+
+
+
+
+  const classes = useStyles();
+
+  return (
+    <Container component="main" maxWidth="xs">
+      <CssBaseline />
+      <div className={classes.paper}>
+        <Avatar className={classes.avatar}>
+          <LockOutlinedIcon />
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          Sign in
+        </Typography>
+        <form className={classes.form} noValidate onSubmit={handleFormSubmit}>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="username"
+            label="Username"
+            name="username"
+            autoComplete="username"
+            autoFocus
+            onChange={handleInputChange}
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+            onChange={handleInputChange}
+          />
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+          >
+            Sign In
+          </Button>
+          <Grid container>
+            <Grid item xs>
+            </Grid>
+            <Grid item>
+            </Grid>
+          </Grid>
+        </form>
+      </div>
+      <Box mt={8}>
+        <Copyright />
+      </Box>
+    </Container>
+  );
+}

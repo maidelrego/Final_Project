@@ -1,4 +1,3 @@
-
 const passport = require('passport'),
   LocalStrategy = require('passport-local').Strategy
 const User = require('../models/User/User.js')
@@ -12,15 +11,15 @@ module.exports = function () {
     },
     function (req, username, password, done) {
       console.log('Local Strategy')
-      console.log(username)
-      console.log(password)
       User.findOne({ username: username }, function (err, user) {
         if (err) {
           console.log("Error. Access denied.")
-          return done(err); }
-        if (!user) { 
+          return done(err);
+        }
+        if (!user) {
           console.log("No user match. Access denied.")
-          return done(null, false); }
+          return done(null, false);
+        }
         return done(null, user);
       });
     }));

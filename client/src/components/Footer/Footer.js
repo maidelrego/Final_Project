@@ -1,19 +1,12 @@
 /* eslint-disable linebreak-style */
 import React from "react";
-import { Row, Col,} from "react-bootstrap";
+import { Row, Col, } from "react-bootstrap";
 import "./footer.scss";
-
 import { Link } from "react-router-dom";
 
 
-
-
-export default function Footer () {
-
-
-
-  return(
-
+export default function Footer() {
+  return (
     <div className='footer-container'>
       <Row>
         <Col xs={4}>
@@ -22,7 +15,7 @@ export default function Footer () {
             <ul>
               <li><a to="/" href="/">Home</a></li>
               <li><a to="/quote" href="/quote">Quotes</a></li>
-              <li><a to="/gallery" href="/gallery">Galery</a></li>
+              <li><a to="/gallery" href="/gallery">Gallery</a></li>
               <li><a to="/#about" href="/#about">About Us</a></li>
             </ul>
           </div>
@@ -31,7 +24,7 @@ export default function Footer () {
         <Col xs={4}>
           <p className='logo-name'>Campbell Wood Designs</p>
           <div className='about-text'>
-            Family owned business located in our hometown of Excelsior Springs, Missouri.
+            Family owned business, located in our hometown of Excelsior Springs, Missouri.
             We are here to help you and delivery the best service.
           </div>
         </Col>
@@ -50,12 +43,11 @@ export default function Footer () {
               </span>
             </a>
           </div>
-          <div className='text-center mt-4 login'><Link className='btn' to={"/login"}>Sign In</Link></div>
+          <div className='text-center mt-4 login'><Link className='btn btn-footer' to={"/login"}>Sign In</Link></div>
 
         </Col>
       </Row>
       <hr />
     </div>
-
   );
 }

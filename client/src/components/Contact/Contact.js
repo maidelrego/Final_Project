@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Row, Col, Container, Form, InputGroup } from "react-bootstrap";
 import { useGlobalContext } from "../../utils/GlobalState.js";
 import API from "../../utils/API.js";
@@ -38,9 +38,6 @@ const About = () => {
   };
 
 
-
-
-
   return (
     <Container fluid id='contact'>
       <Row>
@@ -77,7 +74,7 @@ const About = () => {
                 <InputGroup>
                   <Form.Control as='textarea' name="message" rows="3" required onChange={updateState} />
                   <Form.Control.Feedback type="invalid">
-                      Your Message is Missing!.
+                    Your Message is Missing!.
                   </Form.Control.Feedback>
                 </InputGroup>
               </Form.Group>

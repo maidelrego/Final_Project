@@ -439,11 +439,11 @@ export default function VerticalLinearStepper() {
                 <Form.Row>
                   <Form.Group as={Col} xs="6">
                     <Form.Label>Height (Inches):</Form.Label>
-                    <Form.Control required type="number" name="dimensionsH" onChange={updateState} />
+                    <Form.Control required type="number" value={state.dimensionsH} name="dimensionsH" onChange={updateState} />
                   </Form.Group>
                   <Form.Group as={Col} xs="6">
                     <Form.Label>Width (Inches):</Form.Label>
-                    <Form.Control required type="number" name="dimensionsW" onChange={updateState} />
+                    <Form.Control required type="number" value={state.dimensionsW} name="dimensionsW" onChange={updateState} />
                   </Form.Group>
                 </Form.Row>
               </Form>

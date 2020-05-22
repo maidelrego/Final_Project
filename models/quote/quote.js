@@ -8,7 +8,7 @@ const quoteSchema = new Schema({
   firstName: { type: String },
   lastName: { type: String },
   phoneNumber: {
-    type: Number,
+    type: String,
   },
   email: {
     type: String,

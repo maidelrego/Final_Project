@@ -46,7 +46,6 @@ export default function Admin() {
     });
   }
 
-
   useEffect(() => {
     loadMessages();
   }, []);
@@ -62,7 +61,6 @@ export default function Admin() {
       .then(() => loadQuotes())
       .catch((err) => console.log(err));
   }
-
   const classes = useStyles();
 
   return (
