@@ -1,7 +1,5 @@
 const passport = require("passport");
 const router = require("express").Router();
-
-
 const quotesController = require("../../controllers/quoteController.js");
 const contactController = require("../../controllers/contactController.js");
 
@@ -27,19 +25,15 @@ router
   .get(contactController.findById)
   .delete(contactController.delete);
 
-
 // user login/logout routes
 router.get("/admin", (req, res) => {
   res.json({ status: "ok" });
 });
 
-
 router.post(
   "/login",
   passport.authenticate("local", { failureRedirect: "/login" }),
   function (req, res) {
-
-
     res.json(req.user);
   }
 );
@@ -48,7 +42,6 @@ router.post(
     console.log("logout")
     res.redirect('/')
     req.logout()
-    
   })
 module.exports = router
 

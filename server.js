@@ -29,7 +29,6 @@ if (app.get('env') === 'development') {
   });
 }
 
-// // required for passport
 // Connect to the Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/campbellwooddesigns",
@@ -39,14 +38,11 @@ mongoose.connect(
     useUnifiedTopology: true,
   }
 );
-
+// // required for passport
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
-// app.use(flash());
 require('./config/passport.js')(passport);
-// // Add routes, both API and view
 app.use(routes);
-// mongoose.connect("mongodb://heroku_mfsxx4tk:imoqrp9hkg1ce78taesoskai8o@ds117739.mlab.com(opens in new tab):17739/heroku_mfsxx4tk");
 // Start the API server
 app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);

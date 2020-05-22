@@ -37,7 +37,6 @@ const reducer = (state, action) => {
 
 const GlobalStateProvider = ({ value = 0, ...props }) => {
   const [state, dispatch] = useReducer(reducer, {
-    // TODO - set tinitial state in tis object
     firstName: '',
     lastName: '',
     phoneNumber: '',
