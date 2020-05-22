@@ -29,7 +29,8 @@ if (app.get("env") === "development") {
   app.use(function (_, res, next) {
     res.header(
       "Access-Control-Allow-Origin",
-      "https://ancient-lowlands-03560.herokuapp.com/"
+      // "https://ancient-lowlands-03560.herokuapp.com/"
+      "https://peaceful-wildwood-36798.herokuapp.com/"
     ); // update to match the domain you will make the request from
     res.header(
       "Access-Control-Allow-Headers",
