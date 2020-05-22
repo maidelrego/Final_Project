@@ -118,7 +118,7 @@ export default function Admin() {
           <Col md={12}>
             <Jumbotron id="jumbo">
               <h1 className="text-center">Messages</h1>
-              {/* <Table responsive className="text-center">
+              <Table responsive className="text-center">
                 {messages.length ? (
                   <tbody>
                     {messages.map((messages) => (
@@ -159,7 +159,7 @@ export default function Admin() {
                     <h3>No Results to Display</h3>
                   </caption>
                 )}
-              </Table> */}
+              </Table>
             </Jumbotron>
           </Col>
         </Row>
