@@ -37,7 +37,7 @@ export default function MyNav() {
               </Link>
             </li>
             <li>
-              <Nav.Link
+              <Link
                 to="/gallery"
                 className={
                   window.location.pathname === "/gallery" ? " active" : " "
@@ -45,13 +45,13 @@ export default function MyNav() {
                 href="/gallery"
               >
                 Gallery
-              </Nav.Link>
+              </Link>
             </li>
             <li>
-              <Nav.Link to="/#about" href="/#about">About us</Nav.Link>
+              <Link to="/#about" href="/#about">About us</Link>
             </li>
             <li>
-              <Nav.Link to="/#contact" href="/#contact">Contact us</Nav.Link>
+              <Link to="/#contact" href="/#contact">Contact us</Link>
             </li>
           </ul>
         </Nav>

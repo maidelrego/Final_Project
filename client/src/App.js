@@ -26,15 +26,9 @@ function Home() {
   return (
     <Container fluid="xs" className="p-0">
       <MyParallax />
-      {/* <About />
-      <Contact /> */}
-      {/* <TypingEffect /> */}
-
-      {/* <QuoteDetails /> */}
-
-      {/* <SignIn /> */}
-      {/* <Admin /> */}
-      {/* <Footer /> */}
+      <About />
+      <Contact />
+      <Footer />
     </Container>
   );
 }
