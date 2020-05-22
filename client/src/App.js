@@ -16,18 +16,21 @@ import NoMatch from "./pages/NoMatch/NoMatch.js";
 import SignIn from "./pages/SignIn/SignIn.js";
 import Footer from "./components/Footer/Footer.js";
 
-function Home() {
-  return (
-    <Container fluid="xs" className="p-0">
-      <MyParallax />
-      <About />
-      <Contact />
-      <Footer />
-    </Container>
-  );
-}
+
 
 function App() {
+
+  function Home() {
+    return (
+      <Container fluid="xs" className="p-0">
+        <MyParallax />
+        <About />
+        <Contact />
+        <Footer />
+      </Container>
+    );
+  }
+  
   return (
     <GlobalStateProvider>
       <Router>
