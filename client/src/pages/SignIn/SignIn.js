@@ -10,9 +10,9 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import API from "../../utils/API.js"
+import API from "../../utils/API.js";
 import { useGlobalContext } from "../../utils/GlobalState.js";
-import { useHistory } from "react-router-dom";
+import { useHistory, withRouter } from "react-router-dom";
 
 function Copyright() {
   return (
@@ -20,7 +20,7 @@ function Copyright() {
       {"Copyright © "}
       <Link color="inherit" href="/">
         Campbell Wood Designs
-</Link>{" "}
+      </Link>{" "}
       {new Date().getFullYear()}
       {"."}
     </Typography>
@@ -47,43 +47,37 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
-  
-  const [state, dispatch] = useGlobalContext()
-  const [formObject, setFormObject] = useState({})
+export default withRouter(function SignIn() {
+  const [state, dispatch] = useGlobalContext();
+  const [formObject, setFormObject] = useState({});
 
   function handleInputChange(event) {
     const { name, value } = event.target;
-    setFormObject({ ...formObject, [name]: value })
-  };
+    setFormObject({ ...formObject, [name]: value });
+  }
 
   let history = useHistory();
-  
+
   function handleFormSubmit(event) {
     event.preventDefault();
     API.postUser({
       username: formObject.username,
-      password: formObject.password
+      password: formObject.password,
     })
-      .then(
-        res => {
-          console.log(res);
-          if (res.status === 200) {
-            if (res.data.role === "admin") {
-              dispatch({ type: "role", value:"admin"});
-              history.push("/admin");
-            } else {
-              console.log("denied!")
-              window.location.replace("/login")
-            }
+      .then((res) => {
+        console.log(res);
+        if (res.status === 200) {
+          if (res.data.role === "admin") {
+            dispatch({ type: "role", value: "admin" });
+            history.push("/admin");
+          } else {
+            console.log("denied!");
+            window.location.replace("/login");
           }
         }
-      )
-      .catch(err => console.log(err));
+      })
+      .catch((err) => console.log(err));
   }
-
-
-
 
   const classes = useStyles();
 
@@ -132,10 +126,8 @@ export default function SignIn() {
             Sign In
           </Button>
           <Grid container>
-            <Grid item xs>
-            </Grid>
-            <Grid item>
-            </Grid>
+            <Grid item xs></Grid>
+            <Grid item></Grid>
           </Grid>
         </form>
       </div>
@@ -144,4 +136,4 @@ export default function SignIn() {
       </Box>
     </Container>
   );
-}
+});
