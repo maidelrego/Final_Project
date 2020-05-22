@@ -44,7 +44,7 @@ export default function Footer () {
                 <i className="fab fa-facebook-f"></i>
               </span>
             </a>
-            <a href="https://www.instagram.com/campbell_wood_designs/?hl=en" className="social-buttons__button social-button social-button--instagram" aria-label="Instagram">
+            <a href="https://www.instagram.com/campbell_wood_designs/?hl=en" target='blank' className="social-buttons__button social-button social-button--instagram" aria-label="Instagram">
               <span className="social-button__inner">
                 <i className="fab fa-instagram"></i>
               </span>
