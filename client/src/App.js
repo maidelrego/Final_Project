@@ -34,8 +34,8 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/#about" component={Home} />
-          <Route path="/#contact-img" component={Home} />
+          <Route path="/#about" component={About} />
+          <Route path="/#contact" component={Contact} />
           <Route path="/quote" component={Quote} />
           <Route path="/thankyou" component={Display} />
           <Route path="/gallery" component={Gallery} />
