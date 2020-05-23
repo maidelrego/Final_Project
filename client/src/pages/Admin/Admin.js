@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Jumbotron, Table } from "react-bootstrap";
 import API from "../../utils/API.js";
-import { Link, BrowserRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
@@ -25,9 +25,6 @@ export default function Admin() {
 
   function keepLogin() {
     dispatch({ type: "role", value: "admin" });
-    // if (window.confirm("Do you really want to leave?")) {
-    //   window.open("/login", "Thanks for Visiting!");
-    // }
   }
 
   function loadQuotes() {
@@ -51,6 +48,9 @@ export default function Admin() {
 
   function handleLogout(e) {
     e.preventDefault();
+    if (window.confirm("Do you really want to leave?")) {
+      window.open("/login", "See You Later!");
+    }
     API.logout().then(() => {
       window.location.replace("/login");
     });
@@ -70,14 +70,10 @@ export default function Admin() {
   }
   const classes = useStyles();
 
+  window.onbeforeunload = function () {
+    return "Are you sure you want to leave?";
+ }
   return (
-    <BrowserRouter
-      getUserConfirmation={(message, callback) => {
-        // this is the default behavior
-        const allowTransition = window.confirm(message);
-        callback(allowTransition);
-      }}
-    >
       <div>
         <Row className='admin-head mt-2'>
           <Col>
@@ -179,6 +175,5 @@ export default function Admin() {
           </Row>
         </div>
       </div>
-    </BrowserRouter>
   );
 }
