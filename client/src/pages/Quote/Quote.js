@@ -106,7 +106,7 @@ export default function VerticalLinearStepper() {
               </Form.Group>
 
               <Form.Group as={Col} md="5">
-                <Form.Label>First name</Form.Label>
+                <Form.Label>Last Name</Form.Label>
                 <Form.Control required type="text" name="lastName" placeholder="Last name" value={state.lastName} onChange={updateState} />
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 <Form.Control.Feedback type="invalid">Ooops!</Form.Control.Feedback>
