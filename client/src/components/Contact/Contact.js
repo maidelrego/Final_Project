@@ -18,6 +18,7 @@ const About = () => {
   const history = useHistory();
 
   const handleSubmit = (event) => {
+    event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -29,7 +30,7 @@ const About = () => {
     API.saveMessage({
       name: state.name,
       emailMessage: state.emailMessage,
-      message: state.message,
+      message: state.message
     })
       .then(() => {
         history.push("/thankyou");

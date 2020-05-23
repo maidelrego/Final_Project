@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const moment = require("moment");
+var moment = require('moment-timezone');
 
 // Quote schema
 const contactSchema = new Schema({
@@ -17,7 +17,8 @@ const contactSchema = new Schema({
 // created_at and updated_at are stored in default which is in milliseconds
 contactSchema.pre("save", function (next) {
   event = new Date();
-  now = moment(event).format("LLLL");
+  
+  now = moment().tz("America/Chicago").format("LLLL");
   this.date = now;
   if (!this.date) {
     this.date = now;
