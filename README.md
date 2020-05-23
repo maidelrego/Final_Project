@@ -4,7 +4,7 @@ Progressive Web Application in React.js
 
 ## App description
 
-The application is desgined for the small buisness owner, "Cambell Wood Designs", to interact with the public. The public will be able to view the services offered, choose options and request a quote. The application will
+The application is desgined for the small buisness owner, "Campbell Wood Designs", to interact with the public. The public will be able to view the services offered, choose options and request a quote. The application will
 email the quote request with the customer's contact information to the business. Then the buisness will contact the customer with a priced estimate.
 
 ## User Story
@@ -38,4 +38,36 @@ A business with it's services on an interactive web application enables a wider 
 
 ## Demo
 
-[Link to deployed application]()
+[Link to deployed application](https://frozen-tundra-71246.herokuapp.com/)
+
+## Photos
+
+- Home page
+
+![Home Page](./assets/HomePage.png)
+
+![About Us Page](./assets/AboutUsPage.png)
+
+- Contact component for customers
+
+![Contact business](./assets/MessagePage.png)
+
+- Quote Page
+
+![Quote Page](./assets/QuotePage1.png)
+
+![Quote Page Door Design](./assets/DoorDesign.png)
+
+![Quote Page Finishes](./assets/Finishes.png)
+
+- Gallery Page
+
+![Gallery Page](./assets/Gallery.png)
+
+- Authenticated User Page
+
+![Admin Page](./assets/AdminPage.png)
+
+- View the quote
+
+![Admin View of Quote Page](./assets/AdminQuote.png)
