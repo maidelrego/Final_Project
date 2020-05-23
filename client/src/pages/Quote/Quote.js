@@ -133,7 +133,7 @@ export default function VerticalLinearStepper() {
             </Form.Row>
             <br />
             <h3>Optional</h3>
-            <p className="text-muted">We need your address if you are chosing Delivery</p>
+            <p className="text-muted">We need your address if you are choosing Delivery</p>
 
             <Form.Row>
               <Form.Group as={Col} md="12">
