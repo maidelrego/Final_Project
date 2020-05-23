@@ -33,7 +33,7 @@ const About = () => {
       message: state.message
     })
       .then(() => {
-        history.push("/thankyou");
+        history.push("/message-success");
       })
       .catch(err => console.log(err));
   };

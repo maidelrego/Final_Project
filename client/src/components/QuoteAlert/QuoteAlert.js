@@ -1,7 +1,7 @@
 import React from "react";
 import Alert from "react-bootstrap/Alert";
 
-const Display = () => {
+const QuoteAlert = () => {
 
   return (
     <Alert variant="success" className='text-center'>
@@ -12,5 +12,5 @@ const Display = () => {
 };
 
 
-export default Display;
+export default QuoteAlert;
 

@@ -69,7 +69,7 @@ export default function VerticalLinearStepper() {
         dimensionsW: state.dimensionsW,
       })
         .then(() => {
-          history.push("/thankyou");
+          history.push("/quote-success");
         })
         .catch(err => console.log(err));
     }
