@@ -10,7 +10,6 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { makeStyles } from "@material-ui/core/styles";
 import "./admin.css";
 import logo from "../../images/logo.png";
-import moment from "moment";
 
 
 const useStyles = makeStyles(() => ({
@@ -69,6 +68,7 @@ export default function Admin() {
       <Row className='admin-head mt-2'>
         <Col>
           <h2 id="josh-text">Josh Campbell Page</h2>
+          <button className="btn btn-primary" onClick={() => loadQuotes()}>Refresh Quotes</button>
         </Col>
         <Col>
           <button className='btn logout' onClick={handleLogout} ><i className="fas fa-sign-out-alt"></i>Log Out</button>
