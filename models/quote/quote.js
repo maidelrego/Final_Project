@@ -56,7 +56,8 @@ const quoteSchema = new Schema({
 // created_at and updated_at are stored in default which is in milliseconds
 quoteSchema.pre("save", function (next) {
   event = new Date();
-  now = moment(event).format("LLLL");
+  
+  now = moment().tz("America/Chicago").format("LLLL");
   this.date = now;
   if (!this.date) {
     this.date = now;
