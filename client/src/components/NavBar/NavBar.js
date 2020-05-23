@@ -1,8 +1,6 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import "./myNav.scss";
-
 
 export default function MyNav() {
   return (
@@ -18,16 +16,16 @@ export default function MyNav() {
         <Nav className="nav-container">
           <ul>
             <li>
-              <Link
+              <Nav.Link
                 to="/"
                 className={window.location.pathname === "/" ? " active" : " "}
                 href="/"
               >
                 Home
-              </Link>
+              </Nav.Link>
             </li>
             <li>
-              <Link
+              <Nav.Link
                 to="/quote"
                 className={
                   window.location.pathname === "/quote" ? " active" : " "
@@ -35,10 +33,10 @@ export default function MyNav() {
                 href="/quote"
               >
                 Quotes
-              </Link>
+              </Nav.Link>
             </li>
             <li>
-              <Link
+              <Nav.Link
                 to="/gallery"
                 className={
                   window.location.pathname === "/gallery" ? " active" : " "
@@ -46,13 +44,29 @@ export default function MyNav() {
                 href="/gallery"
               >
                 Gallery
-              </Link>
+              </Nav.Link>
             </li>
             <li>
-              <Link to="/#about" href="/#about">About us</Link>
+              <Nav.Link
+                to="/#about"
+                className={
+                  window.location.pathname === "/#about" ? " active" : " "
+                }
+                href="/#about"
+              >
+                About us
+              </Nav.Link>
             </li>
             <li>
-              <Link to="/#contact" href="/#contact">Contact us</Link>
+              <Nav.Link
+                to="/#contact"
+                className={
+                  window.location.pathname === "/#contact" ? " active" : " "
+                }
+                href="/#contact"
+              >
+                Contact us
+              </Nav.Link>
             </li>
           </ul>
         </Nav>

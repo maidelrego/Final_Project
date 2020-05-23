@@ -35,8 +35,8 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/#about" component={Home} />
-          <Route path="/#contact" component={Home} />
+          <Route path="/#about" component={About} />
+          <Route path="/#contact" component={Contact} />
           <Route path="/quote" component={Quote} />
           <Route path="/quote-success" component={QuoteAlert} />
           <Route path="/message-success" component={MessageAlert} />

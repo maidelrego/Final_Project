@@ -102,21 +102,21 @@ export default function VerticalLinearStepper() {
                 <Form.Label>First name</Form.Label>
                 <Form.Control required type="text" name="firstName" placeholder="First name" value={state.firstName} onChange={updateState} />
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                <Form.Control.Feedback type="invalid">Ooops!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Please enter First Name!</Form.Control.Feedback>
               </Form.Group>
 
               <Form.Group as={Col} md="5">
                 <Form.Label>Last Name</Form.Label>
                 <Form.Control required type="text" name="lastName" placeholder="Last name" value={state.lastName} onChange={updateState} />
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                <Form.Control.Feedback type="invalid">Ooops!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Please Enter Last Name!</Form.Control.Feedback>
               </Form.Group>
 
               <Form.Group as={Col} md="2">
                 <Form.Label>Phone Number</Form.Label>
-                <Form.Control required type="number" placeholder="555-555-5555" name="phoneNumber" value={state.phoneNumber} onChange={updateState} />
+                <Form.Control required type="phone-number" placeholder="555-555-5555" pattern="^[2-9]\d{2}-\d{3}-\d{4}$" min="12" max="12" name="phoneNumber" value={state.phoneNumber} onChange={updateState} />
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                <Form.Control.Feedback type="invalid">Phone Number Missing!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Invalid Phone Number!</Form.Control.Feedback>
               </Form.Group>
 
             </Form.Row>
@@ -127,7 +127,7 @@ export default function VerticalLinearStepper() {
                 <Form.Label>Email</Form.Label>
                 <Form.Control required type="email" placeholder="@example.com" name="email" value={state.email} onChange={updateState} />
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                <Form.Control.Feedback type="invalid">Ooops!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Invalid Email!</Form.Control.Feedback>
               </Form.Group>
 
             </Form.Row>
