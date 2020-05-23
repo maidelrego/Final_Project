@@ -7,6 +7,7 @@ const session = require('express-session');
 const app = express();
 const routes = require('./routes/index');
 const PORT = process.env.PORT || 3001;
+const path = require("path");
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/campbellwooddesigns");
 // Define middleware here
@@ -18,7 +19,11 @@ app.use(session({
 app.use(morgan('dev'))
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use('/static', express.static(path.join(__dirname, './client/build//static')));
+  app.get('*', function(req, res) {
+  res.sendFile('index.html', {root: path.join(__dirname, './client/build/')});
+});
+
 }
 //  CORS auth
 if (app.get('env') === 'development') {
