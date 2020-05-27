@@ -8,7 +8,8 @@ import NavBar from "./components/NavBar/NavBar.js";
 import Gallery from "./pages/Gallery";
 import About from "./components/About/About.js";
 import Contact from "./components/Contact/Contact.js";
-import Display from "./components/Alert/Alert.js";
+import QuoteAlert from "./components/QuoteAlert/QuoteAlert.js";
+import MessageAlert from "./components/MessageAlert/MessageAlert.js";
 import QuoteDetail from "./pages/Quote/QuoteDetails.js";
 import Admin from "./pages/Admin/Admin";
 import IsAuthenticatedRoute from "./components/Auth/isAuthenticatedRoute";
@@ -37,7 +38,8 @@ function App() {
           <Route path="/#about" component={About} />
           <Route path="/#contact" component={Contact} />
           <Route path="/quote" component={Quote} />
-          <Route path="/thankyou" component={Display} />
+          <Route path="/quote-success" component={QuoteAlert} />
+          <Route path="/message-success" component={MessageAlert} />
           <Route path="/gallery" component={Gallery} />
           <Route path="/login">
             <SignIn />

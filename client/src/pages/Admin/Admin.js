@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col, Jumbotron, Table } from "react-bootstrap";
+import { Row, Col, Jumbotron, Table, Button } from "react-bootstrap";
 import API from "../../utils/API.js";
 import { Link } from "react-router-dom";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
@@ -8,9 +8,8 @@ import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { makeStyles } from "@material-ui/core/styles";
-import "./admin.css";
 import logo from "../../images/logo.png";
-import moment from "moment";
+import "./admin.css";
 
 
 const useStyles = makeStyles(() => ({
@@ -80,11 +79,18 @@ export default function Admin() {
         </Col>
       </Row>
 
+
       <div className='container'>
         <Row>
-          <Col md={12}>
+          <Col>
+            <button className="btn float-left" onClick={loadQuotes}><i className="fas fa-redo-alt fa-2x"></i></button>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12}>
             <Jumbotron id="jumbo">
               <h1 className="text-center">Quotes</h1>
+
               <Table responsive className="text-center">
                 {quotes.length ? (
                   <tbody>
@@ -116,7 +122,12 @@ export default function Admin() {
               </Table>
             </Jumbotron>
           </Col>
-          <Col md={12}>
+
+          <Col>
+            <button className="btn float-left" onClick={loadMessages}><i className="fas fa-redo-alt fa-2x"></i></button>
+          </Col>
+
+          <Col xs={12}>
             <Jumbotron id="jumbo">
               <h1 className="text-center">Messages</h1>
               <Table responsive className="text-center">

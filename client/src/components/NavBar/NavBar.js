@@ -17,16 +17,16 @@ export default function MyNav() {
         <Nav className="nav-container">
           <ul>
             <li>
-              <Nav.Link
+              <Link
                 to="/"
                 className={window.location.pathname === "/" ? " active" : " "}
                 href="/"
               >
                 Home
-              </Nav.Link>
+              </Link>
             </li>
             <li>
-              <Nav.Link
+              <Link
                 to="/quote"
                 className={
                   window.location.pathname === "/quote" ? " active" : " "
@@ -34,10 +34,10 @@ export default function MyNav() {
                 href="/quote"
               >
                 Quotes
-              </Nav.Link>
+              </Link>
             </li>
             <li>
-              <Nav.Link
+              <Link
                 to="/gallery"
                 className={
                   window.location.pathname === "/gallery" ? " active" : " "
@@ -45,10 +45,10 @@ export default function MyNav() {
                 href="/gallery"
               >
                 Gallery
-              </Nav.Link>
+              </Link>
             </li>
             <li>
-              <Nav.Link
+              <Link
                 to="/#about"
                 className={
                   window.location.pathname === "/#about" ? " active" : " "
@@ -56,10 +56,10 @@ export default function MyNav() {
                 href="/#about"
               >
                 About us
-              </Nav.Link>
+              </Link>
             </li>
             <li>
-              <Nav.Link
+              <Link
                 to="/#contact"
                 className={
                   window.location.pathname === "/#contact" ? " active" : " "
@@ -67,7 +67,7 @@ export default function MyNav() {
                 href="/#contact"
               >
                 Contact us
-              </Nav.Link>
+              </Link>
             </li>
           </ul>
         </Nav>
