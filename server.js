@@ -8,7 +8,8 @@ const app = express();
 const routes = require('./routes/index');
 const PORT = process.env.PORT || 3001;
 const path = require("path");
-const uri = 'mongodb+srv://maydelrego:oddun077@cluster-p5nwjvdj.ez3xl.mongodb.net/campbellDB'
+require('dotenv').config()
+const uri = process.env.MONGO_URI
 
 
 // Connect to the Mongo DB
