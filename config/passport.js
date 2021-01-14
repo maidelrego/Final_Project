@@ -12,6 +12,7 @@ module.exports = function () {
     function (req, username, password, done) {
       console.log('Local Strategy')
       User.findOne({ username: username }, function (err, user) {
+        console.log(username)
         if (err) {
           console.log("Error. Access denied.")
           return done(err);

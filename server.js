@@ -8,8 +8,18 @@ const app = express();
 const routes = require('./routes/index');
 const PORT = process.env.PORT || 3001;
 const path = require("path");
+const uri = 'mongodb+srv://maydelrego:oddun077@cluster-p5nwjvdj.ez3xl.mongodb.net/campbellDB'
+
+
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/campbellwooddesigns");
+
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+  }).then(() => {console.log('MongoDB Connected…', mongoose.connection.readyState)}).catch(err => console.log(err))
+
+
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -31,15 +41,6 @@ if (app.get('env') === 'development') {
   });
 }
 
-// Connect to the Mongo DB
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/campbellwooddesigns",
-  {
-    useNewUrlParser: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
-  }
-);
 // // required for passport
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
