@@ -67,7 +67,6 @@ export default function SignIn() {
     })
       .then(
         res => {
-          
           if (res.status === 200) {
             if (res.data.role === "admin") {
               dispatch({ type: "role", value:"admin"});
