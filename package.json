@@ -1,5 +1,5 @@
 {
-  "name": "mern",
+  "name": "fullstackproject",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -45,5 +45,6 @@
     "react-resize-detector": "^4.2.3",
     "react-smooth": "^1.0.5",
     "recharts": "^1.8.5"
-  }
+  },
+  "keywords": []
 }
